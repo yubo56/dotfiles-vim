@@ -1,0 +1,31 @@
+snippet tikz
+	\begin{figure}[!h]
+		\centering
+		\begin{tikzpicture}[scale=0.2]
+			\draw[<->] (-10,0) -- (10,0);
+			\node[right] at (10,0) {$x$};
+			\draw[<->] (0,-10) -- (0,10);
+			\node[above] at (0,10) {$y$};
+			${1}
+		\end{tikzpicture}
+		\caption{<++>}
+		\label{<++>}
+	\end{figure}<++>
+snippet a
+	\begin{align}
+		${1}
+	\end{align}<++>
+snippet e
+	\begin{enumerate}[${1}]
+		\item <++>
+	\end{enumerate}<++>
+snippet i
+	\begin{itemize}
+		\item ${1}
+	\end{itemize}<++>
+snippet s
+	\section{${1}}<++>
+snippet ss
+	\subsection{${1}}<++>
+snippet <
+	<++>${1}

@@ -1,0 +1,225 @@
+# Ce fichier viminfo a été généré par Vim 7.4.
+# Vous pouvez l'éditer, mais soyez prudent.
+
+# 'encoding' dans lequel ce fichier a été écrit
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# Dernier motif de recherche  :
+~MSle0~/strip
+
+# Historique ligne de commande (chronologie décroissante) :
+:q
+:wq
+:w
+:q!
+
+# Historique chaîne de recherche (chronologie décroissante) :
+?/strip
+?/srtip
+
+# Historique expression (chronologie décroissante) :
+
+# Historique ligne de saisie (chronologie décroissante) :
+
+# Historique ligne de saisie (chronologie décroissante) :
+
+# Registres :
+""1	LINE	0
+	alias gulp='~/SURF2013/GULP/gulp'
+"2	LINE	0
+	alias swag='ssh -XY yssu@atom.wag.caltech.edu'
+"3	LINE	0
+	alias ipython='ipython --nosep --no-confirm-exit --classic'
+"4	LINE	0
+	
+"5	LINE	0
+	
+	if [ -f ~/.zsh_aliases ]; then
+	    . ~/.zsh_aliases
+	fi
+	
+"6	BLOCK	1
+	# 
+	# 
+	# 
+	# 
+"7	LINE	0
+	md5sums=('116305320eb852dcc5ae1105f9776448'
+	         '369907f86d107fc1f73d10b1b5b98e40'
+	         '939f403a71b6e85261d09fc3412269ee')
+	md5sums=('482c9b01f1c2f8fe728610b40f88d7c9'
+	         '369907f86d107fc1f73d10b1b5b98e40'
+	         '939f403a71b6e85261d09fc3412269ee')
+"-	CHAR	0
+	%
+
+# Marques dans le fichier :
+'0  1  0  /etc/group
+'1  1  0  ~/.Xresources
+'2  15  0  ~/.xinitrc
+'3  42  4  ~/custom/dwmalt/config.h
+'4  2  0  ~/.xinitrc
+'5  1  0  ~/.xinitrc
+'6  20  0  ~/.xinitrc
+'7  29  0  ~/.zsh_aliases
+'8  32  0  ~/.zsh_aliases
+'9  23  7  ~/.zshrc
+
+# Liste de sauts (le plus récent en premier) :
+-'  1  0  /etc/group
+-'  44  0  /etc/group
+-'  1  0  ~/.Xresources
+-'  15  0  ~/.xinitrc
+-'  2  0  ~/.xinitrc
+-'  42  4  ~/custom/dwmalt/config.h
+-'  49  0  ~/custom/dwmalt/config.h
+-'  1  0  ~/custom/dwmalt/config.h
+-'  1  0  ~/.xinitrc
+-'  20  0  ~/.xinitrc
+-'  18  10  ~/.xinitrc
+-'  29  0  ~/.zsh_aliases
+-'  31  29  ~/.zsh_aliases
+-'  32  0  ~/.zsh_aliases
+-'  30  0  ~/.zsh_aliases
+-'  1  0  ~/.zsh_aliases
+-'  23  7  ~/.zshrc
+-'  5  44  ~/.zshrc
+-'  22  0  ~/.zshrc
+-'  17  0  ~/.zshrc
+-'  2  0  ~/.zshrc
+-'  9  0  ~/.zshrc
+-'  19  0  ~/.zshrc
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/.zshrc
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  23  7  ~/.zshrc
+-'  29  0  ~/.zsh_aliases
+-'  31  29  ~/.zsh_aliases
+-'  32  0  ~/.zsh_aliases
+-'  30  0  ~/.zsh_aliases
+-'  1  0  ~/.zsh_aliases
+-'  23  7  ~/.zshrc
+-'  5  44  ~/.zshrc
+-'  22  0  ~/.zshrc
+-'  17  0  ~/.zshrc
+-'  2  0  ~/.zshrc
+-'  9  0  ~/.zshrc
+-'  19  0  ~/.zshrc
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+-'  10  0  ~/custom/dwmalt/PKGBUILD
+-'  1  0  ~/custom/dwmalt/PKGBUILD
+
+# Historique des marques dans les fichiers (les plus récentes en premier) :
+
+> /etc/group
+	"	1	0
+
+> ~/.Xresources
+	"	1	0
+
+> ~/.xinitrc
+	"	15	0
+	^	20	0
+	.	15	0
+	+	18	10
+	+	20	0
+	+	8	0
+	+	13	0
+	+	14	0
+	+	15	0
+
+> ~/custom/dwmalt/config.h
+	"	42	4
+
+> ~/.zsh_aliases
+	"	29	0
+	^	31	30
+	.	29	0
+	+	32	0
+	+	31	29
+	+	5	0
+	+	6	0
+	+	29	0
+
+> ~/.zshrc
+	"	23	7
+	^	23	10
+	.	23	7
+	+	11	54
+	+	19	0
+	+	8	0
+	+	11	39
+	+	12	0
+	+	2	0
+	+	13	7
+	+	17	0
+	+	18	9
+	+	22	6
+	+	23	0
+	+	5	0
+	+	1	24
+	+	5	44
+	+	23	7
+
+> ~/custom/dwmalt/PKGBUILD
+	"	10	0
+	.	38	0
+	+	38	0
