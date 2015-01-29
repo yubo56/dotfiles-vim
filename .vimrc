@@ -3,7 +3,7 @@
 " :%s/\s\+$// -- remove trailing whitespace (to remove at beginning just <<)
 "
 "
-filetype plugin on
+filetype plugin indent on
 set foldmethod=syntax
 
 " vimlatex stuff
@@ -14,13 +14,15 @@ set grepprg=grep\ -nH\ $*
 
 "set line numbers
 set nu
-" set rnu
+set rnu
+" only tex dosen't rnu b/c causes lag
+autocmd BufRead,BufNewFile *.tex set nornu
 
 "indentation options; 2 spaces per indent, autoindent
 set tabstop=4
+" set softtabstop=4
 set expandtab
 set sw=4
-filetype indent on
 set ls=2
 set smarttab autoindent
 
