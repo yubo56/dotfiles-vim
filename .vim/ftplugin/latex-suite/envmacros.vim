@@ -2,7 +2,6 @@
 " 	     File: envmacros.vim
 "      Author: Mikolaj Machowski
 "     Created: Tue Apr 23 08:00 PM 2002 PST
-"  CVS Header: $Id: envmacros.vim 1101 2010-01-28 23:30:56Z tmaas $
 "  Description: mappings/menus for environments. 
 "=============================================================================
 
@@ -16,18 +15,15 @@ nmap <silent> <script> <plug> i
 imap <silent> <script> <C-o><plug> <Nop>
 
 " Define environments for IMAP evaluation " {{{
-" let s:figure =     "\\begin{figure}[<+htpb+>]\<cr>\\centering\<cr>\\psfig{figure=<+eps file+>}\<cr>\\caption{<+caption text+>}\<cr>\\label{fig:<+label+>}\<cr>\\end{figure}<++>"
-" let s:figure_graphicx =    "\\begin{figure}[<+htpb+>]\<cr>\\centering\<cr>\\includegraphics{<+file+>}\<cr>\\caption{<+caption text+>}\<cr>\\label{fig:<+label+>}\<cr>\\end{figure}<++>"
-let s:figure =    "\\begin{figure}[<+htpb+>]\<cr>\\centering\<cr>\\includegraphics{<+file+>}\<cr>\\caption{<+caption text+>}\<cr>\\label{fig:<+label+>}\<cr>\\end{figure}<++>"
+let s:figure =    "\\begin{figure}[!h]\<cr>\\centering\<cr>\\includegraphics{<+file+>}\<cr>\\caption{<+caption text+>}\<cr>\\label{fig:<+label+>}\<cr>\\end{figure}<++>"
 let s:minipage =   "\\begin{minipage}[<+tb+>]{<+width+>}\<cr><++>\<cr>\\end{minipage}<++>"
 let s:picture =    "\\begin{picture}(<+width+>, <+height+>)(<+xoff+>,<+yoff+>)\<cr>\\put(<+xoff+>,<+yoff+>){\\framebox(<++>,<++>){<++>}}\<cr>\\end{picture}<++>"
 let s:list =       "\\begin{list}{<+label+>}{<+spacing+>}\<cr>\\item <++>\<cr>\\end{list}<++>"
-let s:table =      "\\begin{table}\<cr>\\centering\<cr>\\begin{tabular}{<+dimensions+>}\<cr><++>\<cr>\\end{tabular}\<cr>\\caption{<+Caption text+>}\<cr>\\label{tab:<+label+>}\<cr>\\end{table}<++>"
+let s:table =      "\\begin{table}[!h]\<cr>\\centering\<cr>\\begin{tabular}{<+dimensions+>}\<cr><++>\<cr>\\end{tabular}\<cr>\\caption{<+Caption text+>}\<cr>\\label{tab:<+label+>}\<cr>\\end{table}<++>"
 let s:array =      "\\left<++>\<cr>\\begin{array}{<+dimension+>}\<cr><+elements+>\<cr>\\end{array}\<cr>\\right<++>"
 let s:description ="\\begin{description}\<cr>\\item[<+label+>]<++>\<cr>\\end{description}<++>"
 let s:document =   "\\documentclass[<+options+>]{<+class+>}\<cr>\<cr>\\begin{document}\<cr><++>\<cr>\\end{document}"
-let s:tabular = "\\begin{tabular}[<+hbtp+>]{<+format+>}\<cr><++>\<cr>\\end{tabular}"
-let s:tabular_star = "\\begin{tabular*}[<+hbtp+>]{<+format+>}\<cr><++>\<cr>\\end{tabular*}"
+let s:tabular = "\\begin{tabular}[!h]{<+format+>}\<cr><++>\<cr>\\end{tabular}"
 
 " }}}
 " define environments with special behavior in line wise selection. {{{
@@ -217,9 +213,9 @@ call s:Tex_EnvMacros('ETG', '&Tables.', 'tabbing')
 call s:Tex_EnvMacros('',    '&Tables.', 'table*')
 call s:Tex_EnvMacros('',    '&Tables.', 'table2')
 call s:Tex_SpecialMacros('ETR', '&Tables.', 'tabular', s:tabular)
-call s:Tex_SpecialMacros('', '&Tables.', 'tabular*', s:tabular_star)
 " }}}
 " Math {{{
+call s:Tex_EnvMacros('EAL', '&Math.', 'align')
 call s:Tex_EnvMacros('EAR', '&Math.', 'array')
 call s:Tex_EnvMacros('EDM', '&Math.', 'displaymath')
 call s:Tex_EnvMacros('EEA', '&Math.', 'eqnarray')
@@ -228,24 +224,24 @@ call s:Tex_EnvMacros('EEQ', '&Math.', 'equation')
 call s:Tex_EnvMacros('EMA', '&Math.', 'math')
 " }}}
 " Structure {{{
-call s:Tex_SpecialMacros('EAR', 'Math.', 'array', s:array)
-call s:Tex_EnvMacros('EAB', '&Structure.', 'abstract')
-call s:Tex_EnvMacros('EAP', '&Structure.', 'appendix')
+" call s:Tex_SpecialMacros('EAR', 'Math.', 'array', s:array)
+" call s:Tex_EnvMacros('EAB', '&Structure.', 'abstract')
+" call s:Tex_EnvMacros('EAP', '&Structure.', 'appendix')
 call s:Tex_EnvMacros('ECE', '&Structure.', 'center')
-call s:Tex_EnvMacros('EDO', '&Structure.', 'document')
-call s:Tex_EnvMacros('EFC', '&Structure.', 'filecontents')
-call s:Tex_EnvMacros('',    '&Structure.', 'filecontents*')
-call s:Tex_EnvMacros('EFL', '&Structure.', 'flushleft')
-call s:Tex_EnvMacros('EFR', '&Structure.', 'flushright')
-call s:Tex_EnvMacros('EQN', '&Structure.', 'quotation')
-call s:Tex_EnvMacros('EQE', '&Structure.', 'quote')
-call s:Tex_EnvMacros('ESP', '&Structure.', 'sloppypar')
-call s:Tex_EnvMacros('ETI', '&Structure.', 'theindex')
-call s:Tex_EnvMacros('ETP', '&Structure.', 'titlepage')
+" call s:Tex_EnvMacros('EDO', '&Structure.', 'document')
+" call s:Tex_EnvMacros('EFC', '&Structure.', 'filecontents')
+" call s:Tex_EnvMacros('',    '&Structure.', 'filecontents*')
+" call s:Tex_EnvMacros('EFL', '&Structure.', 'flushleft')
+" call s:Tex_EnvMacros('EFR', '&Structure.', 'flushright')
+" call s:Tex_EnvMacros('EQN', '&Structure.', 'quotation')
+" call s:Tex_EnvMacros('EQE', '&Structure.', 'quote')
+" call s:Tex_EnvMacros('ESP', '&Structure.', 'sloppypar')
+" call s:Tex_EnvMacros('ETI', '&Structure.', 'theindex')
+" call s:Tex_EnvMacros('ETP', '&Structure.', 'titlepage')
 call s:Tex_EnvMacros('EVM', '&Structure.', 'verbatim')
-call s:Tex_EnvMacros('',    '&Structure.', 'verbatim*')
-call s:Tex_EnvMacros('EVE', '&Structure.', 'verse')
-call s:Tex_EnvMacros('ETB', '&Structure.', 'thebibliography')
+" call s:Tex_EnvMacros('',    '&Structure.', 'verbatim*')
+" call s:Tex_EnvMacros('EVE', '&Structure.', 'verse')
+" call s:Tex_EnvMacros('ETB', '&Structure.', 'thebibliography')
 call s:Tex_SpecialMacros('', '&Structure.', '-sepstruct0-', ':', 0)
 call s:Tex_EnvMacros('ENO', '&Structure.', 'note')
 call s:Tex_EnvMacros('EOV', '&Structure.', 'overlay')
@@ -256,7 +252,7 @@ call s:Tex_SectionMacros('SPA', 'part')
 call s:Tex_SectionMacros('SCH', 'chapter')
 call s:Tex_SectionMacros('SSE', 'section*')
 call s:Tex_SectionMacros('SSS', 'subsection*')
-call s:Tex_SectionMacros('SS2', 'subsubsection*')
+call s:Tex_SectionMacros('SS2', 'subsubsection')
 call s:Tex_SectionMacros('SPG', 'paragraph')
 call s:Tex_SectionMacros('SSP', 'subparagraph')
 " }}}
@@ -343,7 +339,7 @@ function! Tex_figure(env)
 		return IMAP_PutTextWithMovement(figure)
 	else
 		if g:Tex_package_detected =~ '\<graphicx\>'
-			return IMAP_PutTextWithMovement(s:figure_graphicx)
+			return IMAP_PutTextWithMovement(s:figure)
 		else
 			return IMAP_PutTextWithMovement(s:figure)
 		endif

@@ -75,7 +75,7 @@ autocmd BufReadPost *
 
 " line wrapping
 " set wrap
-" set tw=79
+" set tw=80
 
 set statusline=%t%m%=
 set statusline+=%c, 
