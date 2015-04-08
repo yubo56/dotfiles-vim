@@ -1,8 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/yssu/custom/dwm'
-let g:netrw_dirhist_2='/home/yssu/LaTeX/1HW/Mu140'
-let g:netrw_dirhist_3='/home/yssu/LaTeX/ClassNotes/.git'
-let g:netrw_dirhist_4='/home/yssu/LaTeX/HWSets/.git'
-let g:netrw_dirhist_5='/home/yssu/LaTeX/ClassNotes/ME19'
-let g:netrw_dirhist_6='/home/yssu/.dotfiles/vim/.vim/ftplugin/latex-suite'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/yssu/LaTeX/HWSets/.git'
+let g:netrw_dirhist_2='/home/yssu/LaTeX/HWSets'
+let g:netrw_dirhist_3='/home/yssu/bin'
