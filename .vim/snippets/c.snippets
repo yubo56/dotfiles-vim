@@ -7,7 +7,7 @@ snippet main
 	}
 # #include <...>
 snippet inc
-	#include <${1:stdio}>${2}
+	#include <${1:stdio.h}>${2}
 # #include "..."
 snippet Inc
 	#include "${1:`Filename("$1.h")`}"${2}
@@ -39,14 +39,14 @@ snippet once
 	#endif /* end of include guard: $1 */
 # If Condition
 snippet if
-	if (${1:/* condition */}) 
+	if (${1:}) 
 	{
-		${2:/* code */}
+		${2:}
 	}${3}
 snippet elif
-	else if (${1:/* condition */}) 
+	else if (${1:}) 
 	{
-		${2:/* code */}
+		${2:}
 	}${3}
 snippet el
 	else 
@@ -55,36 +55,36 @@ snippet el
 	}${2}
 # Tertiary conditional
 snippet t
-	${1:/* condition */} ? ${2:a} : ${3:b}
+	${1:} ? ${2:a} : ${3:b}
 # Do While Loop
 snippet do
 	do 
 	{
-		${2:/* code */}
-	} while (${1:/* condition */});
+		${2:}
+	} while (${1:});
 # While Loop
 snippet wh
-	while (${1:/* condition */}) 
+	while (${1:}) 
 	{
-		${2:/* code */}
+		${2:}
 	}
 # For Loop
 snippet for
 	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
 	{
-		${4:/* code */}
+		${4:}
 	}
 # Custom For Loop
 snippet forr
 	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) 
 	{
-		${5:/* code */}
+		${5:}
 	}
 # Function
 snippet fun
 	${1:void} ${2:function_name}(${3})
 	{
-		${4:/* code */}
+		${4:}
 	}
 	${5}
 # Function Declaration
@@ -97,19 +97,19 @@ snippet td
 snippet st
 	struct ${1:`Filename('$1_t', 'name')`} 
 	{
-		${2:/* data */}
-	}${3: /* optional variable list */};${4}
+		${2:}
+	}${3: };${4}
 # Typedef struct
 snippet tds
 	typedef struct ${2:_$1 } 
 	{
-		${3:/* data */}
+		${3:}
 	} ${1:`Filename('$1_t', 'name')`};
 # Typdef enum
 snippet tde
 	typedef enum 
 	{
-		${1:/* data */}
+		${1:}
 	} ${2:foo};
 # printf
 # unfortunately version this isn't as nice as TextMates's, given the lack of a

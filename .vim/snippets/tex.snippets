@@ -6,30 +6,80 @@ snippet tikz
 		\end{tikzpicture}
 		\caption{<++>}
 		\label{<++>}
-	\end{figure}<++>
+	\end{figure}
+	<++>
 snippet a
 	\begin{align}
 		${1}
-	\end{align}<++>
+	\end{align}
+	<++>
 snippet a*
 	\begin{align*}
 		${1}
-	\end{align*}<++>
+	\end{align*}
+	<++>
 snippet e
 	\begin{enumerate}[${1}]
 		\item <++>
-	\end{enumerate}<++>
+	\end{enumerate}
+	<++>
 snippet i
 	\begin{itemize}
 		\item ${1}
-	\end{itemize}<++>
+	\end{itemize}
+	<++>
 snippet s
-	\section{${1}}<++>
+	\section{${1}}
+	
+	<++>
 snippet ss
-	\subsection{${1}}<++>
+	\subsection{${1}}
+	
+	<++>
 snippet s*
-	\section*{${1}}<++>
+	\section*{${1}}
+	
+	<++>
 snippet ss*
-	\subsection*{${1}}<++>
+	\subsection*{${1}}
+	
+	<++>
 snippet <
 	<++>${1}
+snippet fig
+	\begin{figure}[!h]
+	    \centering
+		\includegraphics[width=${1}\textwidth]{<++>}
+		\caption{<+caption text+>}
+		\label{fig:<+label+>}
+	\end{figure}
+	<++>
+snippet figsub
+	\begin{figure}[!h]
+	    \centering
+		\begin{subfigure}{${1}\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{<++>}
+		\end{subfigure}
+		<++>
+		\caption{<+caption text+>}
+		\label{fig:<+label+>}
+	\end{figure}
+	<++>
+snippet subfig
+	\begin{subfigure}{${1}\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{<++>}
+		\caption{<+caption text+>}
+	\end{subfigure}
+	<++>
+snippet tab
+	\begin{table}[!h]
+		\centering
+		\begin{tabular}{${1}}
+			<++>
+		\end{tabular}
+		\caption{<+Caption text+>}
+		\label{tab:<+label+>}
+	\end{table}
+	<++>

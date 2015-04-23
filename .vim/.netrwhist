@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/yssu/LaTeX/HWSets/.git'
 let g:netrw_dirhist_2='/home/yssu/LaTeX/HWSets'
 let g:netrw_dirhist_3='/home/yssu/bin'
+let g:netrw_dirhist_4='/home/yssu/.dotfiles/vim/.vim/snippets'
+let g:netrw_dirhist_5='/etc/modules-load.d'
+let g:netrw_dirhist_6='/home/yssu/.dotfiles/vim/.vim/ftplugin/latex-suite'
