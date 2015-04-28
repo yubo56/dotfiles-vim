@@ -1,6 +1,8 @@
 " convenient vim commands
 "
 " :%s/\s\+$// -- remove trailing whitespace (to remove at beginning just <<)
+" :perldo s/(\d+\.\d+)/sprintf "%.2f", $1/eg -- round all numbers to some
+" number of digits
 "
 "
 filetype plugin indent on
@@ -80,3 +82,4 @@ autocmd BufReadPost *
 set statusline=%t%m%=
 set statusline+=%c, 
 set statusline+=%l/%L 
+map <space> @q

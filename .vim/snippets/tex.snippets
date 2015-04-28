@@ -5,13 +5,19 @@ snippet tikz
 			${1}
 		\end{tikzpicture}
 		\caption{<++>}
-		\label{<++>}
+		\label{fig:<++>}
 	\end{figure}
 	<++>
 snippet a
 	\begin{align}
 		${1}
 	\end{align}
+	<++>
+snippet eq
+	\begin{equation}
+		${1}
+		\label{eq:<++>}
+	\end{equation}
 	<++>
 snippet a*
 	\begin{align*}
