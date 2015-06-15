@@ -83,3 +83,4 @@ set statusline=%t%m%=
 set statusline+=%c, 
 set statusline+=%l/%L 
 map <space> @q
+au BufAdd,BufNewFile * nested tab sball " auto use tabs
