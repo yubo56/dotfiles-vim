@@ -11,7 +11,8 @@ set foldmethod=syntax
 " vimlatex stuff
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_ViewRule_pdf = 'zathura --debug error'
+let g:Tex_ViewRule_pdf = 'zathura --fork'
+let g:Tex_GotoError=0
 set grepprg=grep\ -nH\ $*
 
 "set line numbers
@@ -83,4 +84,4 @@ set statusline=%t%m%=
 set statusline+=%c, 
 set statusline+=%l/%L 
 map <space> @q
-au BufAdd,BufNewFile * nested tab sball " auto use tabs
+" au BufAdd,BufNewFile * nested tab sball " auto use tabs
