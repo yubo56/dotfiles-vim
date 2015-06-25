@@ -2,6 +2,9 @@
 " "   Language: LaTeX (ft=tex)
 "
 
+" only tex no rnu
+autocmd BufRead,BufNewFile *.tex set nornu
+
 " mimic vimlatex markers, handy
 noremap <C-H> /\[++\]<cr>c%
 inoremap <C-H> <ESC>/\[++\]<cr>c%

@@ -5,55 +5,65 @@
 " number of digits
 "
 "
+
+
+
 filetype plugin indent on
-set foldmethod=syntax
-
-" vimlatex stuff
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_ViewRule_pdf = 'zathura --fork'
-let g:Tex_GotoError=0
-set grepprg=grep\ -nH\ $*
-
-"set line numbers
-set nu
-set rnu
-" only tex dosen't rnu b/c causes lag
-autocmd BufRead,BufNewFile *.tex set nornu
-
-"indentation options; 2 spaces per indent, autoindent
-set tabstop=4
-" set softtabstop=4
-set expandtab
-set sw=4
-set ls=2
-set smarttab autoindent
-
-"set highlight search
-set hlsearch
-
-"syntax highlighting
-syntax on
-
-"colors!!
-colorscheme desert
-
-"Use templates
-autocmd BufNewFile * silent! 0r ~/.vim/temps/temp.%:e
-autocmd bufnewfile Makefile silent! 0r ~/.vim/temps/Makefile
-
-" wrap all txt files
-autocmd bufreadpre,bufnewfile *.txt setlocal tw=79 | setlocal fo+=t
-
-"Set up hidden files
-set hidden
-
-" paste toggle
-set pastetoggle=<F12>
+set foldmethod=syntax " alternatively, could use indent
 
 " pathogen
 execute pathogen#infect()
 
+
+
+
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"                               built in config options
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+"set line numbers
+set nu
+set rnu
+"indentation
+set tabstop=4
+set expandtab
+set sw=4
+set ls=2
+set smarttab autoindent
+"set highlight search
+set hlsearch
+" Set up hidden files
+set hidden
+" syntax highlighting
+syntax on
+" colors!!
+colorscheme desert
+" timeout len when waiting for input
+set timeoutlen=300
+
+" statusline
+set statusline=%t%m%=
+set statusline+=%c, 
+set statusline+=%l/%L 
+map <space> @q
+
+
+
+
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"                                   keybindings
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+" various bindings
+set pastetoggle=<F12>
 map <F4> :set nonumber norelativenumber <CR>
 map <F3> :set number relativenumber <CR>
 imap <F2> <ESC><F2>
@@ -64,19 +74,33 @@ map Q <NOP>
 imap <F1> <Nop>
 vmap <F1> <Nop>
 inoremap <C-U> <Nop>
-set timeoutlen=300
+
+
+
+
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"                                   autocmds
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 " always use last known cursor position
 autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
+"Use templates
+autocmd BufNewFile * silent! 0r ~/.vim/temps/temp.%:e
+autocmd BufNewFile Makefile silent! 0r ~/.vim/temps/Makefile
+" wrap all txt files
+autocmd bufreadpre,bufnewfile *.txt setlocal tw=79 | setlocal fo+=t
 
-" statusline
-set statusline=%t%m%=
-set statusline+=%c, 
-set statusline+=%l/%L 
-map <space> @q
+
+
+
+
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -85,10 +109,9 @@ map <space> @q
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-" Trigger configuration. Do not use <tab> if you use
+" Trigger configuration
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsJumpForwardTrigger="<C-J>"
+let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+" :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
