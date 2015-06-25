@@ -4,6 +4,8 @@
 
 " only tex no rnu
 autocmd BufRead,BufNewFile *.tex set nornu
+" without vimlatex, set folding rule
+set foldmethod=syntax
 
 " mimic vimlatex markers, handy
 noremap <C-H> /\[++\]<cr>c%
