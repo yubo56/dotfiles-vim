@@ -64,11 +64,7 @@ map Q <NOP>
 imap <F1> <Nop>
 vmap <F1> <Nop>
 inoremap <C-U> <Nop>
-
-" set mouse on (disables mouse selection copy)
-" if has('mouse')
-"   set mouse=a
-" endif
+set timeoutlen=300
 
 " always use last known cursor position
 autocmd BufReadPost *
@@ -76,12 +72,23 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-" line wrapping
-" set wrap
-" set tw=80
-
+" statusline
 set statusline=%t%m%=
 set statusline+=%c, 
 set statusline+=%l/%L 
 map <space> @q
-" au BufAdd,BufNewFile * nested tab sball " auto use tabs
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"                                   ultisnips config
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+" Trigger configuration. Do not use <tab> if you use
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"

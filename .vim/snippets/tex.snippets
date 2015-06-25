@@ -4,95 +4,74 @@ snippet tikz
 		\begin{tikzpicture}
 			${1}
 		\end{tikzpicture}
-		\caption{<++>}
-		\label{fig:<++>}
+		\caption{${2}}
+		\label{fig:${3}}
 	\end{figure}
-	<++>
 snippet a
 	\begin{align}
 		${1}
 	\end{align}
-	<++>
 snippet eq
 	\begin{equation}
 		${1}
-		\label{eq:<++>}
+		\label{eq:${2}}
 	\end{equation}
-	<++>
 snippet a*
 	\begin{align*}
 		${1}
 	\end{align*}
-	<++>
 snippet e
 	\begin{enumerate}[${1}]
-		\item <++>
+		\item ${2}
 	\end{enumerate}
-	<++>
 snippet i
 	\begin{itemize}
 		\item ${1}
 	\end{itemize}
-	<++>
 snippet s
 	\section{${1}}
-	
-	<++>
 snippet ss
 	\subsection{${1}}
-	
-	<++>
 snippet s*
 	\section*{${1}}
-	
-	<++>
 snippet ss*
 	\subsection*{${1}}
-	
-	<++>
-snippet <
-	<++>${1}
 snippet fig
 	\begin{figure}[!h]
 	    \centering
-		\includegraphics[width=${1}\textwidth]{<++>}
-		\caption{<+caption text+>}
-		\label{fig:<+label+>}
+		\includegraphics[width=${1}\textwidth]{${2}}
+		\caption{${3}}
+		\label{fig:${4}}
 	\end{figure}
-	<++>
 snippet figsub
 	\begin{figure}[!h]
 	    \centering
 		\begin{subfigure}{${1}\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{<++>}
-			\caption{<+caption text+>}
+			\includegraphics[width=\textwidth]{${2}}
+			\caption{${3}}
 		\end{subfigure}
-		<++>
-		\caption{<+caption text+>}
-		\label{fig:<+label+>}
+		${4}
+		\caption{${5}}
+		\label{fig:${6}}
 	\end{figure}
-	<++>
 snippet subfig
 	\begin{subfigure}{${1}\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{<++>}
-		\caption{<+caption text+>}
+		\includegraphics[width=\textwidth]{${2}}
+		\caption{${3}}
 	\end{subfigure}
-	<++>
 snippet tab
 	\begin{table}[!h]
 		\centering
 		\begin{tabular}{${1}}
-			<++>
+			${2}
 		\end{tabular}
-		\caption{<+Caption text+>}
-		\label{tab:<+label+>}
+		\caption{${3}}
+		\label{tab:${4}}
 	\end{table}
-	<++>
 snippet nonum
 	\nonumber\\
-	${1}
 snippet cent
 	\begin{center}
 		${1}
@@ -105,3 +84,79 @@ snippet verb
 	\begin{verbatim}
 	${1}
 	\end{verbatim}
+
+# ported from vim-latex
+snippet `<
+	\bra{${1}}
+snippet [
+	[++]
+snippet `C
+	\hat{${1}}
+snippet `J
+	\binom{${1}}{${2}}
+snippet `K
+	\mathfrak{${1}}
+snippet `3
+	\mathrm{${1}}
+snippet `#
+	\mathbb{${1}}
+snippet `>
+	\ket{${1}}
+snippet `6
+	\pd{${1}}{${2}}
+snippet `5
+	\rd{${1}}{${2}}
+snippet `B
+	\mathbf{${1}}
+snippet `v
+	\vec{${1}}
+snippet `V
+	\pvec{${1}}
+snippet `j
+	\expvalue{${1}}
+snippet `%
+	\rtd{${1}}{${2}}
+snippet `^
+	\ptd{${1}}{${2}}
+snippet `(
+	\begin{pmatrix} ${1} \end{pmatrix} 
+snippet `[
+	\begin{bmatrix} ${1} \end{bmatrix} 
+snippet `I
+	\int\limits_{${1}}^{${2}}${3}\;
+snippet `_
+	\overline{${1}}
+snippet `/
+	\frac{${1}}{${2}}
+snippet `M
+	\sum\limits_{${1}}^{${2}}
+snippet `~
+	\tilde{${1}}
+snippet `;
+	\dot{${1}}
+snippet `:
+	\ddot{${1}}
+snippet `2
+	\sqrt{${1}}
+snippet CAL
+	\mathcal{${1}}
+snippet SCN
+	\scinot{${1}}{${2}}
+snippet LBL
+	\label{${1}}
+snippet REF
+	\eqref{${1}}
+snippet __
+	_{${1}}
+snippet ^^
+	^{${1}}
+snippet ((
+	\left( ${1} \right)
+snippet [[
+	\left[ ${1} \right]
+snippet {{
+	\left\{ ${1} \right\}
+snippet ||
+	\abs{${1}}
+snippet <>
+	\dotp{${1}}{${2}}
