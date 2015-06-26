@@ -76,7 +76,7 @@ map Q <NOP>
 imap <F1> <Nop>
 vmap <F1> <Nop>
 inoremap <C-U> <Nop>
-
+nmap <space> @q
 
 
 
