@@ -65,18 +65,25 @@ let g:tex_flavor = "latex"
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 " various bindings
-set pastetoggle=<F12>
-map <F4> :set nonumber norelativenumber <CR>
-map <F3> :set number relativenumber <CR>
-imap <F2> <ESC><F2>
-map <C-F5> :make <CR>
+" paste mode toggle
+set pastetoggle=<F12> 
+" line numbers
+map <F4> :set nonumber norelativenumber <CR> 
+map <F3> :set number relativenumber <CR> 
+" makes commentary easier
+imap <F2> <ESC><F2> 
+" makes repeating commands easier
+nmap <space> @q 
+" allows ctrl-backspace to work, disables ctrl-w
+inoremap <C-H> <C-W>
+inoremap <C-W> <Nop>
+    
 " unmap stuff
 map <F1> <Nop>
-map Q <NOP>
+map Q <Nop>
 imap <F1> <Nop>
 vmap <F1> <Nop>
 inoremap <C-U> <Nop>
-nmap <space> @q
 
 
 
