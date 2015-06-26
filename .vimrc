@@ -43,13 +43,15 @@ syntax on
 " colors!!
 colorscheme desert
 " timeout len when waiting for input
-set timeoutlen=300
+set timeoutlen=500
 
 " statusline
 set statusline=%t%m%=
 set statusline+=%c, 
 set statusline+=%l/%L 
-map <space> @q
+
+" recognize tex correctly
+let g:tex_flavor = "latex"
 
 
 

@@ -2,10 +2,13 @@
 " "   Language: LaTeX (ft=tex)
 "
 
-" only tex no rnu
-autocmd BufRead,BufNewFile *.tex set nornu
+" only tex no rnu, lags b/c absurd repeat rate
+set nornu
 " without vimlatex, set folding rule
-set foldmethod=syntax
+set foldmethod=indent
+" make sure <space> is mapped to self... danger!
+imap <space> <space>
+nmap <space> <space>
 
 " mimic vimlatex markers, handy
 noremap <C-H> /\[++\]<cr>c%
@@ -13,7 +16,9 @@ inoremap <C-H> <ESC>/\[++\]<cr>c%
 
 
 " compile/view launch
-noremap <Leader>l :!pdflatex -interaction=nonstopmode %<cr>
+noremap <Leader>l :silent ! pdflatex -interaction=nonstopmode %<cr>
+    " silent means don't need to press enter,  means automatically resets
+    " screen!
 noremap <Leader>v :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
 
 " various alphabetic substitutions
@@ -74,3 +79,42 @@ imap >= \geq
 imap <= \leq
 imap != \neq
 imap +- \pm
+
+" coordinated with UltiSnips
+imap `< _snip_<<tab>
+imap `C _snip_C<tab>
+imap `J _snip_J<tab>
+imap `K _snip_K<tab>
+imap `3 _snip_3<tab>
+imap `# _snip_#<tab>
+imap `> _snip_><tab>
+imap `6 _snip_6<tab>
+imap `5 _snip_5<tab>
+imap `B _snip_B<tab>
+imap `v _snip_v<tab>
+imap `V _snip_V<tab>
+imap `j _snip_j<tab>
+imap `% _snip_%<tab>
+imap `^ _snip_^<tab>
+imap `( _snip_(<tab>
+imap `[ _snip_[<tab>
+imap `I _snip_I<tab>
+imap `_ _snip__<tab>
+imap `/ _snip_/<tab>
+imap `M _snip_M<tab>
+imap `~ _snip_~<tab>
+imap `; _snip_;<tab>
+imap `: _snip_:<tab>
+imap `2 _snip_2<tab>
+imap CAL _snipcal_<tab>
+imap SCN _snipscn_<tab>
+imap LBL _sniplbl_<tab>
+imap EQR _snipeqr_<tab>
+imap REF _snipref_<tab>
+imap __ _snipunder_<tab>
+imap ^^ _snipover_<tab>
+imap (( _snipparen_<tab>
+imap [[ _snipsquare_<tab>
+imap {{ _snipcurly_<tab>
+imap \|\| _snipabs_<tab>
+imap <> _snipdotp_<tab>
