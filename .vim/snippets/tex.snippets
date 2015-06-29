@@ -36,6 +36,8 @@ snippet s*
 	\section*{${1}}
 snippet ss*
 	\subsection*{${1}}
+snippet ch
+	\chapter{${1}}
 snippet fig
 	\begin{figure}[!h]
 	    \centering
@@ -84,3 +86,7 @@ snippet verb
 	\begin{verbatim}
 	${1}
 	\end{verbatim}
+snippet b
+	\begin{${1:env}}
+		${2}
+	\end{$1}
