@@ -16,11 +16,11 @@ inoremap <C-S-F12> <ESC>/\[++\]<cr>c%
 
 
 " compile/view launch
-noremap <Leader>l :silent ! pdflatex -interaction=nonstopmode %<cr>
+noremap <Leader>l :silent ! pdflatex -interaction=nonstopmode %<cr><C-L>
     " silent means don't need to press enter,  means automatically resets
     " screen!
 noremap <Leader>v :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
-noremap <Leader>g :exec 'silent ! sed -i -n "/^\!/p" ' . expand('%:r') . '.log'<cr> | badd %:r.log
+noremap <Leader>g :exec 'silent ! sed -i -n "/^\!/p" ' . expand('%:r') . '.log'<cr><C-L> |badd %:r.log
 
 " various alphabetic substitutions
 imap `a \alpha
