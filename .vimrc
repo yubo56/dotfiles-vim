@@ -75,8 +75,8 @@ imap <F2> <ESC><F2>
 " makes repeating commands easier
 nmap <space> @q 
 " allows ctrl-backspace to work, disables ctrl-w
-inoremap <C-H> <C-W>
-inoremap <C-W> <Nop>
+" inoremap <C-H> <C-W>
+" inoremap <C-W> <Nop>
     
 " unmap stuff
 map <F1> <Nop>
