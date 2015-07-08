@@ -100,7 +100,7 @@ imap `^ _snip_^<tab>
 imap `( _snip_(<tab>
 imap `[ _snip_[<tab>
 imap `I _snip_I<tab>
-imap `_ _snip__<tab>
+imap `_ _snipbar_<tab>
 imap `/ _snip_/<tab>
 imap `M _snip_M<tab>
 imap `~ _snip_~<tab>
