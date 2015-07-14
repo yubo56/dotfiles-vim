@@ -73,7 +73,7 @@ map <F3> :set number relativenumber <CR>
 " makes commentary easier
 imap <F2> <ESC><F2> 
 " makes repeating commands easier
-nmap <space> @q 
+nmap <space> @q
 " allows ctrl-backspace to work, disables ctrl-w
 " inoremap <C-H> <C-W>
 " inoremap <C-W> <Nop>

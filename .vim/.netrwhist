@@ -1,10 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/yssu/SURF2015/.git'
-let g:netrw_dirhist_2='/home/yssu/SURF2015'
-let g:netrw_dirhist_3='/home/yssu/SURF2015/Summer/2DOff'
-let g:netrw_dirhist_4='/home/yssu/.dotfiles/vim/.vim/snippets'
-let g:netrw_dirhist_5='/home/yssu/.dotfiles/vim/.vim/ftplugin'
-let g:netrw_dirhist_6='/home/yssu/SURF2015/Summer/OffIter'
-let g:netrw_dirhist_7='/home/yssu/.dotfiles/vim/.vim/UltiSnips'
-let g:netrw_dirhist_8='/home/yssu/.dotfiles/vim/.vim/ftplugin'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/yssu/SURF2015'
+let g:netrw_dirhist_2='/home/yssu/SURF2015/routines'
+let g:netrw_dirhist_3='/home/yssu/SURF2015'
