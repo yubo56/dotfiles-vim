@@ -47,8 +47,8 @@ set timeoutlen=500
 
 " statusline
 set statusline=%t%m%=
-set statusline+=%c, 
-set statusline+=%l/%L 
+set statusline+=%c,
+set statusline+=%l/%L
 
 " recognize tex correctly
 let g:tex_flavor = "latex"
@@ -66,18 +66,18 @@ let g:tex_flavor = "latex"
 
 " various bindings
 " paste mode toggle
-set pastetoggle=<F12> 
+set pastetoggle=<F12>
 " line numbers
-map <F4> :set nonumber norelativenumber <CR> 
-map <F3> :set number relativenumber <CR> 
+map <F4> :set nonumber norelativenumber <CR>
+map <F3> :set number relativenumber <CR>
 " makes commentary easier
-imap <F2> <ESC><F2> 
+inoremap <F2> <ESC><F2>
 " makes repeating commands easier
-nmap <space> @q
+nnoremap <space> @q
 " allows ctrl-backspace to work, disables ctrl-w
 " inoremap <C-H> <C-W>
 " inoremap <C-W> <Nop>
-    
+
 " unmap stuff
 map <F1> <Nop>
 map Q <Nop>

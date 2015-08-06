@@ -20,7 +20,8 @@ noremap <Leader>l :silent ! pdflatex -interaction=nonstopmode %<cr><C-L>
     " silent means don't need to press enter,  means automatically resets
     " screen!
 noremap <Leader>v :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
-noremap <Leader>g :exec 'silent ! sed -i -n "/^\!/p" ' . expand('%:r') . '.log'<cr><C-L> |badd %:r.log
+noremap <Leader>g :exec 'silent ! sed -i -n "/^\!/p" ' . expand('%:r') . '.log'<cr><C-L>
+noremap <Leader>h :e %:r.log<cr>
 
 " various alphabetic substitutions
 imap `a \alpha
