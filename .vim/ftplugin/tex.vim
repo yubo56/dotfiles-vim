@@ -113,6 +113,7 @@ imap SCN _snipscn_<tab>
 imap LBL _sniplbl_<tab>
 imap EQR _snipeqr_<tab>
 imap REF _snipref_<tab>
+imap FBF _snipbf_<tab>
 imap __ _snipunder_<tab>
 imap ^^ _snipover_<tab>
 imap (( _snipparen_<tab>

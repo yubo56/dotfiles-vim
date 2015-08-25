@@ -90,7 +90,10 @@ snippet _snipeqr_ "Description" i
 \eqref{${1}}
 endsnippet
 snippet _snipref_ "Description" i
-\ref{${1}}
+\autoref{${1}}
+endsnippet
+snippet _snipbf_ "Description" i
+\textbf{${1}}
 endsnippet
 snippet _snipunder_ "Description" i
 _{${1}}
@@ -115,4 +118,9 @@ snippet _snipdotp_ "Description" i
 endsnippet
 snippet _snipemph_ "Description" i
 \emph{${1}}
+endsnippet
+snippet begin "begin/end environment" b
+\begin{${1}}${2}
+	${3}
+\end{$1}
 endsnippet
