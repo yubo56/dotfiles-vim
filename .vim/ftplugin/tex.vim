@@ -24,6 +24,7 @@ noremap <Leader>g :exec 'silent ! sed -i -n "/^\!/p" ' . expand('%:r') . '.log'<
 noremap <Leader>h :e %:r.log<cr>
 
 " various alphabetic substitutions
+inoremap `` ``
 imap `a \alpha
 imap `b \beta
 imap `c \chi
