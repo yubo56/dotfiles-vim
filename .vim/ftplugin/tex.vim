@@ -23,8 +23,11 @@ noremap <Leader>v :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
 noremap <Leader>g :exec 'silent ! sed -i -n "/^\!/p" ' . expand('%:r') . '.log'<cr><C-L>
 noremap <Leader>h :e %:r.log<cr>
 
-" various alphabetic substitutions
+" correct some timing bugs
 inoremap `` ``
+inoremap `~ `~
+
+" various alphabetic substitutions
 imap ... \dots
 imap `a \alpha
 imap `b \beta
