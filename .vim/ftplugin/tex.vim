@@ -26,6 +26,10 @@ noremap <Leader>h :e %:r.log<cr>
 " correct some timing bugs
 inoremap `` ``
 inoremap `~ `~
+inoremap `- `-
+inoremap `< `<
+inoremap `> `>
+inoremap [+ [+
 
 " various alphabetic substitutions
 imap ... \dots
