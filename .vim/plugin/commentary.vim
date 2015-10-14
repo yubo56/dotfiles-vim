@@ -55,6 +55,7 @@ endfunction
 
 autocmd bufreadpre,bufnewfile *.pro set commentstring=;\ %s
 autocmd bufreadpre,bufnewfile *.cpp set commentstring=//\ %s
+autocmd bufreadpre,bufnewfile *.sql set commentstring=--\ %s
 xnoremap <silent> <Plug>Commentary     :<C-U>call <SID>go(line("'<"),line("'>"))<CR>
 nnoremap <silent> <Plug>Commentary     :<C-U>set opfunc=<SID>go<CR>g@
 nnoremap <silent> <Plug>CommentaryLine :<C-U>set opfunc=<SID>go<Bar>exe 'norm! 'v:count1.'g@_'<CR>
