@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/yssu/.dotfiles/vim/.vim'
 let g:netrw_dirhist_2='/home/yssu/SURF2015/Summer/multi_band'
 let g:netrw_dirhist_3='/tmp'
 let g:netrw_dirhist_4='/home/yssu/LaTeX/ClassNotes/4/.git'
+let g:netrw_dirhist_5='/home/yssu/LaTeX/ClassNotes/4/CS143'
