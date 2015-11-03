@@ -124,3 +124,5 @@ let g:UltiSnipsJumpForwardTrigger="<C-J>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 " :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+" helpful
+imap <S-tab> <tab>
