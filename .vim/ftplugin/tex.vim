@@ -40,7 +40,8 @@ imap `d \delta
 imap `e \epsilon
 imap `E \varepsilon
 imap `f \phi
-imap `T \varphi
+imap `T \partial
+imap `R \varphi
 imap `g \gamma
 imap `h \eta
 imap `i \iota
