@@ -79,7 +79,7 @@ imap `8 \infty
 imap `N \nabla
 imap `H \hbar
 imap `, \propto
-imap `+ \dagger
+imap `+ ^\dagger
 
 " other substitutions, not `
 imap --> \to
