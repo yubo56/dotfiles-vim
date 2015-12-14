@@ -8,7 +8,7 @@ CFLAGS = -g -Wall --std=c++0x
 #	 $(CC) $(CFLAGS) programs.c
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) -c $<
 
 clean:
 	rm -f *.o testgraph
