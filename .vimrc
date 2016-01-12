@@ -80,6 +80,7 @@ nnoremap <space> @q
 
 " unmap stuff
 map <F1> <Nop>
+map <S-Tab> <Tab>
 map Q <Nop>
 imap <F1> <Nop>
 vmap <F1> <Nop>

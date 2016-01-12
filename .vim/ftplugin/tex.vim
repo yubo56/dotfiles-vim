@@ -83,6 +83,7 @@ imap `+ ^\dagger
 
 " other substitutions, not `
 imap --> \to
+imap ---> \longrightarrow
 imap -+ \mp
 imap ~= \approx
 imap ~~ \sim
