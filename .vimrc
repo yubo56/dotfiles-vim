@@ -86,6 +86,11 @@ imap <F1> <Nop>
 vmap <F1> <Nop>
 inoremap <C-U> <Nop>
 
+" buffer management
+set wildmenu
+set wildcharm=<F10>
+nnoremap <C-B> :b <F10>
+
 
 
 
