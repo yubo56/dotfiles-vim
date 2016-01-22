@@ -112,7 +112,7 @@ syn region snipBalancedBraces start="{" end="}" contained transparent extend
 syn cluster snipTokens add=snipTabStop
 syn cluster snipTabStopTokens add=snipTabStop
 
-syn region snipVisual matchgroup=snipVisual start="\${VISUAL[:}/]\@=" end="}" contained contains=snipVisualDefault,snipTransformationPattern
+syn region snipVisual matchgroup=snipVisual start="\${VISUAL[:}/]\@=" end="}" contained contains=snipVisualDefault,snipTransformationPattern extend
 syn region snipVisualDefault matchgroup=snipVisual start=":" end="\ze[}/]" contained contains=snipTabStopEscape nextgroup=snipTransformationPattern
 syn cluster snipTokens add=snipVisual
 syn cluster snipTabStopTokens add=snipVisual
@@ -150,6 +150,12 @@ syn match snipGlobalFooterKeyword "^endglobal" contained
 syn match snipPriority "^priority\%(\s.*\|$\)" contains=snipPriorityKeyword display
 syn match snipPriorityKeyword "^priority" contained nextgroup=snipPriorityValue skipwhite display
 syn match snipPriorityValue "-\?\d\+" contained display
+
+" Actions {{{3
+
+syn match snipAction "^\(pre_expand\|post_expand\|post_jump\)\%(\s.*\|$\)" contains=snipActionKeyword display
+syn match snipActionKeyword "^\(pre_expand\|post_expand\|post_jump\)" contained nextgroup=snipActionValue skipwhite display
+syn match snipActionValue '".*"' contained display
 
 " Snippt Clearing {{{2
 
@@ -200,6 +206,9 @@ hi def link snipTransformationOptions      Operator
 
 hi def link snipPriorityKeyword  Keyword
 hi def link snipPriorityValue    Number
+
+hi def link snipActionKeyword  Keyword
+hi def link snipActionValue    String
 
 hi def link snipClearKeyword     Keyword
 
