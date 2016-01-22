@@ -1,9 +1,13 @@
+" VIM: set rnu
+" modelines
+"
 " convenient vim commands
 "
 " :%s/\s\+$// -- remove trailing whitespace (to remove at beginning just <<)
 " :perldo s/(\d+\.\d+)/sprintf "%.2f", $1/eg -- round all numbers to some
 " number of digits
 " :%s/ \+/ /g -- compress all whitespace to 1 space
+"
 "
 
 
