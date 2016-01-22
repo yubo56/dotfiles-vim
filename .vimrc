@@ -8,6 +8,7 @@
 
 
 
+set tw=79
 filetype plugin indent on
 set foldmethod=syntax " alternatively, could use indent
 
@@ -64,19 +65,22 @@ let g:tex_flavor = "latex"
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-" various bindings
 " paste mode toggle
 set pastetoggle=<F12>
+
 " line numbers
 map <F4> :set nonumber norelativenumber <CR>
 map <F3> :set number relativenumber <CR>
+
 " makes commentary easier
 inoremap <F2> <ESC><F2>
+
 " makes repeating commands easier
 nnoremap <space> @q
-" allows ctrl-backspace to work, disables ctrl-w
-" inoremap <C-H> <C-W>
-" inoremap <C-W> <Nop>
+
+" reload vimrc
+nnoremap <F5> :so $MYVIMRC <CR>
+
 
 " unmap stuff
 map <F1> <Nop>
@@ -110,7 +114,7 @@ autocmd BufReadPost *
 autocmd BufNewFile * silent! 0r ~/.vim/temps/temp.%:e
 autocmd BufNewFile Makefile silent! 0r ~/.vim/temps/Makefile
 " wrap all txt files
-autocmd bufreadpre,bufnewfile *.txt setlocal tw=79 | setlocal fo+=t
+autocmd bufreadpre,bufnewfile *.py set foldmethod=indent
 
 
 
