@@ -12,7 +12,6 @@
 
 
 
-set tw=79
 filetype plugin indent on
 set foldmethod=syntax " alternatively, could use indent
 
@@ -97,7 +96,7 @@ inoremap <C-U> <Nop>
 " buffer management
 set wildmenu
 set wildcharm=<F10>
-nnoremap <C-B> :b <F10>
+nnoremap <C-C> :b <F10>
 
 
 
