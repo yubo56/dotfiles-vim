@@ -1,8 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/mnt/Users/yubo56/Downloads/CS143_proj/.git'
-let g:netrw_dirhist_2='/home/yssu/1code/SimpleTimer'
-let g:netrw_dirhist_3='/home/yssu/SURF2015/routines'
-let g:netrw_dirhist_4='/home/yssu/SURF2015/Thesis/point_source/emissivity/chi2/4var/sfit_plots'
-let g:netrw_dirhist_5='/home/yssu/SURF2015/Thesis/point_source/emissivity/hist/fixed_hist'
-let g:netrw_dirhist_6='/home/yssu/LaTeX/HWSets/4/4b/CS155/CS155SentimentAnalysis/lib'
+let g:netrw_dirhist_cnt =0
