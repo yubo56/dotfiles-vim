@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g -Wall -ansi -pedantic -Wstrict-prototypes
+CFLAGS = -g -Wall -ansi -pedantic -Wstrict-prototypes -lm
 
 CC = g++
 CFLAGS = -g -Wall --std=c++0x
@@ -11,6 +11,6 @@ CFLAGS = -g -Wall --std=c++0x
 	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -f *.o testgraph
+	rm -f *.o a.out
 	
 .PHONY: all clean
