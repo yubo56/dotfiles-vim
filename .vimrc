@@ -13,7 +13,7 @@
 
 
 filetype plugin indent on
-set foldmethod=syntax " alternatively, could use indent
+set foldmethod=indent " alternatively, could use indent
 
 " pathogen
 execute pathogen#infect()
