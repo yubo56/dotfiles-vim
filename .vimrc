@@ -10,8 +10,8 @@
 "
 "
 
-
-
+" remove trailing whitespace on save
+set backspace=2 " allows deletion of newlines, automatic indentation
 filetype plugin indent on
 set foldmethod=indent " alternatively, could use indent
 
@@ -76,7 +76,7 @@ map <F4> :set nonumber norelativenumber <CR>
 map <F3> :set number relativenumber <CR>
 
 " makes commentary easier
-inoremap <F2> <ESC><F2>
+imap <F2> <ESC><F2>
 
 " makes repeating commands easier
 nnoremap <space> @q
@@ -115,9 +115,10 @@ autocmd BufReadPost *
     \ endif
 "Use templates
 autocmd BufNewFile * silent! 0r ~/.vim/temps/temp.%:e
-autocmd BufNewFile Makefile silent! 0r ~/.vim/temps/Makefile
 " wrap all txt files
-autocmd bufreadpre,bufnewfile *.py set foldmethod=indent
+autocmd BufNewFile Makefile silent! 0r ~/.vim/temps/Makefile
+" remove trailing whitespace on exit
+autocmd BufWritePre * %s/\s\+$//e
 
 
 
