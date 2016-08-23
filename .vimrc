@@ -84,10 +84,14 @@ nnoremap <space> @q
 " reload vimrc
 nnoremap <F5> :so $MYVIMRC <CR>
 
+" insert mode, S-Tab = Tab
+" normal mode, tab = lnext, S-tab = lprev
+imap <S-Tab> <Tab>
+nmap <Tab> :lnext<CR>
+nmap <S-Tab> :ll<CR>
 
 " unmap stuff
 map <F1> <Nop>
-map <S-Tab> <Tab>
 map Q <Nop>
 imap <F1> <Nop>
 vmap <F1> <Nop>
@@ -138,8 +142,6 @@ let g:UltiSnipsJumpForwardTrigger="<C-J>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 " :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-" helpful
-imap <S-tab> <tab>
 
 " Syntastic config
 set statusline+=%#warningmsg#
@@ -150,3 +152,4 @@ let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_quiet_messages = { "regex": 'terminated with space\|between a pair of' }
