@@ -1,9 +1,12 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
+    branch = 631df935f6d7083e34c3eded659bd7ec138fe7f3
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
+    branch = ff10513cddc36f316e5d848c9b54aa8dd9ba9cd5
 [submodule ".vim/bundle/vim-javascript-syntax"]
 	path = .vim/bundle/vim-javascript-syntax
 	url = git@github.com:jelera/vim-javascript-syntax.git
+    branch = 9e019fccd738ba73713268a327ac3765646a4edd
