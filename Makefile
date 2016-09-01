@@ -19,6 +19,7 @@ ycm:
 ifndef CMAKE_PATH
 	echo 'cmake required' && exit 1
 else
+	rm -rf ${YCM_TEMP}
 	mkdir -p ${YCM_TEMP}
 	@echo "***Building YouCompleteMe temp files***"
 	@cd ${YCM_TEMP} && \
