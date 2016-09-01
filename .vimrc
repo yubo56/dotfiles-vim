@@ -16,6 +16,7 @@ filetype plugin indent on
 set foldmethod=indent " alternatively, could use indent
 
 " pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 
