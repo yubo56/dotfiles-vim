@@ -2,3 +2,4 @@
 # doesn't get stowed by accident
 
 Makefile
+*.swp

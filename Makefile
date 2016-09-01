@@ -15,9 +15,15 @@ YCM_TEMP = ~/ycm_build
 VIM_PATH = ~/.vim/bundle
 CMAKE_PATH := $(shell command -v cmake 2> /dev/null)
 
-ycm:
+ycm: ycm_make ycm_timeout
+
+ycm_timeout:
+	@echo 'Setting timeout to 5 seconds'
+	@sed -i '' 's/SECONDS\ =\ 0\.5/SECONDS\ =\ 5/g' ${VIM_PATH}/YouCompleteMe/python/ycm/client/completion_request.py
+
+ycm_make:
 ifndef CMAKE_PATH
-	echo 'cmake required' && exit 1
+	@echo 'cmake required' && exit 1
 else
 	rm -rf ${YCM_TEMP}
 	mkdir -p ${YCM_TEMP}
@@ -27,3 +33,6 @@ else
 		cmake --build . --target ycm_core
 	rm -rf ${YCM_TEMP}
 endif
+
+ycm_node:
+	cd ${VIM_PATH}/YouCompleteMe/third_party/ycmd/third_party/tern_runtime && npm install --production
