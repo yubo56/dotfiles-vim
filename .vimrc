@@ -164,3 +164,4 @@ let g:syntastic_quiet_messages = { "regex": 'terminated with space\|between a pa
 
 let g:ycm_key_list_select_completion = ['<C-N>']
 let g:ycm_key_list_previous_completion = ['<C-N>']
+let g:ycm_min_num_of_chars_for_completion = 1
