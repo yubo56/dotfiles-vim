@@ -10,6 +10,8 @@
 "
 "
 
+set nocompatible
+
 " pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -48,8 +50,11 @@ set statusline=%t%m%=
 set statusline+=%c,
 set statusline+=%l/%L
 
-" recognize tex correctly
-let g:tex_flavor = "latex"
+" if persistent_undo, configure a directory for it
+if has("persistent_undo")
+    set undodir='~/.undodir/'
+    set undofile
+endif
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " keybindings
@@ -62,8 +67,9 @@ set pastetoggle=<F12>
 map <F4> :set nonumber norelativenumber <CR>
 map <F3> :set number relativenumber <CR>
 
-" makes commentary easier
-imap <F2> <ESC><F2>
+" buffer splitting
+cnoreabbrev vb vert sball
+cnoreabbrev sb sball
 
 " makes repeating commands easier
 nnoremap <space> @q
@@ -83,11 +89,6 @@ map Q <Nop>
 imap <F1> <Nop>
 vmap <F1> <Nop>
 inoremap <C-U> <Nop>
-
-" buffer management
-set wildmenu
-set wildcharm=<F10>
-nnoremap <C-C> :b <F10>
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " autocmds
@@ -111,6 +112,14 @@ augroup js
     autocmd FileType javascript set shiftwidth=2
 augroup END
 
+" list of plugin triggers (normal mode only)
+" gcc - commentary comment out
+" gs/ys/cs - vim-surround
+" <C-P> - ctrlp
+" <Leader><Leader>w - Easymotion move
+" <Leader>b[bst] - bufexplorer
+" <Leader>u - undotree
+" <Leader>R - YCM refactor
 
 
 
@@ -132,6 +141,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" recognize tex correctly
+let g:tex_flavor = "latex"
+
 let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -148,6 +160,7 @@ let g:ycm_key_list_previous_completion = ['<C-P>']
 let g:ycm_min_num_of_chars_for_completion = 1
 " force general python instead of python2
 let g:ycm_python_binary_path = 'python'
+nnoremap <Leader>R :YcmCompleter RefactorRename
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " EasyMotion config
@@ -159,3 +172,27 @@ let g:ycm_python_binary_path = 'python'
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" bufexplorer config
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" let g:bufExplorerSortBy='number' " let's try mru for a bit
+" autocmd VimEnter * nunmap <Leader>be " Unmap be, more annoying version of bt
+let g:bufExplorerSplitRight=0
+let g:bufExplorerVertSize=40
+let g:bufExplorerBelow=1
+let g:bufExplorerVertSize=10
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" bufexplorer config
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+nnoremap <Leader>u :UndotreeToggle<cr>
+let g:undotree_WindowLayout=2
+let g:undotree_SplitWidth=40
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" NERDTree config
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+nnoremap <Leader>t :NERDTreeToggle<cr>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
+            \ && b:NERDTree.isTabTree()) | q | endif

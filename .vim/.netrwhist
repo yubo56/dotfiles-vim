@@ -1,10 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/yssu/SURF2015/routines'
-let g:netrw_dirhist_2='/home/yssu/SURF2015/routines/helper'
-let g:netrw_dirhist_3='/home/yssu/SURF2015/routines'
-let g:netrw_dirhist_4='/home/yssu/.vim'
-let g:netrw_dirhist_5='/home/yssu/dotfiles/.git'
-let g:netrw_dirhist_6='/Users/yssu/blend/backend/lib/middleware'
-let g:netrw_dirhist_7='/Users/yssu/dotFiles/vim'
-let g:netrw_dirhist_8='/private/var/folders/3z/54gdh_g91935rcrn0klxqj_c0000gn/T/ycm_temp'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/yssu/dotFiles/vim/.vim/bundle/bufexplorer'
+let g:netrw_dirhist_2='/Users/yssu/dotFiles/vim/.vim/bundle/bufexplorer/plugin'
+let g:netrw_dirhist_3='/Users/yssu/dotFiles/vim/.vim/bundle/bufexplorer'
