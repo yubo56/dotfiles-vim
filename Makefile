@@ -32,7 +32,7 @@ endif
 
 ycm_timeout:
 	@echo 'Setting timeout to 5 seconds'
-	# have to use backup then remove backup to be OS X compatible...
+	@# have to use backup then remove backup to be OS X compatible...
 	@sed -i'.bak' 's/SECONDS\ =\ 0\.5/SECONDS\ =\ 5/g' ${VIM_PATH}/YouCompleteMe/python/ycm/client/completion_request.py
 	@rm ${VIM_PATH}/YouCompleteMe/python/ycm/client/completion_request.py.bak
 
