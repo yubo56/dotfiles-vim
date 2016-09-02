@@ -69,7 +69,7 @@ imap <F2> <ESC><F2>
 nnoremap <space> @q
 
 " reload vimrc
-nnoremap <F5> :so $MYVIMRC <CR>
+" nnoremap <F5> :so $MYVIMRC <CR>
 
 " insert mode, S-Tab = Tab
 " normal mode, tab = lnext, S-tab = lprev
