@@ -26,9 +26,10 @@ set foldmethod=indent " alternatively, could use indent
 set nu
 set rnu
 "indentation
-set tabstop=4
 set expandtab
-set sw=4
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set ls=2
 set smarttab autoindent
 "set highlight search
@@ -104,6 +105,11 @@ autocmd BufNewFile Makefile silent! 0r ~/.vim/temps/Makefile
 " remove trailing whitespace on exit
 autocmd BufWritePre * %s/\s\+$//e
 
+augroup js
+    autocmd FileType javascript set tabstop=2
+    autocmd FileType javascript set softtabstop=2
+    autocmd FileType javascript set shiftwidth=2
+augroup END
 
 
 
