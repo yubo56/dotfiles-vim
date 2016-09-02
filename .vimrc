@@ -130,7 +130,8 @@ let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_quiet_messages = { "regex": 'terminated with space\|between a pair of\|better written in dot' }
+let g:syntastic_quiet_messages = { "regex": 'terminated with space\|' +
+            \ 'between a pair of\|better written in dot' }
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " YouCompleteMe config
@@ -139,6 +140,8 @@ let g:syntastic_quiet_messages = { "regex": 'terminated with space\|between a pa
 let g:ycm_key_list_select_completion = ['<C-N>']
 let g:ycm_key_list_previous_completion = ['<C-P>']
 let g:ycm_min_num_of_chars_for_completion = 1
+" force general python instead of python2
+let g:ycm_python_binary_path = 'python'
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " EasyMotion config

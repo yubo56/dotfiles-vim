@@ -17,10 +17,6 @@ CMAKE_PATH := $(shell command -v cmake 2> /dev/null)
 
 ycm: ycm_make ycm_timeout
 
-ycm_timeout:
-	@echo 'Setting timeout to 5 seconds'
-	@sed -i '' 's/SECONDS\ =\ 0\.5/SECONDS\ =\ 5/g' ${VIM_PATH}/YouCompleteMe/python/ycm/client/completion_request.py
-
 ycm_make:
 ifndef CMAKE_PATH
 	@echo 'cmake required' && exit 1
@@ -34,5 +30,12 @@ else
 	rm -rf ${YCM_TEMP}
 endif
 
-ycm_node:
+ycm_timeout:
+	@echo 'Setting timeout to 5 seconds'
+	# have to use backup then remove backup to be OS X compatible...
+	@sed -i'.bak' 's/SECONDS\ =\ 0\.5/SECONDS\ =\ 5/g' ${VIM_PATH}/YouCompleteMe/python/ycm/client/completion_request.py
+	@rm ${VIM_PATH}/YouCompleteMe/python/ycm/client/completion_request.py.bak
+
+# Javascript semantic completion
+ycm_js:
 	cd ${VIM_PATH}/YouCompleteMe/third_party/ycmd/third_party/tern_runtime && npm install --production
