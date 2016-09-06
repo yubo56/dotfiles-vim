@@ -78,10 +78,7 @@ nnoremap <space> @q
 " nnoremap <F5> :so $MYVIMRC <CR>
 
 " insert mode, S-Tab = Tab
-" normal mode, tab = lnext, S-tab = lprev
 imap <S-Tab> <Tab>
-nmap <Tab> :lnext<CR>
-nmap <S-Tab> :ll<CR>
 
 " unmap stuff
 map <F1> <Nop>
@@ -119,6 +116,7 @@ augroup END
 " <Leader><Leader>w - Easymotion move
 " <Leader>[vsb] - bufexplorer
 " <Leader>u - undotree
+" <Leader>l - :ll (Syntastic)
 " <Leader>t - nerdtree
 " <Leader>g - YCM refactor
 " <Leader>R - YCM refactor
@@ -142,14 +140,19 @@ let g:UltiSnipsEditSplit="vertical"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+nnoremap <Tab> :lnext<CR>
+nnoremap <S-Tab> :lprev<CR>
+nnoremap <Leader>l :ll<CR>
 
 " recognize tex correctly
 let g:tex_flavor = "latex"
 
+" recommended syntastic options
 let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" ignore messages
 let g:syntastic_quiet_messages = { "regex": 'terminated with space\|' +
             \ 'between a pair of\|better written in dot' }
 
@@ -184,13 +187,9 @@ let g:bufExplorerSplitRight=0
 let g:bufExplorerVertSize=40
 let g:bufExplorerBelow=1
 let g:bufExplorerVertSize=10
-nunmap <Leader>bv
-nunmap <Leader>be
-nunmap <Leader>bs
-nunmap <Leader>bt
 nnoremap <Leader>v :BufExplorerVerticalSplit<CR>
 nnoremap <Leader>s :BufExplorerHorizontalSplit<CR>
-nnoremap <Leader>b :BufExplorer<CR>
+nnoremap <Leader>b :ToggleBufExplorer<CR>
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " bufexplorer config
@@ -203,6 +202,7 @@ let g:undotree_SplitWidth=40
 " NERDTree config
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 nnoremap <Leader>t :NERDTreeToggle<CR>
+" autoclose vim if NERDTree is last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
             \ && b:NERDTree.isTabTree()) | q | endif
 
@@ -214,4 +214,4 @@ let g:autoclose_vim_commentmode = 1
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " tagbar config
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-nmap <Leader>g :TagbarToggle<CR>
+nnoremap <Leader>g :TagbarToggle<CR>
