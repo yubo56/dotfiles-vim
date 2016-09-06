@@ -117,8 +117,10 @@ augroup END
 " gs/ys/cs - vim-surround
 " <C-P> - ctrlp
 " <Leader><Leader>w - Easymotion move
-" <Leader>b[bst] - bufexplorer
+" <Leader>[vsb] - bufexplorer
 " <Leader>u - undotree
+" <Leader>t - nerdtree
+" <Leader>g - YCM refactor
 " <Leader>R - YCM refactor
 
 
@@ -182,17 +184,34 @@ let g:bufExplorerSplitRight=0
 let g:bufExplorerVertSize=40
 let g:bufExplorerBelow=1
 let g:bufExplorerVertSize=10
+nunmap <Leader>bv
+nunmap <Leader>be
+nunmap <Leader>bs
+nunmap <Leader>bt
+nnoremap <Leader>v :BufExplorerVerticalSplit<CR>
+nnoremap <Leader>s :BufExplorerHorizontalSplit<CR>
+nnoremap <Leader>b :BufExplorer<CR>
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " bufexplorer config
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-nnoremap <Leader>u :UndotreeToggle<cr>
+nnoremap <Leader>u :UndotreeToggle<CR>
 let g:undotree_WindowLayout=2
 let g:undotree_SplitWidth=40
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " NERDTree config
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-nnoremap <Leader>t :NERDTreeToggle<cr>
+nnoremap <Leader>t :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
             \ && b:NERDTree.isTabTree()) | q | endif
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" autoclose config
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+let g:autoclose_vim_commentmode = 1
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" tagbar config
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+nmap <Leader>g :TagbarToggle<CR>
