@@ -103,12 +103,6 @@ autocmd BufNewFile Makefile silent! 0r ~/.vim/temps/Makefile
 " remove trailing whitespace on exit
 autocmd BufWritePre * %s/\s\+$//e
 
-augroup js
-    autocmd FileType javascript set tabstop=2
-    autocmd FileType javascript set softtabstop=2
-    autocmd FileType javascript set shiftwidth=2
-augroup END
-
 " list of plugin triggers (normal mode only)
 " gcc - commentary comment out
 " gs/ys/cs - vim-surround
@@ -116,6 +110,7 @@ augroup END
 " <Leader><Leader>w - Easymotion move
 " <Leader>[vsb] - bufexplorer
 " <Leader>u - undotree
+" <Leader>a - tabularize
 " <Leader>l - :ll (Syntastic)
 " <Leader>t - nerdtree
 " <Leader>g - YCM refactor
@@ -215,3 +210,9 @@ let g:autoclose_vim_commentmode = 1
 " tagbar config
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 nnoremap <Leader>g :TagbarToggle<CR>
+let g:tagbar_width=40
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" tabular config
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+noremap <Leader>a :Tab /

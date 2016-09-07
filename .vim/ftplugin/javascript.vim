@@ -1,6 +1,11 @@
 " record a couple of macros
 " f = temporary register
 
+" settings
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
 " split up a console.log(a, b, c) into separate lines
 let @c = "f,s);\<CR>console.log(\<ESC>"
 
