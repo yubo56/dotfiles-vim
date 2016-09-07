@@ -11,8 +11,8 @@ imap <space> <space>
 nmap <space> <space>
 
 " mimic vimlatex markers, handy
-noremap <C-S-F12> /\[++\]<cr>c%
-inoremap <C-S-F12> <ESC>/\[++\]<cr>c%
+noremap <F11> /\[++\]<cr>c%
+inoremap <F11> <ESC>/\[++\]<cr>c%
 
 
 " compile/view launch
