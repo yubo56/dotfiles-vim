@@ -43,6 +43,8 @@ syntax on
 colorscheme desert
 " timeout len when waiting for input
 set timeoutlen=500
+" wrapping
+set tw=80
 
 " statusline
 set laststatus=2            " always statusbar
@@ -53,14 +55,13 @@ set statusline+=%l/%L\ %y   " curr line/total line [filetype]
 
 " if persistent_undo, configure a directory for it
 if has("persistent_undo")
-    set undodir='~/.undodir/'
+    set undodir=$HOME/.undodir/
     set undofile
 endif
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " keybindings
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 " paste mode toggle
 set pastetoggle=<F12>
 
@@ -153,7 +154,8 @@ let g:syntastic_check_on_wq = 0
 
 " ignore messages
 let g:syntastic_quiet_messages = { "regex": 'terminated with space\|' .
-            \ 'between a pair of\|better written in dot' }
+            \ 'between a pair of\|better written in dot\|' .
+            \ 'cell-var-from-loop\|' . 'broad-except'}
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " YouCompleteMe config
@@ -219,3 +221,8 @@ let g:tagbar_width=40
 " tabular config
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 noremap <Leader>a :Tab /
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" argumentative config
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+noremap >. >,

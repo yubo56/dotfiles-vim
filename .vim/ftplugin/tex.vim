@@ -3,7 +3,7 @@
 "
 
 " only tex no rnu, lags b/c absurd repeat rate
-set nornu
+" set nornu
 " without vimlatex, set folding rule
 set foldmethod=indent
 " make sure <space> is mapped to self... danger!
