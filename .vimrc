@@ -144,7 +144,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 nnoremap <Tab> :lnext<CR>
 nnoremap <S-Tab> :lprev<CR>
-nnoremap <Leader>l :ll<CR>
+nnoremap <Leader>n :ll<CR>
 
 " recognize tex correctly
 let g:tex_flavor = "latex"
