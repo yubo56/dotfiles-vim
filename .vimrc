@@ -32,7 +32,6 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set ls=2
 set smarttab autoindent
 "set highlight search
 set hlsearch
@@ -46,9 +45,11 @@ colorscheme desert
 set timeoutlen=500
 
 " statusline
-set statusline=%t%m%=
-set statusline+=%c,
-set statusline+=%l/%L
+set laststatus=2            " always statusbar
+set statusline=%{getcwd()}: " pwd of vim
+set statusline+=\ %f%m%=    " relative path to filename, modified flag, RHS
+set statusline+=%c,         " char number
+set statusline+=%l/%L\ %y   " curr line/total line [filetype]
 
 " if persistent_undo, configure a directory for it
 if has("persistent_undo")
@@ -87,6 +88,9 @@ imap <F1> <Nop>
 vmap <F1> <Nop>
 inoremap <C-U> <Nop>
 
+" close any preview windows
+nnoremap <Leader>c :pc<CR>
+
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " autocmds
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -98,7 +102,6 @@ autocmd BufReadPost *
     \ endif
 "Use templates
 autocmd BufNewFile * silent! 0r ~/.vim/temps/temp.%:e
-" wrap all txt files
 autocmd BufNewFile Makefile silent! 0r ~/.vim/temps/Makefile
 " remove trailing whitespace on exit
 autocmd BufWritePre * %s/\s\+$//e
@@ -109,6 +112,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " <C-P> - ctrlp
 " <Leader><Leader>w - Easymotion move
 " <Leader>[vsb] - bufexplorer
+" <Leader>c - close preview/scratch
 " <Leader>u - undotree
 " <Leader>a - tabularize
 " <Leader>l - :ll (Syntastic)
@@ -148,7 +152,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " ignore messages
-let g:syntastic_quiet_messages = { "regex": 'terminated with space\|' +
+let g:syntastic_quiet_messages = { "regex": 'terminated with space\|' .
             \ 'between a pair of\|better written in dot' }
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -177,7 +181,6 @@ let g:ctrlp_cmd = 'CtrlP'
 " bufexplorer config
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " let g:bufExplorerSortBy='number' " let's try mru for a bit
-" autocmd VimEnter * nunmap <Leader>be " Unmap be, more annoying version of bt
 let g:bufExplorerSplitRight=0
 let g:bufExplorerVertSize=40
 let g:bufExplorerBelow=1
