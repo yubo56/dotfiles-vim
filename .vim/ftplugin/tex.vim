@@ -14,6 +14,8 @@ nmap <space> <space>
 noremap <F11> /\[++\]<cr>c%
 inoremap <F11> <ESC>/\[++\]<cr>c%
 
+" autowrap
+set tw=80
 
 " compile/view launch
 noremap <Leader>l :silent ! pdflatex -interaction=nonstopmode %<cr><C-L>

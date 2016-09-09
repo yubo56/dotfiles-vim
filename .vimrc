@@ -24,10 +24,6 @@ set backspace=2 " allows deletion of newlines, automatic indentation
 filetype plugin indent on
 set foldmethod=indent " alternatively, could use indent
 
-" Highlight after 80
-hi ColorColumn ctermbg=red guibg=red
-set cc=+1
-
 "set line numbers
 set nu
 set rnu
@@ -47,8 +43,10 @@ syntax on
 colorscheme desert
 " timeout len when waiting for input
 set timeoutlen=500
-" wrapping
-set tw=80
+" wrapping + highlight
+set tw=0
+hi ColorColumn ctermbg=red guibg=red
+set cc=81
 
 " statusline
 set laststatus=2            " always statusbar
