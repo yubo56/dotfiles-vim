@@ -24,6 +24,10 @@ set backspace=2 " allows deletion of newlines, automatic indentation
 filetype plugin indent on
 set foldmethod=indent " alternatively, could use indent
 
+" Highlight after 80
+hi ColorColumn ctermbg=red guibg=red
+set cc=+1
+
 "set line numbers
 set nu
 set rnu
@@ -112,11 +116,11 @@ autocmd BufWritePre * %s/\s\+$//e
 " gs/ys/cs - vim-surround
 " <C-P> - ctrlp
 " <Leader><Leader>w - Easymotion move
-" <Leader>[vsb] - bufexplorer
+" <Leader>b - bufexplorer
 " <Leader>c - close preview/scratch
 " <Leader>u - undotree
 " <Leader>a - tabularize
-" <Leader>l - :ll (Syntastic)
+" <Leader>n - :ll (Syntastic)
 " <Leader>t - nerdtree
 " <Leader>g - YCM refactor
 " <Leader>R - YCM refactor
