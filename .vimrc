@@ -44,6 +44,8 @@ syntax on
 colorscheme desert
 " timeout len when waiting for input
 set timeoutlen=500
+" wrapping
+set tw=80
 
 " statusline
 set statusline=%t%m%=
@@ -52,14 +54,13 @@ set statusline+=%l/%L
 
 " if persistent_undo, configure a directory for it
 if has("persistent_undo")
-    set undodir='~/.undodir/'
+    set undodir=$HOME/.undodir/
     set undofile
 endif
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " keybindings
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 " paste mode toggle
 set pastetoggle=<F12>
 
