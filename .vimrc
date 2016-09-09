@@ -88,8 +88,8 @@ imap <F1> <Nop>
 vmap <F1> <Nop>
 inoremap <C-U> <Nop>
 
-" close any preview windows
-nnoremap <Leader>c :pc<CR>
+" close any preview & help windows
+nnoremap <Leader>c :pc<CR>:helpclose<CR>
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " autocmds
