@@ -92,7 +92,11 @@ vmap <F1> <Nop>
 inoremap <C-U> <Nop>
 
 " close any preview & help windows
-nnoremap <Leader>c :pc<CR>:helpclose<CR>
+nnoremap <Leader>h :pc<CR>:helpclose<CR>
+
+" copen/cclose
+nnoremap <Leader>c :cclose<CR>
+nnoremap <Leader>C :copen<CR>
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " autocmds
@@ -115,7 +119,8 @@ autocmd BufWritePre * %s/\s\+$//e
 " <C-P> - ctrlp
 " <Leader><Leader>w - Easymotion move
 " <Leader>b - bufexplorer
-" <Leader>c - close preview/scratch
+" <Leader>h - close preview/scratch
+" <Leader>c/C - quickfix close/open
 " <Leader>u - undotree
 " <Leader>a - tabularize
 " <Leader>n - :ll (Syntastic)
@@ -180,6 +185,7 @@ nnoremap <Leader>R :YcmCompleter RefactorRename
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = 'venv\|node_modules\|git'
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " bufexplorer config
