@@ -1,5 +1,5 @@
 " record a couple of macros
-" f = temporary register
+" f, g = temporary register
 
 " settings
 set tabstop=2
@@ -13,13 +13,13 @@ set cc=121
 let @c = "f,s);\<CR>console.log(\<ESC>"
 
 " remove all *.only from the file
-let @o = "mf:%s/\.only//g\<CR>'f"
+let @o = "mfHmg:%s/\.only//g\<CR>'gzt'f"
 
 " put .only on leading describe
-let @d = "mf:%s/^describe\(/describe.only\(/g\<CR>'f"
+let @d = "mfHmg:%s/^describe\(/describe.only\(/g\<CR>'gzt'f"
 
 " put .only on 'it' just before
-let @b = "mf?it(\<CR>cwit.only\<ESC>'f"
+let @b = "mfHmg'f?it(\<CR>cwit.only\<ESC>'gzt'f"
 
 " find local eslint
 let s:lcd = fnameescape(getcwd())
