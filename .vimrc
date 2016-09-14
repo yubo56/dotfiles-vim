@@ -22,7 +22,6 @@ execute pathogen#infect()
 
 set backspace=2 " allows deletion of newlines, automatic indentation
 filetype plugin indent on
-set foldmethod=indent " alternatively, could use indent
 
 "set line numbers
 set nu
@@ -113,6 +112,25 @@ autocmd BufNewFile Makefile silent! 0r ~/.vim/temps/Makefile
 " remove trailing whitespace on exit
 autocmd BufWritePre * %s/\s\+$//e
 
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" functions
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+" folding
+function ToggleFoldmethod()
+    if &foldmethod ==? "manual"
+        set foldmethod=indent " default foldmethod when starting vim
+    else
+        set foldmethod=manual
+    endif
+endfunction
+call ToggleFoldmethod() " toggles from manual, default before vimrc
+
+nnoremap <Leader>ft :call ToggleFoldmethod()<CR>
+nnoremap <Leader>fm :set foldmethod=manual<CR>
+nnoremap <Leader>fi :set foldmethod=indent<CR>
+nnoremap <Leader>fs :set foldmethod=syntax<CR>
+
 " list of plugin triggers (normal mode only)
 " gcc - commentary comment out
 " gs/ys/cs - vim-surround
@@ -122,6 +140,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " <Leader>h - close preview/scratch
 " <Leader>c/C - quickfix close/open
 " <Leader>u - undotree
+" <Leader>f[tsmi] - fold method keybindings
 " <Leader>a - tabularize
 " <Leader>n - :ll (Syntastic)
 " <Leader>t - nerdtree
