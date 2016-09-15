@@ -2,4 +2,7 @@
 # doesn't get stowed by accident
 
 Makefile
-*.swp
+\.git
+\.gitignore
+\.gitmodules
+.*.swp

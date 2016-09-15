@@ -7,6 +7,7 @@
 " :perldo s/(\d+\.\d+)/sprintf "%.2f", $1/eg -- round all numbers to some
 " number of digits
 " :%s/ \+/ /g -- compress all whitespace to 1 space
+" /^.\{81,\}$ -- search for all lines at least 81 characters long
 "
 "
 
