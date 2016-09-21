@@ -13,7 +13,7 @@ set cc=121
 let @c = "f,s);\<CR>console.log(\<ESC>"
 
 " remove all *.only from the file
-let @o = "mfHmg:%s/\.only//g\<CR>'gzt'f"
+let @o = "mfHmg:%s/\.only\(/\(/g\<CR>'gzt'f"
 
 " put .only on leading describe
 let @d = "mfHmg:%s/^describe\(/describe.only\(/g\<CR>'gzt'f"

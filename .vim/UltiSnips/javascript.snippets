@@ -3,15 +3,25 @@ function ${1:function_name}(${2:argument}) {
 	${3:// body...}
 }
 endsnippet
-snippet f "Anonymous Function" i
+snippet fa "Anonymous Function" i
 function(${1}) {${2}}
 endsnippet
+snippet fb "Anonymous Function w/ braces" i
+function(${1}) {
+	${2}
+}
+endsnippet
 snippet if "if" i
-if (${1:true}) {${2}};
+if (${1:true}) {
+	${2}
+};
 endsnippet
 snippet ife "if ... else" i
-if (${1:true}) {${2}}
-else{${3}};
+if (${1:true}) {
+	${2}
+} else {
+	${3}
+};
 endsnippet
 snippet ? "tertiary conditional" i
 ${1:/* condition */} ? ${2:a} : ${3:b}
@@ -70,6 +80,13 @@ endsnippet
 snippet exp "Description" i
 expect(${1}).to.equal(${2});
 endsnippet
-snippet cl "console.log" b
+snippet cl "console.log" i
 console.log(${1});
+endsnippet
+snippet err "Description" i
+if (err) return cb(${1:err});
+endsnippet
+snippet /* "comment" i
+/** ${1}
+ */ ${2}
 endsnippet
