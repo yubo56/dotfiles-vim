@@ -182,8 +182,8 @@ let g:syntastic_check_on_wq = 0
 " ignore messages
 let g:syntastic_quiet_messages = { "regex": 'terminated with space\|' .
             \ 'between a pair of\|better written in dot\|' .
-            \ 'cell-var-from-loop\|' . 'broad-except' .
-            \ 'enclose previous parentheses'}
+            \ 'cell-var-from-loop\|' . 'broad-except\|' .
+            \ 'enclose the previous parenthesis'}
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " YouCompleteMe config
