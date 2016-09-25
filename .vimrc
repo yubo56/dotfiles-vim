@@ -182,11 +182,12 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " ignore messages
-let g:syntastic_quiet_messages = { "regex": 'terminated with space\|' .
+let g:syntastic_quiet_messages = { "regex":
+            \ 'terminated with space\|enclose the previous parenthesis\|' .
             \ 'between a pair of\|better written in dot\|' .
             \ 'cell-var-from-loop\|' . 'broad-except\|' .
-            \ 'enclose the previous parenthesis\|' .
-            \ 'too-many-arguments' }
+            \ 'too-many-arguments\|too-many-locals\|too-many-branches\|' .
+            \ 'too-few-public-methods' }
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " YouCompleteMe config
