@@ -81,7 +81,7 @@ snippet exp "Description" i
 expect(${1}).to.equal(${2});
 endsnippet
 snippet cl "console.log" i
-console.log(${1});
+console.log('${1}', ${2:$1});
 endsnippet
 snippet err "Description" i
 if (err) return cb(${1:err});
@@ -89,4 +89,7 @@ endsnippet
 snippet /* "comment" i
 /** ${1}
  */ ${2}
+endsnippet
+snippet cb "callback" i
+cb(${1:null, }${2});
 endsnippet
