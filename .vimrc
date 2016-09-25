@@ -94,10 +94,6 @@ inoremap <C-U> <Nop>
 " close any preview & help windows
 nnoremap <Leader>h :pc<CR>:helpclose<CR>
 
-" copen/cclose
-nnoremap <Leader>c :cclose<CR>
-nnoremap <Leader>C :copen<CR>
-
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " autocmds
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -117,6 +113,23 @@ autocmd BufWritePre * %s/\s\+$//e
 " functions
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+" list of triggers (normal mode only)
+" gcc - commentary comment out
+" gs/ys/cs - vim-surround
+" <C-P> - ctrlp
+" <Leader>a - tabularize
+" <Leader>b - bufexplorer
+" <Leader>c[lv] - latex keybindings
+" <Leader>c[npq] - quickfix keybindings
+" <Leader>f[tsmi] - fold method keybindings
+" <Leader>g - tagbar toggle
+" <Leader>h - close preview/scratch
+" <Leader>l[npq] - location list keybindings
+" <Leader>t - nerdtree
+" <Leader>u - undotree
+" <Leader>R - YCM refactor
+" <Leader><Leader>w - Easymotion move
+
 " folding
 function ToggleFoldmethod()
     if &foldmethod ==? "manual"
@@ -132,23 +145,13 @@ nnoremap <Leader>fm :set foldmethod=manual<CR>
 nnoremap <Leader>fi :set foldmethod=indent<CR>
 nnoremap <Leader>fs :set foldmethod=syntax<CR>
 
-" list of plugin triggers (normal mode only)
-" gcc - commentary comment out
-" gs/ys/cs - vim-surround
-" <C-P> - ctrlp
-" <Leader><Leader>w - Easymotion move
-" <Leader>b - bufexplorer
-" <Leader>h - close preview/scratch
-" <Leader>c/C - quickfix close/open
-" <Leader>u - undotree
-" <Leader>f[tsmi] - fold method keybindings
-" <Leader>a - tabularize
-" <Leader>n - :ll (Syntastic)
-" <Leader>t - nerdtree
-" <Leader>g - YCM refactor
-" <Leader>R - YCM refactor
+nnoremap <Leader>ln :lnext<CR>
+nnoremap <Leader>lp :lprev<CR>
+nnoremap <Leader>ll :ll<CR>
 
-
+nnoremap <Leader>cn :cnext<CR>
+nnoremap <Leader>cp :cprev<CR>
+nnoremap <Leader>cl :cc<CR>
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " ultisnips
@@ -167,15 +170,14 @@ let g:UltiSnipsEditSplit="vertical"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-nnoremap <Tab> :lnext<CR>
-nnoremap <S-Tab> :lprev<CR>
-nnoremap <Leader>n :ll<CR>
 
 " recognize tex correctly
 let g:tex_flavor = "latex"
 
 " recommended syntastic options
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 3
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
@@ -183,7 +185,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "regex": 'terminated with space\|' .
             \ 'between a pair of\|better written in dot\|' .
             \ 'cell-var-from-loop\|' . 'broad-except\|' .
-            \ 'enclose the previous parenthesis'}
+            \ 'enclose the previous parenthesis\|' .
+            \ 'too-many-arguments' }
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " YouCompleteMe config

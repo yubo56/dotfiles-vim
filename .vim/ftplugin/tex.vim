@@ -18,12 +18,13 @@ inoremap <F11> <ESC>/\[++\]<cr>c%
 set tw=80
 
 " compile/view launch
-noremap <Leader>l :silent ! pdflatex -interaction=nonstopmode %<cr><C-L>
-    " silent means don't need to press enter,  means automatically resets
-    " screen!
-noremap <Leader>v :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
-noremap <Leader>g :exec 'silent ! sed -i -n "/^\!/p" ' . expand('%:r') . '.log'<cr><C-L>
-noremap <Leader>h :e %:r.log<cr>
+set makeprg=pdflatex\ -interaction=nonstopmode\ -file-line-error\ %\\\|grep\ \'^\\./%\'
+set errorformat=%f:%l:\ %m
+command QLmake make | cwindow 3
+noremap <Leader>cc :QLmake <cr><C-L>
+    " silent means don't need to press enter on complete,  means
+    " automatically resets screen
+noremap <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
 
 " correct some timing bugs
 inoremap `` ``
