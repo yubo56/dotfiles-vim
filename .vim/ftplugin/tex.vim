@@ -7,8 +7,7 @@
 " without vimlatex, set folding rule
 set foldmethod=indent
 " make sure <space> is mapped to self... danger!
-imap <space> <space>
-nmap <space> <space>
+nnoremap <space> <space>
 
 " mimic vimlatex markers, handy
 noremap <F11> /\[++\]<cr>c%
@@ -25,6 +24,7 @@ noremap <Leader>cc :QLmake <cr><C-L>
     " silent means don't need to press enter on complete,  means
     " automatically resets screen
 noremap <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
+noremap <Leader>cg :e %:r.log<cr>
 
 " correct some timing bugs
 inoremap `` ``
@@ -35,64 +35,65 @@ inoremap `> `>
 inoremap [+ [+
 
 " various alphabetic substitutions
-imap ... \dots
-imap `a \alpha
-imap `b \beta
-imap `c \chi
-imap `d \delta
-imap `e \epsilon
-imap `E \varepsilon
-imap `f \phi
-imap `T \partial
-imap `R \varphi
-imap `g \gamma
-imap `h \eta
-imap `i \iota
-imap `k \kappa
-imap `l \lambda
-imap `m \mu
-imap `n \nu
-imap `p \pi
-imap `q \theta
-imap `r \rho
-imap `s \sigma
-imap `t \tau
-imap `u \upsilon
-imap `w \omega
-imap `x \xi
-imap `y \psi
-imap `z \zeta
-imap `D \Delta
-imap `F \Phi
-imap `P \Pi
-imap `G \Gamma
-imap `Q \Theta
-imap `L \Lambda
-imap `X \Xi
-imap `Y \Psi
-imap `S \Sigma
-imap `U \Upsilon
-imap `W \Omega
+inoremap ... \dots
+inoremap `a \alpha
+inoremap `b \beta
+inoremap `c \chi
+inoremap `d \delta
+inoremap `e \epsilon
+inoremap `E \varepsilon
+inoremap `f \phi
+inoremap `T \partial
+inoremap `R \varphi
+inoremap `g \gamma
+inoremap `h \eta
+inoremap `i \iota
+inoremap `k \kappa
+inoremap `l \lambda
+inoremap `m \mu
+inoremap `n \nu
+inoremap `p \pi
+inoremap `q \theta
+inoremap `r \rho
+inoremap `s \sigma
+inoremap `t \tau
+inoremap `u \upsilon
+inoremap `w \omega
+inoremap `x \xi
+inoremap `y \psi
+inoremap `z \zeta
+inoremap `D \Delta
+inoremap `F \Phi
+inoremap `P \Pi
+inoremap `G \Gamma
+inoremap `Q \Theta
+inoremap `L \Lambda
+inoremap `X \Xi
+inoremap `Y \Psi
+inoremap `S \Sigma
+inoremap `U \Upsilon
+inoremap `W \Omega
 
 " other ` substitutions
-imap `\| \Bigg\|
-imap `& \cdot
-imap `* \times
-imap `8 \infty
-imap `N \nabla
-imap `H \hbar
-imap `, \propto
-imap `+ ^\dagger
+inoremap `\| \Bigg\|
+inoremap `& \cdot
+inoremap `* \times
+inoremap `8 \infty
+inoremap `N \nabla
+inoremap `H \hbar
+inoremap `, \propto
+inoremap `+ ^\dagger
 
 " other substitutions, not `
-imap --> \to
-imap ---> \longrightarrow
-imap -+ \mp
-imap ~= \approx
-imap ~~ \sim
-imap >> \gg
-imap << \ll
-imap >= \geq
-imap <= \leq
-imap != \neq
-imap +- \pm
+inoremap --> \to
+inoremap ---> \longrightarrow
+inoremap -+ \mp
+inoremap ~= \approx
+inoremap ~~ \sim
+inoremap >> \gg
+inoremap << \ll
+inoremap >= \geq
+inoremap <= \leq
+inoremap != \neq
+inoremap +- \pm
+inoremap \i \item

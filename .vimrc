@@ -121,6 +121,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " <Leader>b - bufexplorer
 " <Leader>c[lv] - latex keybindings
 " <Leader>c[npq] - quickfix keybindings
+" <Leader>e - easymotion prefix [wb]
 " <Leader>f[tsmi] - fold method keybindings
 " <Leader>g - tagbar toggle
 " <Leader>h - close preview/scratch
@@ -203,7 +204,7 @@ nnoremap <Leader>R :YcmCompleter RefactorRename
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " EasyMotion config
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-" map <Leader> <Plug>(easymotion-prefix) " doesn't seem to work
+nmap <Leader>e <Plug>(easymotion-prefix)
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " ctrlp config

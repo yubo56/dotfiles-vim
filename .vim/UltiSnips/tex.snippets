@@ -1,8 +1,5 @@
 # ported from vim-latex
-snippet [+ "Description" i
-[++]
-endsnippet
-snippet `< "Description" i
+snippet `< "Description" iA
 \bra{${1}}
 endsnippet
 snippet `C "Description" i
@@ -66,7 +63,7 @@ snippet `- "Description" i
 \bar{${1}}
 endsnippet
 snippet `/ "Description" i
-\frac{${1}}{${2}}
+\frac{${1:${VISUAL}}}{${2}}
 endsnippet
 snippet `M "Description" i
 \sum\limits_{${1}}^{${2}}
@@ -110,15 +107,6 @@ endsnippet
 snippet ^^ "Description" i
 ^{${1}}
 endsnippet
-snippet (( "Description" i
-\left( ${1} \right)
-endsnippet
-snippet [[ "Description" i
-\left[ ${1} \right]
-endsnippet
-snippet {{ "Description" i
-\left\\\{ ${1} \right\\\}
-endsnippet
 snippet || "Description" i
 \abs{${1}}
 endsnippet
@@ -130,7 +118,7 @@ snippet FEM "Description" i
 endsnippet
 snippet begin "begin/end environment" b
 \begin{${1}}${2}
-	${3}
+	${3:${VISUAL}}
 \end{$1}
 endsnippet
 snippet d "Description" i
@@ -142,4 +130,28 @@ snippet lst "Description" i
 \begin{lstlisting}
 ${1}
 \end{lstlisting}
+endsnippet
+snippet (( "in-line left/right parens" i
+\left( ${1:${VISUAL}} \right)
+endsnippet
+snippet [[ "in-line left/right square brackets" i
+\left[ ${1:${VISUAL}} \right]
+endsnippet
+snippet {{ "in-line left/right curly braces" i
+\left\\\{ ${1:${VISUAL}} \right\\\}
+endsnippet
+snippet (B "block left/right parens" i
+\left(
+	${1:${VISUAL}}
+\right)
+endsnippet
+snippet [B "block left/right square brackets" i
+\left[
+	${1:${VISUAL}}
+\right]
+endsnippet
+snippet {B "block left/right curly braces" i
+\left\\\{
+	${1:${VISUAL}}
+\right\\\}
 endsnippet
