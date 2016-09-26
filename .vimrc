@@ -47,6 +47,8 @@ set timeoutlen=500
 set tw=0
 hi ColorColumn ctermbg=red guibg=red
 set cc=81
+" show opening operator when closing
+set showmatch
 
 " statusline
 set laststatus=2            " always statusbar
