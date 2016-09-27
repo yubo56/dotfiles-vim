@@ -151,10 +151,12 @@ nnoremap <Leader>fs :set foldmethod=syntax<CR>
 nnoremap <Leader>ln :lnext<CR>
 nnoremap <Leader>lp :lprev<CR>
 nnoremap <Leader>ll :ll<CR>
+nnoremap <Leader>lq :lclose<CR>
 
 nnoremap <Leader>cn :cnext<CR>
 nnoremap <Leader>cp :cprev<CR>
 nnoremap <Leader>cl :cc<CR>
+nnoremap <Leader>cq :cclose<CR>
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " ultisnips
