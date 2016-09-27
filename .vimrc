@@ -201,6 +201,12 @@ let g:ycm_key_list_previous_completion = ['<C-P>']
 let g:ycm_min_num_of_chars_for_completion = 1
 " force general python instead of python2
 let g:ycm_python_binary_path = 'python'
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'markdown' : 1,
+      \ 'text' : 1,
+      \ 'latex' : 1
+      \}
 nnoremap <Leader>R :YcmCompleter RefactorRename
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

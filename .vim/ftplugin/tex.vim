@@ -96,4 +96,4 @@ inoremap >= \geq
 inoremap <= \leq
 inoremap != \neq
 inoremap +- \pm
-inoremap \i \item
+inoremap ** \item
