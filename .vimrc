@@ -68,6 +68,8 @@ endif
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " paste mode toggle
 set pastetoggle=<F12>
+" <F8> but not actually a function key?
+map [19~ <C-W>
 
 " line numbers
 map <F4> :set nonumber norelativenumber <CR>
