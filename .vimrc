@@ -166,8 +166,8 @@ nnoremap <Leader>cq :cclose<CR>
 
 " Trigger configuration
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-J>"
-let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+let g:UltiSnipsJumpForwardTrigger="<C-L>"
+let g:UltiSnipsJumpBackwardTrigger="<C-H>"
 " :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
@@ -223,6 +223,12 @@ nmap <Leader>e <Plug>(easymotion-prefix)
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtSelectMove("j")':   ['<c-j>', '<c-n>', '<down>'],
+    \ 'PrtSelectMove("k")':   ['<c-k>', '<c-p>', '<up>'],
+    \ 'PrtHistory(-1)':       ['<c-b>', '<left>'],
+    \ 'PrtHistory(1)':        ['<c-f>', '<right>'],
+    \ }
 let g:ctrlp_custom_ignore = 'venv\|node_modules\|git'
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
