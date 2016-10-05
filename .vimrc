@@ -57,8 +57,8 @@ set statusline+=\ %f%m%=    " relative path to filename, modified flag, RHS
 set statusline+=%c,         " char number
 set statusline+=%l/%L\ %y   " curr line/total line [filetype]
 
-" always show tabline
-set showtabline=2
+" always show tabline (2) or only show when multiple (1)
+set showtabline=1
 
 " if persistent_undo, configure a directory for it
 if has("persistent_undo")
