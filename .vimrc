@@ -108,7 +108,7 @@ nnoremap <Leader>h :pc<CR>:helpclose<CR>
 " swap windows are ^W[hljk], send is ^W[HLJK]
 " ^Wt selects first window
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-nnoremap <C-W>n :tabnew<CR>
+" nnoremap <C-W>n to custom function below
 nnoremap <C-W>x :tabclose<CR>
 nmap <C-W>! <C-W>T
 nnoremap <C-W>[ gT
@@ -130,7 +130,45 @@ nnoremap <C-W>7 7gt
 nnoremap <C-W>8 8gt
 nnoremap <C-W>9 9gt
 
-" show tab numbers
+nnoremap <C-W>n :call NewTabFast() <CR>
+nnoremap <C-W>N :call NewTabInteractive() <CR>
+nnoremap <C-W>, :call NameTab(tabpagenr()) <CR>
+
+function! NewTabFast()
+    let t = tabpagenr()
+    let name = 'x'
+    if t < len(g:tab_names)
+        let g:tab_names[t] = name
+    else
+        let g:tab_names += [name]
+    endif
+    execute "tabnew "
+endfunction
+function! NameTab(tabnum)
+    " vimscript tabs are 1-indexed but lists are 0-indexed
+    let tabnum = a:tabnum - 1
+
+    call inputsave()
+    let name = input('tab name: ')
+    call inputrestore()
+    if tabnum < len(g:tab_names)
+        let g:tab_names[tabnum] = name
+    else
+        let g:tab_names += [name]
+    endif
+    execute "redraw!"
+endfunction
+function! NewTabInteractive()
+    call NameTab(tabpagenr() + 1)
+    execute "tabnew"
+endfunction
+
+" show tab numbers, with two naming schemes
+let g:tab_names_use_filenames = 1
+nnoremap <C-W>q :let g:tab_names_use_filenames =
+            \ !g:tab_names_use_filenames <CR><C-L>
+
+let g:tab_names = get(g:, 'tab_names', ['main'])
 function! MyTabLine()
     let s = ''
     let t = tabpagenr()
@@ -145,18 +183,23 @@ function! MyTabLine()
         let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
         let s .= '%*'
         let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-        let bufnr = buflist[winnr - 1]
-        let file = bufname(bufnr)
-        let buftype = getbufvar(bufnr, '&buftype')
-        if buftype == ''
-            let file = fnamemodify(file, ':~:.')
+        if g:tab_names_use_filenames == 1
+            let bufnr = buflist[winnr - 1]
+            let tabname = bufname(bufnr)
+            let buftype = getbufvar(bufnr, '&buftype')
+            if buftype == ''
+                if tabname == ''
+                    let tabname = '[No Name]'
+                else
+                    let tabname = fnamemodify(tabname, ':~:.')
+                endif
+            else
+                let tabname = buftype
+            endif
         else
-            let file = buftype
+            let tabname = get(g:tab_names, i - 1, 'x')
         endif
-        if file == ''
-            let file = '[No Name]'
-        endif
-        let s .= file
+        let s .= tabname
         let i = i + 1
     endwhile
     let s .= '%T%#TabLineFill#%='
@@ -277,6 +320,7 @@ let g:ycm_filetype_blacklist = {
       \ 'tagbar' : 1,
       \ 'markdown' : 1,
       \ 'text' : 1,
+      \ 'vim' : 1,
       \ 'latex' : 1
       \}
 nnoremap <Leader>R :YcmCompleter RefactorRename
