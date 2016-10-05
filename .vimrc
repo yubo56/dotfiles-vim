@@ -57,6 +57,9 @@ set statusline+=\ %f%m%=    " relative path to filename, modified flag, RHS
 set statusline+=%c,         " char number
 set statusline+=%l/%L\ %y   " curr line/total line [filetype]
 
+" always show tabline
+set showtabline=2
+
 " if persistent_undo, configure a directory for it
 if has("persistent_undo")
     set undodir=$HOME/.undodir/
@@ -70,6 +73,8 @@ endif
 set pastetoggle=<F12>
 " <F8> but not actually a function key?
 map [19~ <C-W>
+" reload vimrc
+nnoremap <C-W><C-R> :so $MYVIMRC<CR>
 
 " line numbers
 map <F4> :set nonumber norelativenumber <CR>
@@ -97,6 +102,69 @@ inoremap <C-U> <Nop>
 
 " close any preview & help windows
 nnoremap <Leader>h :pc<CR>:helpclose<CR>
+
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" use tabs using <C-W> similar to windows in tmux
+" swap windows are ^W[hljk], send is ^W[HLJK]
+" ^Wt selects first window
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+nnoremap <C-W>n :tabnew<CR>
+nnoremap <C-W>x :tabclose<CR>
+nmap <C-W>! <C-W>T
+nnoremap <C-W>[ gT
+nnoremap <C-W>] gt
+nnoremap <C-W>] gt
+nnoremap <C-W><Left> :-tabmove<CR>
+nnoremap <C-W><C-B> :-tabmove<CR>
+nnoremap <C-W><Right> :+tabmove<CR>
+nnoremap <C-W><C-F> :+tabmove<CR>
+
+" jump windows by number like tmux
+nnoremap <C-W>1 1gt
+nnoremap <C-W>2 2gt
+nnoremap <C-W>3 3gt
+nnoremap <C-W>4 4gt
+nnoremap <C-W>5 5gt
+nnoremap <C-W>6 6gt
+nnoremap <C-W>7 7gt
+nnoremap <C-W>8 8gt
+nnoremap <C-W>9 9gt
+
+" show tab numbers
+function! MyTabLine()
+    let s = ''
+    let t = tabpagenr()
+    let i = 1
+    while i <= tabpagenr('$')
+        let buflist = tabpagebuflist(i)
+        let winnr = tabpagewinnr(i)
+        let s .= '%' . i . 'T'
+        let s .= '%#TabLineFill# '
+        let s .= i
+        let s .= '(' . tabpagewinnr(i,'$') . '): '
+        let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
+        let s .= '%*'
+        let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
+        let bufnr = buflist[winnr - 1]
+        let file = bufname(bufnr)
+        let buftype = getbufvar(bufnr, '&buftype')
+        if buftype == ''
+            let file = fnamemodify(file, ':~:.')
+        else
+            let file = buftype
+        endif
+        if file == ''
+            let file = '[No Name]'
+        endif
+        let s .= file
+        let i = i + 1
+    endwhile
+    let s .= '%T%#TabLineFill#%='
+    let s .= 'cwd: '
+    let s .= getcwd()
+    return s
+endfunction
+set tabline=%!MyTabLine()
 
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " autocmds
@@ -136,7 +204,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " <Leader><Leader>w - Easymotion move
 
 " folding
-function ToggleFoldmethod()
+function! ToggleFoldmethod()
     if &foldmethod ==? "manual"
         set foldmethod=indent " default foldmethod when starting vim
     else
