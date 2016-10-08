@@ -1,119 +1,119 @@
 # ported from vim-latex
-snippet `< "Description" iA
+snippet `< "bra" iA
 \bra{${1}}
 endsnippet
-snippet `C "Description" i
+snippet `C "hat" iA
 \hat{${1}}
 endsnippet
-snippet `J "Description" i
+snippet `J "binom" iA
 \binom{${1}}{${2}}
 endsnippet
-snippet `K "Description" i
+snippet `K "mathfrak" iA
 \mathfrak{${1}}
 endsnippet
-snippet `3 "Description" i
+snippet `3 "mathrm" iA
 \mathrm{${1}}
 endsnippet
-snippet `# "Description" i
+snippet `# "mathbb" iA
 \mathbb{${1}}
 endsnippet
-snippet `> "Description" i
+snippet `> "ket" iA
 \ket{${1}}
 endsnippet
-snippet `6 "Description" i
+snippet `6 "pd" iA
 \pd{${1}}{${2}}
 endsnippet
-snippet `5 "Description" i
+snippet `5 "rd" iA
 \rd{${1}}{${2}}
 endsnippet
-snippet `B "Description" i
+snippet `B "mathbf" iA
 \mathbf{${1}}
 endsnippet
-snippet FTT "Description" i
+snippet FTT "texttt" iA
 \texttt{${1}}
 endsnippet
-snippet `v "Description" i
+snippet `v "vec" iA
 \vec{${1}}
 endsnippet
-snippet `V "Description" i
+snippet `V "pvec" iA
 \pvec{${1}}
 endsnippet
-snippet `j "Description" i
+snippet `j "expvalue" iA
 \expvalue{${1}}
 endsnippet
-snippet `% "Description" i
+snippet `% "rtd" iA
 \rtd{${1}}{${2}}
 endsnippet
-snippet `^ "Description" i
+snippet `^ "ptd" iA
 \ptd{${1}}{${2}}
 endsnippet
-snippet `( "Description" i
+snippet `( "pmatrix" i
 \begin{pmatrix} ${1} \end{pmatrix}
 endsnippet
-snippet `[ "Description" i
+snippet `[ "bmatrix" i
 \begin{bmatrix} ${1} \end{bmatrix}
 endsnippet
-snippet `I "Description" i
+snippet `I "int" i
 \int\limits_{${1}}^{${2}}${3}\;
 endsnippet
-snippet `_ "Description" i
+snippet `_ "overline" iA
 \overline{${1}}
 endsnippet
-snippet `- "Description" i
+snippet `- "bar" iA
 \bar{${1}}
 endsnippet
-snippet `/ "Description" i
+snippet `/ "frac" iA
 \frac{${1:${VISUAL}}}{${2}}
 endsnippet
-snippet `M "Description" i
+snippet `M "sum" i
 \sum\limits_{${1}}^{${2}}
 endsnippet
-snippet `~ "Description" i
+snippet `~ "tilde" iA
 \tilde{${1}}
 endsnippet
-snippet `; "Description" i
+snippet `; "dot" iA
 \dot{${1}}
 endsnippet
-snippet `: "Description" i
+snippet `: "ddot" iA
 \ddot{${1}}
 endsnippet
-snippet `2 "Description" i
+snippet `2 "sqrt" iA
 \sqrt{${1}}
 endsnippet
-snippet `Z "Description" i
+snippet `Z "overset" i
 \overset{${1}}{${2}}
 endsnippet
-snippet CAL "Description" i
+snippet CAL "mathcal" iA
 \mathcal{${1}}
 endsnippet
-snippet SCN "Description" i
+snippet SCN "scinot" i
 \scinot{${1}}{${2}}
 endsnippet
-snippet LBL "Description" i
+snippet LBL "label" iA
 \label{${1}}
 endsnippet
-snippet EQR "Description" i
+snippet EQR "eqref" iA
 \eqref{${1}}
 endsnippet
-snippet REF "Description" i
+snippet REF "autoref" iA
 \autoref{${1}}
 endsnippet
-snippet FBF "Description" i
+snippet FBF "textbf" iA
 \textbf{${1}}
 endsnippet
-snippet __ "Description" i
+snippet __ "subscript" iA
 _{${1}}
 endsnippet
-snippet ^^ "Description" i
+snippet ^^ "superscript" iA
 ^{${1}}
 endsnippet
-snippet || "Description" i
+snippet || "abs" iA
 \abs{${1}}
 endsnippet
-snippet <> "Description" i
+snippet <> "dotp" iA
 \dotp{${1}}{${2}}
 endsnippet
-snippet FEM "Description" i
+snippet FEM "emph" iA
 \emph{${1}}
 endsnippet
 snippet begin "begin/end environment" b
@@ -121,12 +121,12 @@ snippet begin "begin/end environment" b
 	${3:${VISUAL}}
 \end{$1}
 endsnippet
-snippet d "Description" i
+snippet d "Description" b
 \begin{description}
 	\item[${1}]${2}
 \end{description}
 endsnippet
-snippet lst "Description" i
+snippet lst "lstlisting" b
 \begin{lstlisting}
 ${1}
 \end{lstlisting}
@@ -154,4 +154,7 @@ snippet {B "block left/right curly braces" i
 \left\\\{
 	${1:${VISUAL}}
 \right\\\}
+endsnippet
+snippet *[ "item with brackets" iA
+\item[${1}]
 endsnippet

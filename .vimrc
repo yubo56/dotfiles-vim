@@ -18,6 +18,11 @@ if $NO_PLUGIN !=? "TRUE"
     execute pathogen#infect()
 endif
 
+" break old habit
+imap <C-J> <Nop>
+" don't print ugly stuff
+imap <C-L> <Nop>
+
 " {{{ built in config options
 set backspace=2 " allows deletion of newlines, automatic indentation
 set modeline
