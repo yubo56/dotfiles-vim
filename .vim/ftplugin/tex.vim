@@ -1,22 +1,17 @@
 " LaTeX filetype
-" "   Language: LaTeX (ft=tex)
+" vim: fdm=marker
+" Language: LaTeX (ft=tex)
 "
 
 " only tex no rnu, lags b/c absurd repeat rate
 " set nornu
 " without vimlatex, set folding rule
 set foldmethod=indent
-" make sure <space> is mapped to self... danger!
-nnoremap <space> <space>
-
-" mimic vimlatex markers, handy
-noremap <F11> /\[++\]<cr>c%
-inoremap <F11> <ESC>/\[++\]<cr>c%
 
 " autowrap
 set tw=80
 
-" compile/view launch
+" {{{ Compile/viewing bindings
 set makeprg=pdflatex\ -interaction=nonstopmode\ -file-line-error\ %\\\|grep\ \'^\\./%\'
 set errorformat=%f:%l:\ %m
 command QLmake make | cwindow 3
@@ -25,7 +20,8 @@ noremap <Leader>cc :QLmake <cr><C-L>
     " automatically resets screen
 noremap <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
 noremap <Leader>cg :e %:r.log<cr>
-
+" }}}
+" {{{ imaps
 " correct some timing bugs
 inoremap `` ``
 inoremap `~ `~
@@ -97,3 +93,32 @@ inoremap <= \leq
 inoremap != \neq
 inoremap +- \pm
 inoremap ** \item
+" }}}
+" {{{ user-completion autocompletes labels
+function! CompleteRefs(findstart, base)
+    " first invocation (findstart=1) tries to backtrack 4 characters
+    " second invocation checks whether base == 'ref{' before returning list of
+    "       \label{(.*)} matches
+    if a:findstart
+        " if line is too short, truncate at -1
+        return max([-1, col('.') - 5])
+    else
+        " if not empty base and base matches 'ref{' at index 0
+        if !empty(a:base) && !match(a:base, 'ref{')
+            let lbls = []
+            let linenr = 1
+            while linenr <= line("$")
+                let linematch = matchlist(getline(linenr), '\\label{\(.*\)}')
+                if !empty(linematch)
+                    call add(lbls, a:base . linematch[1])
+                endif
+                let linenr += 1
+            endwhile
+            return lbls
+        " else a:base is empty, empty return
+        endif
+    endif
+endfunction
+
+set completefunc=CompleteRefs
+" }}}
