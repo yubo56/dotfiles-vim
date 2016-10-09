@@ -50,6 +50,8 @@ set cc=81
 set showmatch
 " define what words are in vim
 set iskeyword+=:
+" define tags files
+set tags=./.tags;
 
 " statusline
 set laststatus=2            " always statusbar
