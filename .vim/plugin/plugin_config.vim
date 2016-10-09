@@ -4,8 +4,8 @@ if $NO_PLUGIN !=? "TRUE"
     " {{{ Ultisnips
     " Trigger configuration
     let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<C-L>"
-    let g:UltiSnipsJumpBackwardTrigger="<C-H>"
+    let g:UltiSnipsJumpForwardTrigger="<C-J>"
+    let g:UltiSnipsJumpBackwardTrigger="<C-K>"
     " :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
     " }}}
