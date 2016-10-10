@@ -12,7 +12,10 @@ set foldmethod=indent
 set tw=80
 
 " {{{ Compile/viewing bindings
-set makeprg=pdflatex\ -interaction=nonstopmode\ -file-line-error\ %\\\|grep\ \'^\\./%\'
+set makeprg=pdflatex\ -interaction=nonstopmode\ -file-line-error\ %\\
+            \\|sed\ -E
+            \\ \'s\/(.*Warning:.*)on\ input\ line\ ([0-9]+)\/.\\\/%:\\2:\ \\1\/g\'\\
+            \\|\'grep\'\ \'^\\./%\'
 set errorformat=%f:%l:\ %m
 command QLmake make | cwindow 3
 noremap <Leader>cc :QLmake <cr><C-L>
