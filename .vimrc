@@ -49,7 +49,7 @@ set cc=81
 " show opening operator when closing
 set showmatch
 " define what words are in vim
-" set iskeyword+=:
+set iskeyword=@,48-57,192-255,_
 " define tags files
 set tags=./.tags;
 
