@@ -11,6 +11,7 @@
 "
 
 set nocompatible
+let g:netrw_dirhistmax  =10
 
 " pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim

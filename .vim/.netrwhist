@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/yssu/dotFiles/vim/.vim/bundle/bufexplorer'
-let g:netrw_dirhist_2='/Users/yssu/dotFiles/vim/.vim/bundle/bufexplorer/plugin'
-let g:netrw_dirhist_3='/Users/yssu/dotFiles/vim/.vim/bundle/bufexplorer'
