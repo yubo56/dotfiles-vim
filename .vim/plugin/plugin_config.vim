@@ -81,6 +81,12 @@ if $NO_PLUGIN !=? "TRUE"
     nnoremap <Leader>g :TagbarToggle<CR>
     let g:tagbar_width=40
     let g:tagbar_show_linenumbers=1
+    let g:tagbar_type_make = {
+        \ 'kinds' : [
+            \ 't:targets',
+            \ 'm:macros',
+        \ ],
+    \ }
     let g:tagbar_type_tex = {
         \ 'ctagstype' : 'latex',
         \ 'kinds'     : [
