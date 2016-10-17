@@ -11,13 +11,16 @@
 "
 
 set nocompatible
-let g:netrw_dirhistmax  =10
+let g:netrw_dirhistmax=10
 
 " pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 if $NO_PLUGIN !=? "TRUE"
     execute pathogen#infect()
 endif
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 
 " {{{ built in config options
 set backspace=2 " allows deletion of newlines, automatic indentation
