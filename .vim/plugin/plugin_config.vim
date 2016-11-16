@@ -68,8 +68,8 @@ if $NO_PLUGIN !=? "TRUE"
 
     " }}}
     " {{{ NERDTree config
-    let g:NERDTreeDirArrowExpandable="+"
-    let g:NERDTreeDirArrowCollapsible="~"
+    " let g:NERDTreeDirArrowExpandable="+"
+    " let g:NERDTreeDirArrowCollapsible="~"
     nnoremap <Leader>t :NERDTreeToggle<CR>
     " autoclose vim if NERDTree is last buffer
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
