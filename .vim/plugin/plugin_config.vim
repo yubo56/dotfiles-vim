@@ -28,7 +28,8 @@ if $NO_PLUGIN !=? "TRUE"
     let g:syntastic_quiet_messages = { "regex":
                 \ 'terminated with space\|enclose the previous parenthesis\|' .
                 \ 'between a pair of\|better written in dot\|' .
-                \ 'cell-var-from-loop\|' . 'broad-except\|' .
+                \ 'consider-using-enumerate' .
+                \ '\|cell-var-from-loop\|broad-except\|' .
                 \ 'too-many-arguments\|too-many-locals\|too-many-branches\|' .
                 \ 'too-few-public-methods' }
 
