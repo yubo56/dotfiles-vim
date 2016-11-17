@@ -42,11 +42,19 @@ if $NO_PLUGIN !=? "TRUE"
     let g:ctrlp_map = '<C-P>'
     let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_prompt_mappings = {
-        \ 'PrtSelectMove("j")':   ['<c-j>', '<c-n>', '<down>'],
-        \ 'PrtSelectMove("k")':   ['<c-k>', '<c-p>', '<up>'],
+        \ 'PrtSelectMove("j")':   ['<down>'],
+        \ 'PrtSelectMove("k")':   ['<up>'],
         \ 'PrtHistory(-1)':       ['<c-b>', '<left>'],
         \ 'PrtHistory(1)':        ['<c-f>', '<right>'],
+        \ 'PrtCurLeft()':         [],
+        \ 'PrtCurRight()':        [],
+        \ 'PrtSelectMove("t")':   [],
+        \ 'PrtSelectMove("b")':   [],
+        \ 'PrtCurStart()':        ['<Home>'],
+        \ 'PrtCurEnd()':          ['<End>']
         \ }
+    " default CurLeft/Right kills arrow key, use Home/End to move cursor,
+    " SelectMove(t/b) previously occupied home key
     let g:ctrlp_custom_ignore = 'venv\|node_modules\|git'
 
     " }}}
