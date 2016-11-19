@@ -44,8 +44,8 @@ if $NO_PLUGIN !=? "TRUE"
     let g:ctrlp_prompt_mappings = {
         \ 'PrtSelectMove("j")':   ['<down>'],
         \ 'PrtSelectMove("k")':   ['<up>'],
-        \ 'PrtHistory(-1)':       ['<c-b>', '<left>'],
-        \ 'PrtHistory(1)':        ['<c-f>', '<right>'],
+        \ 'PrtHistory(-1)':       ['<c-f>', '<right>'],
+        \ 'PrtHistory(1)':        ['<c-b>', '<left>'],
         \ 'PrtCurLeft()':         [],
         \ 'PrtCurRight()':        [],
         \ 'PrtSelectMove("t")':   [],
