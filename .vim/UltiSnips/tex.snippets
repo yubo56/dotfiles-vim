@@ -63,7 +63,7 @@ snippet `- "bar" iA
 \bar{${1}}
 endsnippet
 snippet `/ "frac" iA
-\frac{${1:${VISUAL}}}{${2}}
+\frac{${VISUAL}${1}}{${2}}
 endsnippet
 snippet `M "sum" i
 \sum\limits_{${1}}^{${2}}
@@ -118,7 +118,7 @@ snippet FEM "emph" iA
 endsnippet
 snippet begin "begin/end environment" i
 \begin{${1}}${2}
-	${3:${VISUAL}}
+	${VISUAL}${3}
 \end{$1}
 endsnippet
 snippet d "Description" b
@@ -132,27 +132,27 @@ ${1}
 \end{lstlisting}
 endsnippet
 snippet (( "in-line left/right parens" i
-\left( ${1:${VISUAL}} \right)
+\left( ${VISUAL}${1} \right)
 endsnippet
 snippet [[ "in-line left/right square brackets" i
-\left[ ${1:${VISUAL}} \right]
+\left[ ${VISUAL}${1} \right]
 endsnippet
 snippet {{ "in-line left/right curly braces" i
-\left\\\{ ${1:${VISUAL}} \right\\\}
+\left\\\{ ${VISUAL}${1} \right\\\}
 endsnippet
 snippet (B "block left/right parens" i
 \left(
-	${1:${VISUAL}}
+	${VISUAL}${1}
 \right)
 endsnippet
 snippet [B "block left/right square brackets" i
 \left[
-	${1:${VISUAL}}
+	${VISUAL}${1}
 \right]
 endsnippet
 snippet {B "block left/right curly braces" i
 \left\\\{
-	${1:${VISUAL}}
+	${VISUAL}${1}
 \right\\\}
 endsnippet
 snippet *[ "item with brackets" iA
@@ -160,4 +160,117 @@ snippet *[ "item with brackets" iA
 endsnippet
 snippet `` "quotes" i
 \`\`${1}''
+endsnippet
+
+# ported from snipmate
+snippet tikz "tikz" b
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}
+		${1}
+	\end{tikzpicture}
+	\caption{${2}\label{fig:${3}}}
+\end{figure}
+endsnippet
+snippet a "a" b
+\begin{align}
+	${1}
+\end{align}
+endsnippet
+snippet eq "eq" b
+\begin{equation}
+	${1}\label{eq:${2}}
+\end{equation}
+endsnippet
+snippet a* "*" b
+\begin{align*}
+	${1}
+\end{align*}
+endsnippet
+snippet e "e" b
+\begin{enumerate}[${1}]
+	\item ${2}
+\end{enumerate}
+endsnippet
+snippet i "i" b
+\begin{itemize}
+	\item ${VISUAL}${1:}
+\end{itemize}
+endsnippet
+snippet s "s" b
+\section{${1}}
+endsnippet
+snippet ss "ss" b
+\subsection{${1}}
+endsnippet
+snippet s* "*" b
+\section*{${1}}
+endsnippet
+snippet ss* "*" b
+\subsection*{${1}}
+endsnippet
+snippet sss "sss" b
+\subsubsection{${1}}
+endsnippet
+snippet sss* "*" b
+\subsubsection*{${1}}
+endsnippet
+snippet ch "ch" b
+\chapter{${1}}
+endsnippet
+snippet fig "fig" b
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=${1}\textwidth]{${2}}
+	\caption{${3}\label{fig:${4}}}
+\end{figure}
+endsnippet
+snippet figsub "figsub" b
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{${1}\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{${2}}
+		\caption{${3}}
+	\end{subfigure}
+	${4}
+	\caption{${5}\label{fig:${6}}}
+\end{figure}
+endsnippet
+snippet subfig "subfig" b
+\begin{subfigure}{${1}\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{${2}}
+	\caption{${3}}
+\end{subfigure}
+endsnippet
+snippet tab "tab" b
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{${1}}
+		${2}
+	\end{tabular}
+	\caption{${3}\label{tab:${4}}}
+\end{table}
+endsnippet
+snippet nonum "nonum" b
+\nonumber\\\\
+endsnippet
+snippet center "cent" b
+\begin{center}
+	${1}
+\end{center}
+endsnippet
+snippet cases "cases" b
+\begin{cases}
+	${1}
+\end{cases}
+endsnippet
+snippet verb "verb" b
+\begin{verbatim}
+${1}
+\end{verbatim}
+endsnippet
+snippet FBF "textbf" b
+\textbf{${1}}
 endsnippet
