@@ -29,7 +29,7 @@ nnoremap <C-W>N :call NewTabInteractive() <CR>
 nnoremap <C-W>, :call NameTab(tabpagenr()) <CR>
 " toggles whether to use filenames or custom names
 "       throws in a redraw to instantly update
-nnoremap <C-W>q :let g:tab_names_use_filenames =
+nnoremap <C-W>t :let g:tab_names_use_filenames =
             \ !g:tab_names_use_filenames <CR><C-L>
 
 " opens up a new tab w/ name 'x'

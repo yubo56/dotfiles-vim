@@ -17,7 +17,7 @@ set makeprg=xelatex\ -interaction=nonstopmode\ -file-line-error\ %\\
             \\ \'s\/(.*Warning:.*)on\ input\ line\ ([0-9]+)\/.\\\/%:\\2:\ \\1\/g\'\\
             \\|\'grep\'\ \'^\\./%\'
 set errorformat=%f:%l:\ %m
-command QLmake make | cwindow 3
+command! QLmake make | cwindow 3
 noremap <Leader>cc :QLmake <cr><C-L>
     " silent means don't need to press enter on complete,  means
     " automatically resets screen
