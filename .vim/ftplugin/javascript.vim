@@ -7,7 +7,8 @@ set softtabstop=2
 set shiftwidth=2
 
 " reset highlight for Blend style
-set cc=121
+" set cc=121
+set cc=0
 
 " split up a console.log(a, b, c) into separate lines
 let @c = "f,s);\<CR>console.log(\<ESC>"

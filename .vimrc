@@ -87,7 +87,7 @@ noremap <F3> :set number! relativenumber! <CR>
 
 " buffer splitting
 cnoreabbrev vb vert sball
-cnoreabbrev sb sball
+command! Cd cd %:p:h
 
 " makes repeating commands easier
 nnoremap <space> @q
