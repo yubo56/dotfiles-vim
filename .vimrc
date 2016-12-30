@@ -80,7 +80,7 @@ set pastetoggle=<F12>
 map [19~ <C-W>
 " reload vimrc
 nnoremap <C-W><C-R> :so $MYVIMRC<CR>
-nnoremap <C-W>q :w<cr> :bd <CR>
+nnoremap <C-W>q :bd <CR>
 
 " line numbers
 noremap <F3> :set number! relativenumber! <CR>
