@@ -18,3 +18,156 @@ ${VISUAL}$0
 
 #endif /* end of include guard: $1 */
 endsnippet
+snippet readfile "description"
+std::vector<char> v;
+if (FILE *${2:fp} = fopen(${1:"filename"}, "r")) {
+	char buf[1024];
+	while (size_t len = fread(buf, 1, sizeof(buf), $2))
+		v.insert(v.end(), buf, buf + len);
+	fclose($2);
+}${3}
+endsnippet
+snippet map "description"
+std::map<${1:key}, ${2:value}> map${3};
+endsnippet
+snippet vector "description"
+std::vector<${1:char}> v${2};
+endsnippet
+snippet ns "description"
+namespace ${1:`!v expand('%:r')`} {
+	${2}
+} /* $1 */
+endsnippet
+snippet cl "description"
+class ${1:`!v expand('%:r')`}
+{
+	private:
+		${2:/* data */}
+
+	public:
+		$1 (${3:arguments});
+		~$1 ();
+};
+endsnippet
+snippet main "description"
+int main(int argc, const char *argv[])
+{
+	${1}
+	return 0;
+}
+endsnippet
+snippet inc "description"
+#include <${1:cstdio}>${2}
+endsnippet
+snippet Inc "description"
+#include "${1:`!v expand('%:r')`}"${2}
+endsnippet
+snippet Def "description"
+#ifndef $1
+#define ${1:SYMBOL} ${2:value}
+#endif${3}
+endsnippet
+snippet def "description"
+#define
+endsnippet
+snippet ifdef "description"
+#ifdef ${1:FOO}
+	${2:#define }
+#endif
+endsnippet
+snippet #if "description"
+#if ${1:FOO}
+	${2}
+#endif
+endsnippet
+snippet if "description"
+if (${1:/* condition */})
+{
+	${2:/* code */}
+}
+endsnippet
+snippet elif "description"
+else if (${1:/* condition */})
+{
+	${2:/* code */}
+}
+endsnippet
+snippet el "description"
+else
+{
+	${1}
+}
+endsnippet
+snippet t "description"
+${1:/* condition */} ? ${2:a} : ${3:b}
+endsnippet
+snippet do "description"
+do
+{
+	${2:/* code */}
+} while (${1:/* condition */});
+endsnippet
+snippet wh "description"
+while (${1:/* condition */})
+{
+	${2:/* code */}
+}
+endsnippet
+snippet for "description"
+for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++})
+{
+	${4:/* code */}
+}
+endsnippet
+snippet forr "description"
+for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++})
+{
+	${5:/* code */}
+}
+endsnippet
+snippet fun "description"
+${1:void} ${2:function_name}(${3})
+{
+	${4:/* code */}
+}
+${5}
+endsnippet
+snippet fund "description"
+${1:void} ${2:function_name}(${3});${4}
+endsnippet
+snippet td "description"
+typedef ${1:int} ${2:MyCustomType};${3}
+endsnippet
+snippet st "description"
+struct ${1:`!v expand('%:r')`}
+{
+	${2:/* data */}
+}${3: /* optional variable list */};${4}
+endsnippet
+snippet tds "description"
+typedef struct ${2:_$1 }
+{
+	${3:/* data */}
+} ${1:`!v expand('%:r')`};
+endsnippet
+snippet tde "description"
+typedef enum
+{
+	${1:/* data */}
+} ${2:foo};
+endsnippet
+snippet pr "description"
+printf("${1:%s}\n"${2});${3}
+endsnippet
+snippet fpr "description"
+fprintf(${1:stderr}, "${2:%s}\n"${3});${4}
+endsnippet
+snippet . "description"
+[${1}]${2}
+endsnippet
+snippet un "description"
+unsigned
+endsnippet
+snippet /* "description"
+/* ${1} */${2}
+endsnippet

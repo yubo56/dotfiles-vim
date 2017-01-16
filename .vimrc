@@ -72,6 +72,8 @@ if has("persistent_undo")
     set undodir=$HOME/.undodir/
     set undofile
 endif
+
+autocmd BufRead,BufNewFile *.h set filetype=c " *.h files are c, not cpp (wrt stnippets)
 " }}}
 " {{{ keybindings
 " paste mode toggle
