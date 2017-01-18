@@ -47,25 +47,22 @@ endsnippet
 snippet `^ "ptd" iA
 \ptd{${1}}{${2}}
 endsnippet
-snippet `( "pmatrix" i
+snippet `( "pmatrix" iA
 \begin{pmatrix} ${1} \end{pmatrix}
 endsnippet
-snippet `[ "bmatrix" i
+snippet `[ "bmatrix" iA
 \begin{bmatrix} ${1} \end{bmatrix}
 endsnippet
-snippet `I "int" i
+snippet `I "int" iA
 \int\limits_{${1}}^{${2}}${3}\;
 endsnippet
-snippet `_ "overline" iA
+snippet `- "overline" iA
 \overline{${1}}
-endsnippet
-snippet `- "bar" iA
-\bar{${1}}
 endsnippet
 snippet `/ "frac" iA
 \frac{${VISUAL}${1}}{${2}}
 endsnippet
-snippet `M "sum" i
+snippet `M "sum" iA
 \sum\limits_{${1}}^{${2}}
 endsnippet
 snippet `~ "tilde" iA
@@ -80,13 +77,13 @@ endsnippet
 snippet `2 "sqrt" iA
 \sqrt{${1}}
 endsnippet
-snippet `Z "overset" i
+snippet `Z "overset" iA
 \overset{${1}}{${2}}
 endsnippet
 snippet CAL "mathcal" iA
 \mathcal{${1}}
 endsnippet
-snippet SCN "scinot" i
+snippet SCN "scinot" iA,
 \scinot{${1}}{${2}}
 endsnippet
 snippet LBL "label" iA
@@ -154,9 +151,6 @@ snippet {B "block left/right curly braces" i
 \left\\\{
 	${VISUAL}${1}
 \right\\\}
-endsnippet
-snippet *[ "item with brackets" iA
-\item[${1}]
 endsnippet
 snippet `` "quotes" i
 \`\`${1}''
@@ -253,7 +247,7 @@ snippet tab "tab" b
 	\caption{${3}\label{tab:${4}}}
 \end{table}
 endsnippet
-snippet nonum "nonum" b
+snippet nonum "nonum" i
 \nonumber\\\\
 endsnippet
 snippet center "cent" b
