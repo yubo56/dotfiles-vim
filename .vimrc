@@ -48,8 +48,8 @@ colorscheme desert
 set timeoutlen=500
 " wrapping + highlight
 set tw=0
-hi ColorColumn ctermbg=red guibg=red
-set cc=81
+" hi ColorColumn ctermbg=red guibg=red
+" set cc=81
 " show opening operator when closing
 set showmatch
 " define what words are in vim
