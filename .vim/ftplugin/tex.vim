@@ -12,7 +12,7 @@ set foldmethod=indent
 set tw=80
 
 " {{{ Compile/viewing bindings
-set makeprg=xelatex\ -interaction=nonstopmode\ -file-line-error\ %\\
+set makeprg=pdflatex\ -interaction=nonstopmode\ -file-line-error\ %\\
             \\|sed\ -E
             \\ \'s\/(.*Warning:.*)on\ input\ line\ ([0-9]+)\/.\\\/%:\\2:\ \\1\/g\'\\
             \\|\'grep\'\ \'^\\./%\'
