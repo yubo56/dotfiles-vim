@@ -80,16 +80,24 @@ endsnippet
 snippet exp "Description" i
 expect(${1}).to.${2:equal(${3})};
 endsnippet
-snippet cl "console.log" i
-console.log('${1}'${2:, ${3:$1}});
-endsnippet
 snippet err "Description" i
 if (err) return cb(${1:err});
 endsnippet
 snippet /* "comment" i
-/** ${1}
- */ ${2}
+/* ${1} */
 endsnippet
 snippet cb "callback" i
 cb(${1:null, }${2});
+endsnippet
+snippet cje "console.err" i
+console.error('${1}'${2:, JSON.stringify(${3:$1}, null, 2)});
+endsnippet
+snippet cjl "console.log" i
+console.log('${1}'${2:, JSON.stringify(${3:$1}, null, 2)});
+endsnippet
+snippet ce "console.err" i
+console.error('${1}'${2:, ${3:$1}});
+endsnippet
+snippet cl "console.log" i
+console.log('${1}'${2:, ${3:$1}});
 endsnippet
