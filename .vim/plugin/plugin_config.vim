@@ -64,9 +64,9 @@ if $NO_PLUGIN !=? "TRUE"
     let g:bufExplorerVertSize=40
     let g:bufExplorerBelow=1
     let g:bufExplorerVertSize=10
-    nnoremap <Leader>v :BufExplorerVerticalSplit<CR>
+    " nnoremap <Leader>v :BufExplorerVerticalSplit<CR>
     " nnoremap <Leader>s :BufExplorerHorizontalSplit<CR>
-    " nnoremap <Leader>b :ToggleBufExplorer<CR>
+    nnoremap <Leader>b :ToggleBufExplorer<CR>
 
     " }}}
     " {{{ Undotree config
