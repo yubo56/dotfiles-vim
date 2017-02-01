@@ -106,6 +106,9 @@ inoremap <C-U> <Nop>
 
 " close any preview & help windows
 nnoremap <Leader>h :pc<CR>:helpclose<CR>
+
+" resync comments since dumb
+nnoremap <Leader>s :syntax sync fromstart<CR>
 " }}}
 " {{{ autocmds
 " always use last known cursor position
