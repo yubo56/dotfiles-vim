@@ -8,6 +8,9 @@
 " :%s/ \+/ /g -- compress all whitespace to 1 space
 " /^.\{81,\}$ -- search for all lines at least 81 characters long
 "
+" :g/pattern/d - delete lines matching this pattern (:g! for not-matching)
+" :sort - sorts lines (':sort u' to keep only unique)
+"
 "
 
 set nocompatible
