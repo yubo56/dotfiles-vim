@@ -12,22 +12,24 @@ set foldmethod=indent
 set tw=80
 
 " {{{ Compile/viewing bindings
-fun! CompilePdfLatex()
-    let &makeprg='pdflatex -interaction=nonstopmode -file-line-error %' .
+" cc compiles w/ current make, cp[x] sets current to pdflatex[xelatex] and
+" calls cc
+let g:latexPartialCommand='-interaction=nonstopmode -file-line-error %' .
         \ '\| sed -E ' .
         \ '''s/(.*Warning:.*)on input line ([0-9]+)/.\/%:\2: \1/g''' .
         \ '\| grep ''^\./%'''
-    make | cwindow 3
+command! Compile make | cwindow 3
+fun! CompilePdfLatex()
+    let &makeprg='pdflatex ' . g:latexPartialCommand
+    Compile
 endf
 fun! CompileXeLatex()
-    let &makeprg='xelatex -interaction=nonstopmode -file-line-error %' .
-        \ '\| sed -E ' .
-        \ '''s/(.*Warning:.*)on input line ([0-9]+)/.\/%:\2: \1/g''' .
-        \ '\| grep ''^\./%'''
-    make | cwindow 3
+    let &makeprg='xelatex ' . g:latexPartialCommand
+    Compile
 endf
 set errorformat=%f:%l:\ %m
-noremap <Leader>cc :call CompilePdfLatex() <cr><C-L>
+noremap <Leader>cc :Compile <cr><C-L>
+noremap <Leader>cp :call CompilePdfLatex() <cr><C-L>
 noremap <Leader>cx :call CompileXeLatex() <cr><C-L>
     " silent means don't need to press enter on complete,  means
     " automatically resets screen
