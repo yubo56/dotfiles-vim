@@ -12,13 +12,23 @@ set foldmethod=indent
 set tw=80
 
 " {{{ Compile/viewing bindings
-set makeprg=pdflatex\ -interaction=nonstopmode\ -file-line-error\ %\\
-            \\|sed\ -E
-            \\ \'s\/(.*Warning:.*)on\ input\ line\ ([0-9]+)\/.\\\/%:\\2:\ \\1\/g\'\\
-            \\|\'grep\'\ \'^\\./%\'
+fun! CompilePdfLatex()
+    let &makeprg='pdflatex -interaction=nonstopmode -file-line-error %' .
+        \ '\| sed -E ' .
+        \ '''s/(.*Warning:.*)on input line ([0-9]+)/.\/%:\2: \1/g''' .
+        \ '\| grep ''^\./%'''
+    make | cwindow 3
+endf
+fun! CompileXeLatex()
+    let &makeprg='xelatex -interaction=nonstopmode -file-line-error %' .
+        \ '\| sed -E ' .
+        \ '''s/(.*Warning:.*)on input line ([0-9]+)/.\/%:\2: \1/g''' .
+        \ '\| grep ''^\./%'''
+    make | cwindow 3
+endf
 set errorformat=%f:%l:\ %m
-command! QLmake make | cwindow 3
-noremap <Leader>cc :QLmake <cr><C-L>
+noremap <Leader>cc :call CompilePdfLatex() <cr><C-L>
+noremap <Leader>cx :call CompileXeLatex() <cr><C-L>
     " silent means don't need to press enter on complete,  means
     " automatically resets screen
 noremap <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
