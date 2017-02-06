@@ -14,23 +14,25 @@ set tw=80
 " {{{ Compile/viewing bindings
 " cc compiles w/ current make, cp[x] sets current to pdflatex[xelatex] and
 " calls cc
-let g:latexPartialCommand='-interaction=nonstopmode -file-line-error %' .
+let g:latexPartialCommand=' -interaction=nonstopmode -file-line-error %' .
         \ '\| sed -E ' .
         \ '''s/(.*Warning:.*)on input line ([0-9]+)/.\/%:\2: \1/g''' .
         \ '\| grep ''^\./%'''
 command! Compile make | cwindow 3
-fun! CompilePdfLatex()
-    let &makeprg='pdflatex ' . g:latexPartialCommand
+
+fun! SetMake(cmd)
+    let &makeprg=a:cmd . g:latexPartialCommand
+endf
+fun! CompileWith(cmd)
+    call SetMake(a:cmd)
     Compile
 endf
-fun! CompileXeLatex()
-    let &makeprg='xelatex ' . g:latexPartialCommand
-    Compile
-endf
+
 set errorformat=%f:%l:\ %m
+call SetMake('pdflatex')
 noremap <Leader>cc :Compile <cr><C-L>
-noremap <Leader>cp :call CompilePdfLatex() <cr><C-L>
-noremap <Leader>cx :call CompileXeLatex() <cr><C-L>
+noremap <Leader>cp :call CompileWith('pdflatex') <cr><C-L>
+noremap <Leader>cx :call CompileWith('xelatex') <cr><C-L>
     " silent means don't need to press enter on complete,  means
     " automatically resets screen
 noremap <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
