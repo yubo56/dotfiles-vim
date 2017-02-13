@@ -101,3 +101,19 @@ endsnippet
 snippet cl "console.log" i
 console.log('${1}'${2:, ${3:$1}});
 endsnippet
+snippet be "before each" b
+beforeEach(function(${1:cb}) {
+	${2}
+});
+endsnippet
+snippet ctx "ctx before each" b
+let ctx;
+
+beforeEach(function(cb) {
+	setupUtils.setup(function(err, res) {
+		if (err) return cb(err);
+		ctx = res.ctx;
+		cb();
+	});
+});
+endsnippet
