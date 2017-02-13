@@ -2,32 +2,37 @@ snippet #! " # #!/usr/bin/perl"
 #!/usr/bin/perl
 
 endsnippet
-snippet . " # Hash Pointer"
- =>
-endsnippet
 snippet sub "Function"
-sub ${1:function_name} {
+sub ${1:function_name}
+{
 	${2:#body ...}
 }
 endsnippet
 snippet if "Conditional"
-if (${1}) {
+if (${1})
+{
 	${2:# body...}
 }
 endsnippet
 snippet ife "Conditional if..else"
-if (${1}) {
+if (${1})
+{
 	${2:# body...}
-} else {
+}
+else
+{
 	${3:# else...}
 }
 endsnippet
 snippet ifee "Conditional if..elsif..else"
-if (${1}) {
+if (${1})
+{
 	${2:# body...}
-} elsif (${3}) {
+} elsif (${3})
+{
 	${4:# elsif...}
-} else {
+} else
+{
 	${5:# else...}
 }
 endsnippet
@@ -35,7 +40,8 @@ snippet xif "Conditional One-line"
 ${1:expression} if ${2:condition};${3}
 endsnippet
 snippet unless "Unless conditional"
-unless (${1}) {
+unless (${1})
+{
 	${2:# body...}
 }
 endsnippet
@@ -43,15 +49,18 @@ snippet xunless "Unless conditional One-line"
 ${1:expression} unless ${2:condition};${3}
 endsnippet
 snippet eval "Try/Except"
-eval {
+eval
+{
 	${1:# do something risky...}
 };
-if ($@) {
+if ($@)
+{
 	${2:# handle failure...}
 }
 endsnippet
 snippet wh "While Loop"
-while (${1}) {
+while (${1})
+{
 	${2:# body...}
 }
 endsnippet
@@ -59,12 +68,14 @@ snippet xwh "While Loop One-line"
 ${1:expression} while ${2:condition};${3}
 endsnippet
 snippet for "For Loop"
-for (my $${2:var} = 0; $$2 < ${1:count}; $$2${3:++}) {
+for (my $${2:var} = 0; $$2 < ${1:count}; $$2${3:++})
+{
 	${4:# body...}
 }
 endsnippet
 snippet fore "Foreach Loop"
-foreach my $${1:x} (@${2:array}) {
+foreach my $${1:x} (@${2:array})
+{
 	${3:# body...}
 }
 endsnippet
@@ -76,7 +87,8 @@ package ${1:ClassName};
 
 use base qw(${2:ParentClass});
 
-sub new {
+sub new
+{
 	my $class = shift;
 	$class = ref $class if ref $class;
 	my $self = bless {}, $class;
