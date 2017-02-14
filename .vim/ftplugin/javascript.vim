@@ -22,3 +22,17 @@ let @b = "mfHmg'f?\\s\\+it(\<CR>wcwit.only\<ESC>'gzt'f"
 " To make eslint work w/ plugins, just need to globally install plugin, point
 " eslint symlink in $PATH to subdirectory of plugin
 let g:syntastic_javascript_checkers = ['eslint']
+
+set include=^const.*=.*require
+set suffixesadd=.js
+
+" search node_modules too (unused since really slow)
+" fun! IncludeExpr(file)
+"     if (filereadable(a:file))
+"         return a:file
+"     else
+"         return substitute(a:file, '\\.js', '/index.js', 'g')
+"     endif
+" endf
+" set includeexpr=IncludeExpr(v:fname)
+" set path+=/home/yssu/blend/backend/node_modules/*/index.js
