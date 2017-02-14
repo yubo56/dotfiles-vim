@@ -66,6 +66,7 @@ set statusline=%{getcwd()}: " pwd of vim
 set statusline+=\ %f%m%=    " relative path to filename, modified flag, RHS
 set statusline+=%c,         " char number
 set statusline+=%l/%L\ %y   " curr line/total line [filetype]
+set statusline+=%{fugitive#statusline()}
 
 " always show tabline (2) or only show when multiple (1)
 set showtabline=1
