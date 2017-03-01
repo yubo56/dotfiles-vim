@@ -19,6 +19,9 @@ let @d = "mfHmg:%s/^describe\(/describe.only\(/g\<CR>'gzt'f"
 " put .only on 'it' just before
 let @b = "mfHmg'f?\\s\\+it(\<CR>wcwit.only\<ESC>'gzt'f"
 
+" remove _.partial and turn into a cb =>
+let @p = "0f_df(f,xr(%i, cb\<ESC>"
+
 " To make eslint work w/ plugins, just need to globally install plugin, point
 " eslint symlink in $PATH to subdirectory of plugin
 let g:syntastic_javascript_checkers = ['eslint']
