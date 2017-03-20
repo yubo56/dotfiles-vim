@@ -11,6 +11,9 @@ set foldmethod=indent
 " autowrap
 set tw=80
 
+" syntax highlighting in large files is especially slow
+syntax off
+
 " {{{ Compile/viewing bindings
 " cc compiles w/ current make, cp[x] sets current to pdflatex[xelatex] and
 " calls cc
