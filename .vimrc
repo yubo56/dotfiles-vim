@@ -11,6 +11,9 @@
 " :g/pattern/d - delete lines matching this pattern (:g! for not-matching)
 " :sort - sorts lines (':sort u' to keep only unique)
 "
+" gv - restore the last visual selection
+" ga - information on the character under the cursor
+" g[Uu~]{motion} - uppercase/lowercase/swap until motion
 "
 
 set nocompatible
@@ -50,8 +53,9 @@ colorscheme desert
 " timeout len when waiting for input
 set timeoutlen=500
 " wrapping + highlight
-set tw=0
-" hi ColorColumn ctermbg=red guibg=red
+set wrap
+set tw=80
+" hi ColorColumn ctermbg=Red
 " set cc=81
 " show opening operator when closing
 set showmatch
@@ -59,6 +63,23 @@ set showmatch
 set iskeyword=@,48-57,192-255,_
 " define tags files
 set tags=./.tags;
+
+" show mode in status bar (compatibility?)
+set showmode
+" show commands in bottom right
+set showcmd
+" show horizontal line for cursor
+set cursorline
+" command line tab-completion
+set wildmenu
+set wildmode=longest:full,full
+" no need to set two spaces after punctuation...
+set nojoinspaces
+" neat whitespace highlighting
+set list
+hi SpecialKey ctermbg=DarkRed ctermfg=DarkGreen
+set listchars=tab:>-,trail:\ ,nbsp:~
+set showbreak=\\ " mark wrapped lines w/ backslash
 
 " statusline
 set laststatus=2            " always statusbar
@@ -92,8 +113,7 @@ nnoremap <C-W>q :bd <CR>
 noremap <F3> :set number! relativenumber! <CR>
 
 " buffer splitting
-cnoreabbrev vb vert sball
-command! Cd cd %:p:h
+cnoremap vb vert sball
 
 " makes repeating commands easier
 nnoremap <space> @q
@@ -110,9 +130,12 @@ inoremap <C-U> <Nop>
 
 " close any preview & help windows
 nnoremap <Leader>h :pc<CR>:helpclose<CR>
-
 " resync comments since dumb
 nnoremap <Leader>s :syntax sync fromstart<CR>
+" cd to path of current file
+cnoremap cd. lcd %:p:h
+" let . work in visual mode too
+vnoremap . :normal .<CR>
 " }}}
 " {{{ autocmds
 " always use last known cursor position
@@ -127,8 +150,20 @@ autocmd BufNewFile Makefile silent! 0r ~/.vim/temps/Makefile
 autocmd BufWritePre * %s/\s\+$//e
 " update ctags if found
 autocmd BufWritePost * :call UpdateCtags()
+" automatically cd to directory of current file
+autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+" }}}
+" {{{ triggers
+nnoremap <Leader>ln :lnext<CR>
+nnoremap <Leader>lp :lprev<CR>
+nnoremap <Leader>ll :ll<CR>
+nnoremap <Leader>lq :lclose<CR>
 
-" list of triggers (normal mode only)
+nnoremap <Leader>cn :cnext<CR>
+nnoremap <Leader>cp :cprev<CR>
+nnoremap <Leader>cl :cc<CR>
+nnoremap <Leader>cq :cclose<CR>
+
 " gcc - commentary comment out
 " gs/ys/cs - vim-surround
 " <C-P> - ctrlp
@@ -145,14 +180,4 @@ autocmd BufWritePost * :call UpdateCtags()
 " <Leader>u - undotree
 " <Leader>R - YCM refactor
 " <Leader><Leader>w - Easymotion move
-
-nnoremap <Leader>ln :lnext<CR>
-nnoremap <Leader>lp :lprev<CR>
-nnoremap <Leader>ll :ll<CR>
-nnoremap <Leader>lq :lclose<CR>
-
-nnoremap <Leader>cn :cnext<CR>
-nnoremap <Leader>cp :cprev<CR>
-nnoremap <Leader>cl :cc<CR>
-nnoremap <Leader>cq :cclose<CR>
 " }}}
