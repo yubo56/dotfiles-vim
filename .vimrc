@@ -33,17 +33,25 @@ set backspace=2 " allows deletion of newlines, automatic indentation
 set modeline
 filetype plugin indent on
 
-"set line numbers
+" set line numbers
 set nu
 set rnu
-"indentation
+" indentation
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set smarttab autoindent
-"set highlight search
-set hlsearch
+set smarttab cindent
+" cindent options
+set cino=(1s " after parens, indent only one shiftwidth
+set cino+=m1 " line up closing parens w/ first char of line of opening parens
+" setup search
+set incsearch " search as you go
+autocmd InsertEnter set nohlsearch
+nnoremap / :set hlsearch<CR>/
+nnoremap ? :set hlsearch<CR>?
+nnoremap n :set hlsearch<CR>n
+nnoremap N :set hlsearch<CR>N
 " Set up hidden files
 set hidden
 " syntax highlighting
