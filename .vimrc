@@ -47,7 +47,8 @@ set cino=(1s " after parens, indent only one shiftwidth
 set cino+=m1 " line up closing parens w/ first char of line of opening parens
 " setup search
 set incsearch " search as you go
-autocmd InsertEnter set nohlsearch
+nnoremap * :set hlsearch<CR>*
+nnoremap # :set hlsearch<CR>#
 nnoremap / :set hlsearch<CR>/
 nnoremap ? :set hlsearch<CR>?
 nnoremap n :set hlsearch<CR>n
@@ -158,8 +159,11 @@ autocmd BufNewFile Makefile silent! 0r ~/.vim/temps/Makefile
 autocmd BufWritePre * %s/\s\+$//e
 " update ctags if found
 autocmd BufWritePost * :call UpdateCtags()
+
 " automatically cd to directory of current file
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+" automatically turn off highlight when in insert mode
+autocmd InsertEnter * set nohlsearch
 " }}}
 " {{{ triggers
 nnoremap <Leader>ln :lnext<CR>

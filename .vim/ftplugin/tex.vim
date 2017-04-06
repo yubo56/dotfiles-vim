@@ -8,6 +8,9 @@
 " without vimlatex, set folding rule
 set foldmethod=indent
 
+" indentation configuration
+let g:tex_noindent_env = 'document\|verbatim\|lstlisting'
+
 " autowrap
 set tw=80
 
