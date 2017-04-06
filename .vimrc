@@ -46,13 +46,8 @@ set smarttab cindent
 set cino=(1s " after parens, indent only one shiftwidth
 set cino+=m1 " line up closing parens w/ first char of line of opening parens
 " setup search
+" set hlsearch " highlight search, superceded by autocmds and mappings
 set incsearch " search as you go
-nnoremap * :set hlsearch<CR>*
-nnoremap # :set hlsearch<CR>#
-nnoremap / :set hlsearch<CR>/
-nnoremap ? :set hlsearch<CR>?
-nnoremap n :set hlsearch<CR>n
-nnoremap N :set hlsearch<CR>N
 " Set up hidden files
 set hidden
 " syntax highlighting
@@ -162,8 +157,9 @@ autocmd BufWritePost * :call UpdateCtags()
 
 " automatically cd to directory of current file
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
-" automatically turn off highlight when in insert mode
+" automatically turn off highlight when in insert mode, on when in command mode
 autocmd InsertEnter * set nohlsearch
+autocmd CmdwinEnter * set hlsearch
 " }}}
 " {{{ triggers
 nnoremap <Leader>ln :lnext<CR>
