@@ -17,7 +17,6 @@
 "
 
 set nocompatible
-let g:netrw_dirhistmax=10
 
 " pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -140,6 +139,13 @@ nnoremap <Leader>s :syntax sync fromstart<CR>
 cnoremap cd. lcd %:p:h
 " let . work in visual mode too
 vnoremap . :normal .<CR>
+" let n, N, *, #, /, ? turn on hlsearch
+nnoremap n :set hlsearch <CR>n
+nnoremap N :set hlsearch <CR>N
+nnoremap * :set hlsearch <CR>*
+nnoremap # :set hlsearch <CR>#
+nnoremap / :set hlsearch <CR>/
+nnoremap ? :set hlsearch <CR>?
 " }}}
 " {{{ autocmds
 " always use last known cursor position
@@ -157,9 +163,8 @@ autocmd BufWritePost * :call UpdateCtags()
 
 " automatically cd to directory of current file
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
-" automatically turn off highlight when in insert mode, on when in command mode
+" automatically turn off highlight when in insert mode
 autocmd InsertEnter * set nohlsearch
-autocmd CmdwinEnter * set hlsearch
 " }}}
 " {{{ triggers
 nnoremap <Leader>ln :lnext<CR>
