@@ -14,6 +14,7 @@
 " gv - restore the last visual selection
 " ga - information on the character under the cursor
 " g[Uu~]{motion} - uppercase/lowercase/swap until motion
+" //e goes to end of match
 "
 
 set nocompatible

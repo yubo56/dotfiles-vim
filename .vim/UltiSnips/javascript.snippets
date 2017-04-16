@@ -110,11 +110,10 @@ snippet ctx "ctx before each" b
 let ctx;
 
 beforeEach(function(cb) {
-	setupUtils.setup(function(err, res) {
-		if (err) return cb(err);
-		ctx = res.ctx;
-		cb();
-	});
+	async.waterfall([
+		setupUtils.setup,
+		async.asyncify(res => ctx = res.ctx)
+	], cb);
 });
 endsnippet
 snippet req "Description" b
