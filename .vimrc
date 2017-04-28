@@ -41,10 +41,10 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set smarttab cindent
+set smarttab autoindent
 " cindent options
-set cino=(1s " after parens, indent only one shiftwidth
-set cino+=m1 " line up closing parens w/ first char of line of opening parens
+" set cino=(1s " after parens, indent only one shiftwidth
+" set cino+=m1 " line up closing parens w/ first char of line of opening parens
 " setup search
 " set hlsearch " highlight search, superceded by autocmds and mappings
 set incsearch " search as you go
