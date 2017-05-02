@@ -131,7 +131,7 @@ function! CompleteRefs(findstart, base)
             let lbls = []
             let linenr = 1
             while linenr <= line("$")
-                let linematch = matchlist(getline(linenr), '\\label{\(.*\)}')
+                let linematch = matchlist(getline(linenr), '\\label{\([^}]*\)}')
                 if !empty(linematch)
                     call add(lbls, a:base . linematch[1])
                 endif

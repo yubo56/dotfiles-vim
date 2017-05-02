@@ -37,7 +37,9 @@ for ${1:needle} in ${2:haystack}:
 endsnippet
 snippet cl "New Class"
 class ${1:ClassName}(${2:object}):
-	"""${3:docstring for $1}"""
+	"""
+	${3:docstring for $1}
+	"""
 	def __init__(self, ${4:arg}):
 		${5:super($1, self).__init__()}
 		self.$4 = $4
@@ -45,7 +47,9 @@ class ${1:ClassName}(${2:object}):
 endsnippet
 snippet def "New Function"
 def ${1:fname}(${2:self}):
-	"""${3:docstring for $1}"""
+	"""
+	${3:docstring for $1}
+	"""
 	${4:pass}
 endsnippet
 snippet deff
@@ -108,4 +112,9 @@ if __name__ == '__main__':
 endsnippet
 snippet _ "__magic__"
 __${1:init}__${2}
+endsnippet
+snippet """ "docscring" b
+"""
+${1}
+"""
 endsnippet

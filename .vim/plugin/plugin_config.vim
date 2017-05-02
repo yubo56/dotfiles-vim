@@ -35,7 +35,7 @@ if $NO_PLUGIN !=? "TRUE"
         \ 'between a pair of\|better written in dot\|' .
         \ 'consider-using-enumerate' . '\|cell-var-from-loop\|broad-except\|' .
         \ 'too-many-arguments\|too-many-locals\|too-many-branches\|' .
-        \ 'too-few-public-methods' }
+        \ 'too-few-public-methods\|invalid-name' }
 
     " }}}
     " {{{ easyMotion config

@@ -1,51 +1,50 @@
 # ported from vim-latex
 snippet `< "bra" iA
-\bra{${1}}
+\bra{${VISUAL}${1:}}
 endsnippet
 snippet `C "hat" iA
-\hat{${1}}
+\hat{${VISUAL}${1:}}
 endsnippet
 snippet `J "binom" iA
 \binom{${1}}{${2}}
 endsnippet
 snippet `K "mathfrak" iA
-\mathfrak{${1}}
+\mathfrak{${VISUAL}${1:}}
 endsnippet
 snippet `3 "mathrm" iA
-\mathrm{${1}}
+\mathrm{${VISUAL}${1:}}
 endsnippet
 snippet `# "mathbb" iA
-\mathbb{${1}}
+\mathbb{${VISUAL}${1:}}
 endsnippet
 snippet `> "ket" iA
-\ket{${1}}
-endsnippet
-snippet `6 "pd" iA
-\pd{${1}}{${2}}
+\ket{${VISUAL}${1:}}
 endsnippet
 snippet `5 "rd" iA
-\rd{${1}}{${2}}
+\rd{${VISUAL}${1:}}{${2}}
 endsnippet
-snippet `B "mathbf" iA
-\bm{${1}}
-endsnippet
-snippet FTT "texttt" iA
-\texttt{${1}}
-endsnippet
-snippet `v "vec" iA
-\vec{${1}}
-endsnippet
-snippet `V "pvec" iA
-\pvec{${1}}
-endsnippet
-snippet `j "expvalue" iA
-\expvalue{${1}}
+snippet `6 "pd" iA
+\pd{${VISUAL}${1:}}{${2}}
 endsnippet
 snippet `% "rtd" iA
-\rtd{${1}}{${2}}
+\rtd{${VISUAL}${1:}}{${2}}
 endsnippet
 snippet `^ "ptd" iA
-\ptd{${1}}{${2}}
+\ptd{${VISUAL}${1:}}{${2}}
+snippet `B "mathbf" iA
+\bm{${VISUAL}${1:}}
+endsnippet
+snippet FTT "texttt" iA
+\texttt{${VISUAL}${1:}}
+endsnippet
+snippet `v "vec" iA
+\vec{${VISUAL}${1:}}
+endsnippet
+snippet `V "pvec" iA
+\pvec{${VISUAL}${1:}}
+endsnippet
+snippet `j "expvalue" iA
+\expvalue{${VISUAL}${1:}}
 endsnippet
 snippet `( "pmatrix" iA
 \begin{pmatrix} ${1} \end{pmatrix}
@@ -57,34 +56,34 @@ snippet `I "int" iA
 \int\limits_{${1}}^{${2}}${3}\;
 endsnippet
 snippet `_ "overline" iA
-\overline{${1}}
+\overline{${VISUAL}${1:}}
 endsnippet
 snippet `- "bar" iA
-\bar{${1}}
+\bar{${VISUAL}${1:}}
 endsnippet
 snippet `/ "frac" iA
-\frac{${VISUAL}${1}}{${2}}
+\frac{${VISUAL}${1:}}{${2}}
 endsnippet
 snippet `M "sum" iA
 \sum\limits_{${1}}^{${2}}
 endsnippet
 snippet `~ "tilde" iA
-\tilde{${1}}
+\tilde{${VISUAL}${1:}}
 endsnippet
 snippet `; "dot" iA
-\dot{${1}}
+\dot{${VISUAL}${1:}}
 endsnippet
 snippet `: "ddot" iA
-\ddot{${1}}
+\ddot{${VISUAL}${1:}}
 endsnippet
 snippet `2 "sqrt" iA
-\sqrt{${1}}
+\sqrt{${VISUAL}${1:}}
 endsnippet
 snippet `Z "overset" iA
-\overset{${1}}{${2}}
+\overset{${VISUAL}${1:}}{${2}}
 endsnippet
 snippet CAL "mathcal" iA
-\mathcal{${1}}
+\mathcal{${VISUAL}${1:}}
 endsnippet
 snippet SCN "scinot" iA,
 \scinot{${1}}{${2}}
@@ -99,7 +98,7 @@ snippet REF "autoref" iA
 \autoref{${1}}
 endsnippet
 snippet FBF "textbf" iA
-\textbf{${1}}
+\textbf{${VISUAL}${1:}}
 endsnippet
 snippet __ "subscript" iA
 _{${1}}
@@ -108,13 +107,13 @@ snippet ^^ "superscript" iA
 ^{${1}}
 endsnippet
 snippet || "abs" iA
-\abs{${1}}
+\abs{${VISUAL}${1:}}
 endsnippet
 snippet <> "dotp" iA
 \dotp{${1}}{${2}}
 endsnippet
 snippet FEM "emph" iA
-\emph{${VISUAL}${1}}
+\emph{${VISUAL}${1:}}
 endsnippet
 snippet begin "begin/end environment" i
 \begin{${1}}${2}
@@ -128,31 +127,32 @@ snippet d "Description" b
 endsnippet
 snippet lst "lstlisting" b
 \begin{lstlisting}
+${VISUAL}
 ${1}
 \end{lstlisting}
 endsnippet
 snippet (( "in-line left/right parens" i
-\left( ${VISUAL}${1} \right)
+\left( ${VISUAL}${1:} \right)
 endsnippet
 snippet [[ "in-line left/right square brackets" i
-\left[ ${VISUAL}${1} \right]
+\left[ ${VISUAL}${1:} \right]
 endsnippet
 snippet {{ "in-line left/right curly braces" i
-\left\\\{ ${VISUAL}${1} \right\\\}
+\left\\\{ ${VISUAL}${1:} \right\\\}
 endsnippet
 snippet (B "block left/right parens" i
 \left(
-	${VISUAL}${1}
+	${VISUAL}${1:}
 \right)
 endsnippet
 snippet [B "block left/right square brackets" i
 \left[
-	${VISUAL}${1}
+	${VISUAL}${1:}
 \right]
 endsnippet
 snippet {B "block left/right curly braces" i
 \left\\\{
-	${VISUAL}${1}
+	${VISUAL}${1:}
 \right\\\}
 endsnippet
 snippet `` "quotes" i
@@ -265,9 +265,10 @@ snippet cases "cases" b
 endsnippet
 snippet verb "verb" b
 \begin{verbatim}
+${VISUAL}
 ${1}
 \end{verbatim}
 endsnippet
 snippet FBF "textbf" b
-\textbf{${1}}
+\textbf{${VISUAL}${1}}
 endsnippet
