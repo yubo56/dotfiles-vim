@@ -126,6 +126,9 @@ nnoremap <space> @q
 " insert mode, S-Tab = Tab
 imap <S-Tab> <Tab>
 
+" insert MM/DD/YY
+inoremap <C-D> <C-R>=strftime('%D')<CR>
+
 " unmap stuff
 map <F1> <Nop>
 map Q <Nop>
