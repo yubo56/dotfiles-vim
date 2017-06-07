@@ -127,7 +127,7 @@ nnoremap <space> @q
 imap <S-Tab> <Tab>
 
 " insert MM/DD/YY
-inoremap <C-D> <C-R>=strftime('%D')<CR>
+inoremap <C-B> <C-R>=strftime('%D')<CR>
 
 " unmap stuff
 map <F1> <Nop>
