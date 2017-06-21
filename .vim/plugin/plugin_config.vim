@@ -31,7 +31,7 @@ if $NO_PLUGIN !=? "TRUE"
     " ignore messages
     let g:syntastic_quiet_messages = { "regex":
         \ 'terminated with space\|enclose the previous parenthesis\|' .
-        \ 'punctuation.*math mode\|' .
+        \ 'punctuation.*math mode\|space in front of parenthesis\|' .
         \ 'between a pair of\|better written in dot\|' .
         \ 'consider-using-enumerate' . '\|cell-var-from-loop\|broad-except\|' .
         \ 'too-many-arguments\|too-many-locals\|too-many-branches\|' .

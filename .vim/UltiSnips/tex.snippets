@@ -272,3 +272,28 @@ endsnippet
 snippet FBF "textbf" b
 \textbf{${VISUAL}${1}}
 endsnippet
+
+snippet cols "columns" b
+\begin{columns}
+	\begin{column}{${1:0.5}\textwidth}
+		${2}
+	\end{column}
+	\begin{column}{$1\textwidth}
+		${3}
+	\end{column}
+\end{columns}
+endsnippet
+snippet col "single column" b
+\begin{column}{${1}\textwidth}
+	${2}
+\end{column}
+endsnippet
+
+snippet fr "beamer frame" b
+\begin{frame}
+	\frametitle{${1}}
+	\framesubtitle{${2}}
+
+	${3}
+\end{frame}
+endsnippet
