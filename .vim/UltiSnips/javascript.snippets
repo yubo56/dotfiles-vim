@@ -32,13 +32,15 @@ snippet ? "tertiary conditional" i
 ${1:/* condition */} ? ${2:a} : ${3:b}
 endsnippet
 snippet switch "switch" i
-switch(${1:expression}) {
-	case '${3:case}':
+switch (${1:expression}) {
+	case '${3:case}': {
 		${4:// code}
 		break;
+	}
 	${5}
-	default:
+	default: {
 		${2:// code}
+	}
 }
 endsnippet
 snippet case "case" i
