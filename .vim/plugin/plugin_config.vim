@@ -63,8 +63,14 @@ if $NO_PLUGIN !=? "TRUE"
 
     " }}}
     " {{{ MiniBufExpl config
-    nnoremap <Leader>b :MBEToggle<CR>:MBEFocus<CR>
+    let g:miniBufExplVSplit = 40
+    let g:miniBufExplorerAutoStart = 0
+    let g:miniBufExplShowBufNumbers = 0
+    let g:miniBufExplCloseOnSelect = 1
 
+    nnoremap <Leader>b :MBEToggle<CR>:MBEFocus<CR>
+    nnoremap <C-W><Tab> :MBEbf<CR>
+    nnoremap <C-W><S-Tab> :MBEbb<CR>
     " }}}
     " {{{ Undotree config
     nnoremap <Leader>u :UndotreeToggle<CR>
