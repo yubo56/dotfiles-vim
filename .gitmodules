@@ -19,9 +19,6 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule ".vim/bundle/bufexplorer"]
-	path = .vim/bundle/bufexplorer
-	url = https://github.com/jlanzarotta/bufexplorer.git
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
@@ -49,3 +46,6 @@
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/bufexplorer"]
+	path = .vim/bundle/bufexplorer
+	url = https://github.com/yubo56/bufexplorer.git
