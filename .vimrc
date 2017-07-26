@@ -141,6 +141,7 @@ nnoremap <Leader>h :pc<CR>:helpclose<CR>
 " resync comments since dumb
 nnoremap <Leader>s :syntax sync fromstart<CR>
 " cd to path of current file
+cnoremap cd. lcd %:p:h
 " let . work in visual mode too
 vnoremap . :normal .<CR>
 " let n, N, *, #, /, ? turn on hlsearch
@@ -166,7 +167,7 @@ autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritePost * :call UpdateCtags()
 
 " automatically cd to directory of current file
-" autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 " automatically turn off highlight when in insert mode
 autocmd InsertEnter * set nohlsearch
 " }}}
