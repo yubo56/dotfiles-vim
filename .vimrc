@@ -199,3 +199,8 @@ nnoremap <Leader>cq :cclose<CR>
 " <Leader>R - YCM refactor
 " <Leader><Leader>w - Easymotion move
 " }}}
+" {{{ packadd's
+if has('syntax') && has('eval')
+  packadd matchit
+endif
+" }}}

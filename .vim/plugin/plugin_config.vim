@@ -10,9 +10,9 @@ if $NO_PLUGIN !=? "TRUE"
     let g:UltiSnipsEditSplit="vertical"
     " }}}
     " {{{ Syntastic
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
+    " set statusline+=%#warningmsg#
+    " set statusline+=%{SyntasticStatuslineFlag()}
+    " set statusline+=%*
 
     " recognize tex correctly
     let g:tex_flavor = "latex"
