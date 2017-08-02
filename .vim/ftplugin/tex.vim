@@ -15,7 +15,7 @@ let g:tex_noindent_env = 'document\|verbatim\|lstlisting'
 set tw=80
 
 " syntax highlighting in large files is especially slow
-syntax off
+" syntax off
 
 " {{{ Compile/viewing bindings
 " cc compiles w/ current make, cp[x] sets current to pdflatex[xelatex] and

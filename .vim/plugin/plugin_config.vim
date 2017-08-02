@@ -10,9 +10,9 @@ if $NO_PLUGIN !=? "TRUE"
     let g:UltiSnipsEditSplit="vertical"
     " }}}
     " {{{ Syntastic
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
+    " set statusline+=%#warningmsg#
+    " set statusline+=%{SyntasticStatuslineFlag()}
+    " set statusline+=%*
 
     " recognize tex correctly
     let g:tex_flavor = "latex"
@@ -33,6 +33,7 @@ if $NO_PLUGIN !=? "TRUE"
         \ 'terminated with space\|enclose the previous parenthesis\|' .
         \ 'punctuation.*math mode\|space in front of parenthesis\|' .
         \ 'between a pair of\|better written in dot\|' .
+        \ 'as an alternative to\|Whitespace before punctation mark\|' .
         \ 'consider-using-enumerate' . '\|cell-var-from-loop\|broad-except\|' .
         \ 'too-many-arguments\|too-many-locals\|too-many-branches\|' .
         \ 'too-few-public-methods\|invalid-name' }
