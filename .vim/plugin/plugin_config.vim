@@ -32,8 +32,10 @@ if $NO_PLUGIN !=? "TRUE"
     let g:syntastic_quiet_messages = { "regex":
         \ 'terminated with space\|enclose the previous parenthesis\|' .
         \ 'punctuation.*math mode\|space in front of parenthesis\|' .
-        \ 'between a pair of\|better written in dot\|' .
+        \ 'between a pair of\|possible unwanted space at "{"\|' .
         \ 'as an alternative to\|Whitespace before punctation mark\|' .
+        \ 'remove spaces in front of punctuation\|achieve an ellipsis\|' .
+        \ 'better written in dot\|' .
         \ 'consider-using-enumerate' . '\|cell-var-from-loop\|broad-except\|' .
         \ 'too-many-arguments\|too-many-locals\|too-many-branches\|' .
         \ 'too-few-public-methods\|invalid-name' }
