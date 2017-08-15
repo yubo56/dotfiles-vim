@@ -1,4 +1,4 @@
-    \documentclass[12pt]{article}
+    \documentclass[12pt, usenames, dvipsnames]{article}
     \usepackage{fancyhdr, amsmath, amsthm, amssymb, mathtools, lastpage,
     hyperref, enumerate, graphicx, setspace, wasysym, upgreek, listings, times}
     % chancery
@@ -36,10 +36,21 @@
     \usepackage[labelfont=bf, font=scriptsize]{caption}\usepackage{tikz}
     \usepackage[font=scriptsize]{subcaption}
     \everymath{\displaystyle}
-    \lstset{basicstyle=\ttfamily\footnotesize,frame=single,numbers=left}
 
 \tikzstyle{circ} = [draw, circle, fill=white, node distance=3cm, minimum
 height=2em]
+
+\definecolor{commentgreen}{rgb}{0,0.6,0}
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    frame=single,
+    numbers=left,
+    showstringspaces=false,
+    keywordstyle=\color{blue},
+    stringstyle=\color{purple},
+    commentstyle=\color{commentgreen},
+    morecomment=[l][\color{magenta}]{\#}
+}
 
 \begin{document}
 
