@@ -134,7 +134,10 @@ map <F1> <Nop>
 map Q <Nop>
 imap <F1> <Nop>
 vmap <F1> <Nop>
+
 inoremap <C-U> <Esc>
+nnoremap <C-U> <Esc>
+vnoremap <C-U> <Esc>
 
 " close any preview & help windows
 nnoremap <Leader>h :pc<CR>:helpclose<CR>
