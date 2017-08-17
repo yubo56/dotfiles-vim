@@ -43,6 +43,8 @@ if empty(matchstr($HOME, 'User')) " means on Linux not OS X
     " silent means don't need to press enter on complete,  means
     " automatically resets screen
     noremap <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
+else
+    noremap <Leader>cv :exec 'silent ! open ' . expand('%:r') . '.pdf'<cr>
 endif
 noremap <Leader>cg :e %:r.log<cr>
 " }}}
