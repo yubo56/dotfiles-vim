@@ -200,7 +200,7 @@ nnoremap <Leader>cq :cclose<CR>
 " <Leader><Leader>w - Easymotion move
 " }}}
 " {{{ packadd's
-if has('syntax') && has('eval')
+if has('syntax') && has('eval') && v:version > 800
   packadd matchit
 endif
 " }}}
