@@ -39,9 +39,11 @@ call SetMake('pdflatex')
 noremap <Leader>cc :Compile <cr><C-L>
 noremap <Leader>cp :call CompileWith('pdflatex') <cr><C-L>
 noremap <Leader>cx :call CompileWith('xelatex') <cr><C-L>
+if empty(matchstr($HOME, 'User')) " means on Linux not OS X
     " silent means don't need to press enter on complete,  means
     " automatically resets screen
-noremap <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
+    noremap <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
+endif
 noremap <Leader>cg :e %:r.log<cr>
 " }}}
 " {{{ imaps
