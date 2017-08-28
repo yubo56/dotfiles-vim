@@ -94,7 +94,7 @@ if $NO_PLUGIN !=? "TRUE"
     " {{{ Tagbar config
     nnoremap <Leader>g :TagbarToggle<CR>
     let g:tagbar_width=60
-    let g:tagbar_show_linenumbers=1
+    let g:tagbar_show_linenumbers=2
     let g:tagbar_autoclose=1
     let g:tagbar_type_make = {
         \ 'kinds' : [
