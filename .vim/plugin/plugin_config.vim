@@ -91,14 +91,11 @@ if $NO_PLUGIN !=? "TRUE"
                 \ && b:NERDTree.isTabTree()) | q | endif
 
     " }}}
-    " {{{ Autoclose config
-    let g:autoclose_vim_commentmode = 1
-
-    " }}}
     " {{{ Tagbar config
     nnoremap <Leader>g :TagbarToggle<CR>
-    let g:tagbar_width=40
+    let g:tagbar_width=60
     let g:tagbar_show_linenumbers=1
+    let g:tagbar_autoclose=1
     let g:tagbar_type_make = {
         \ 'kinds' : [
             \ 't:targets',
@@ -108,8 +105,10 @@ if $NO_PLUGIN !=? "TRUE"
     let g:tagbar_type_tex = {
         \ 'ctagstype' : 'latex',
         \ 'kinds'     : [
-            \ 's:foo',
-            \ 'l:labels',
+            \ 'c:chapters:0:0',
+            \ 's:sections:0:0',
+            \ 'll:subsections:0:0',
+            \ 'l:labels:0:0',
         \ ],
         \ 'sort'    : 0,
     \ }
