@@ -2,6 +2,9 @@
     \usepackage{fancyhdr, amsmath, amsthm, amssymb, mathtools, lastpage, float,
     hyperref, enumerate, graphicx, setspace, wasysym, upgreek, listings, times}
     \usepackage[margin=1in]{geometry}
+    \usepackage[labelfont=bf, font=scriptsize]{caption}\usepackage{tikz}
+    \usepackage[font=scriptsize]{subcaption}
+
     \newcommand{\scinot}[2]{#1\times10^{#2}}
     \newcommand{\bra}[1]{\left<#1\right|}
     \newcommand{\ket}[1]{\left|#1\right>}
@@ -15,10 +18,14 @@
     \newcommand{\pvec}[1]{\vec{#1}^{\,\prime}}
     \newcommand{\svec}[1]{\vec{#1}\;\!}
     \newcommand{\bm}[1]{\boldsymbol{\mathbf{#1}}}
-    \let\Re\undefined
-    \let\Im\undefined
+    \newcommand{\expvalue}[1]{\left<#1\right>}
     \newcommand{\ang}[0]{\text{\AA}}
     \newcommand{\mum}[0]{\upmu \mathrm{m}}
+
+    \newtheorem{theorem}{Theorem}[section]
+
+    \let\Re\undefined
+    \let\Im\undefined
     \DeclareMathOperator{\Res}{Res}
     \DeclareMathOperator{\Re}{Re}
     \DeclareMathOperator{\Im}{Im}
@@ -31,11 +38,8 @@
     \DeclareMathOperator*{\argmax}{argmax}
     \DeclareMathOperator{\sgn}{sgn}
     \DeclareMathOperator{\diag}{diag}
-    \newcommand{\expvalue}[1]{\left<#1\right>}
-    \usepackage[labelfont=bf, font=scriptsize]{caption}\usepackage{tikz}
-    \usepackage[font=scriptsize]{subcaption}
-    \everymath{\displaystyle}
 
+    \everymath{\displaystyle}
     \tikzstyle{circ} = [draw, circle, fill=white, node distance=3cm, minimum
     height=2em]
     \definecolor{commentgreen}{rgb}{0,0.6,0}
