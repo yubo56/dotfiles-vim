@@ -25,11 +25,3 @@ run: main
 .PHONY: clean
 clean:
 	rm -f *.o $(BIN)
-
-# Latex Makefile
-#
-# NAME =
-# ${NAME}.pdf: ${NAME}.tex
-# 	pdflatex -interaction=nonstopmode -file-line-error ${NAME}.tex | \
-# 		sed -E 's/(.*Warning:.*)on input line ([0-9]+)/.\/${NAME}.tex:\2: \1/g' | \
-# 		grep './${NAME}.tex'

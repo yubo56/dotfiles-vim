@@ -20,17 +20,14 @@ set tw=80
 " {{{ Compile/viewing bindings
 " cc compiles w/ current make, cp[x] sets current to pdflatex[xelatex] and
 " calls cc
-let g:latexPartialCommand=' -interaction=nonstopmode -file-line-error %' .
-        \ '\| sed -E ' .
-        \ '''s/(.*Warning:.*)on input line ([0-9]+)/.\/%:\2: \1/g''' .
-        \ '\| grep ''^\./%'''
 command! Compile make | cwindow 3
 
 fun! SetMake(cmd)
+    " if we have a Makefile in the current directory, defer to that
     if filereadable("Makefile")
         set makeprg=make
     else
-        let &makeprg=a:cmd . g:latexPartialCommand
+        let &makeprg='compiletex ' . expand('%:r') . ' ' . a:cmd
     endif
 endf
 fun! CompileWith(cmd)
