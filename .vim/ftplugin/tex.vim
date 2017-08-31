@@ -27,7 +27,11 @@ let g:latexPartialCommand=' -interaction=nonstopmode -file-line-error %' .
 command! Compile make | cwindow 3
 
 fun! SetMake(cmd)
-    let &makeprg=a:cmd . g:latexPartialCommand
+    if filereadable("Makefile")
+        set makeprg=make
+    else
+        let &makeprg=a:cmd . g:latexPartialCommand
+    endif
 endf
 fun! CompileWith(cmd)
     call SetMake(a:cmd)
