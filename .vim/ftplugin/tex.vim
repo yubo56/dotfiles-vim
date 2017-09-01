@@ -25,7 +25,7 @@ command! Compile make | cwindow 3
 fun! SetMake(cmd)
     " if we have a Makefile in the current directory, defer to that
     if filereadable("Makefile")
-        set makeprg=make
+        let &makeprg='make ' . expand('%:r') . '.pdf'
     else
         let &makeprg='compiletex ' . expand('%:r') . ' ' . a:cmd
     endif
