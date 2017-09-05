@@ -37,90 +37,90 @@ endf
 
 set errorformat=%f:%l:\ %m
 call SetMake('pdflatex')
-noremap <Leader>cc :Compile <cr><C-L>
-noremap <Leader>cp :call CompileWith('pdflatex') <cr><C-L>
-noremap <Leader>cx :call CompileWith('xelatex') <cr><C-L>
+noremap <buffer> <Leader>cc :Compile <cr><C-L>
+noremap <buffer> <Leader>cp :call CompileWith('pdflatex') <cr><C-L>
+noremap <buffer> <Leader>cx :call CompileWith('xelatex') <cr><C-L>
 if empty(matchstr($HOME, 'User')) " means on Linux not OS X
     " silent means don't need to press enter on complete,  means
     " automatically resets screen
-    noremap <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
+    noremap <buffer> <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
 else
-    noremap <Leader>cv :exec 'silent ! open ' . expand('%:r') . '.pdf'<cr>
+    noremap <buffer> <Leader>cv :exec 'silent ! open ' . expand('%:r') . '.pdf'<cr>
 endif
-noremap <Leader>cg :e %:r.log<cr>
+noremap <buffer> <Leader>cg :e %:r.log<cr>
 " }}}
-" {{{ imaps
+" {{{ imaps <buffer>
 " correct some timing bugs
-inoremap `` ``
-inoremap `~ `~
-inoremap `- `-
-inoremap `< `<
-inoremap `> `>
-inoremap [+ [+
+inoremap <buffer> `` ``
+inoremap <buffer> `~ `~
+inoremap <buffer> `- `-
+inoremap <buffer> `< `<
+inoremap <buffer> `> `>
+inoremap <buffer> [+ [+
 
 " various alphabetic substitutions
-inoremap ... \dots
-inoremap `a \alpha
-inoremap `b \beta
-inoremap `c \chi
-inoremap `d \delta
-inoremap `e \epsilon
-inoremap `E \varepsilon
-inoremap `f \phi
-inoremap `T \partial
-inoremap `R \varphi
-inoremap `g \gamma
-inoremap `h \eta
-inoremap `i \iota
-inoremap `k \kappa
-inoremap `l \lambda
-inoremap `m \mu
-inoremap `n \nu
-inoremap `p \pi
-inoremap `q \theta
-inoremap `r \rho
-inoremap `s \sigma
-inoremap `t \tau
-inoremap `u \upsilon
-inoremap `w \omega
-inoremap `x \xi
-inoremap `y \psi
-inoremap `z \zeta
-inoremap `D \Delta
-inoremap `F \Phi
-inoremap `P \Pi
-inoremap `G \Gamma
-inoremap `Q \Theta
-inoremap `L \Lambda
-inoremap `X \Xi
-inoremap `Y \Psi
-inoremap `S \Sigma
-inoremap `U \Upsilon
-inoremap `W \Omega
+inoremap <buffer> ... \dots
+inoremap <buffer> `a \alpha
+inoremap <buffer> `b \beta
+inoremap <buffer> `c \chi
+inoremap <buffer> `d \delta
+inoremap <buffer> `e \epsilon
+inoremap <buffer> `E \varepsilon
+inoremap <buffer> `f \phi
+inoremap <buffer> `T \partial
+inoremap <buffer> `R \varphi
+inoremap <buffer> `g \gamma
+inoremap <buffer> `h \eta
+inoremap <buffer> `i \iota
+inoremap <buffer> `k \kappa
+inoremap <buffer> `l \lambda
+inoremap <buffer> `m \mu
+inoremap <buffer> `n \nu
+inoremap <buffer> `p \pi
+inoremap <buffer> `q \theta
+inoremap <buffer> `r \rho
+inoremap <buffer> `s \sigma
+inoremap <buffer> `t \tau
+inoremap <buffer> `u \upsilon
+inoremap <buffer> `w \omega
+inoremap <buffer> `x \xi
+inoremap <buffer> `y \psi
+inoremap <buffer> `z \zeta
+inoremap <buffer> `D \Delta
+inoremap <buffer> `F \Phi
+inoremap <buffer> `P \Pi
+inoremap <buffer> `G \Gamma
+inoremap <buffer> `Q \Theta
+inoremap <buffer> `L \Lambda
+inoremap <buffer> `X \Xi
+inoremap <buffer> `Y \Psi
+inoremap <buffer> `S \Sigma
+inoremap <buffer> `U \Upsilon
+inoremap <buffer> `W \Omega
 
 " other ` substitutions
-inoremap `\| \Bigg\|
-inoremap `& \cdot
-inoremap `* \times
-inoremap `8 \infty
-inoremap `N \nabla
-inoremap `H \hbar
-inoremap `, \propto
-inoremap `+ ^\dagger
+inoremap <buffer> `\| \Bigg\|
+inoremap <buffer> `& \cdot
+inoremap <buffer> `* \times
+inoremap <buffer> `8 \infty
+inoremap <buffer> `N \nabla
+inoremap <buffer> `H \hbar
+inoremap <buffer> `, \propto
+inoremap <buffer> `+ ^\dagger
 
 " other substitutions, not `
-inoremap --> \to
-inoremap ---> \longrightarrow
-inoremap -+ \mp
-inoremap ~= \approx
-inoremap ~~ \sim
-inoremap >> \gg
-inoremap << \ll
-inoremap >= \geq
-inoremap <= \leq
-inoremap != \neq
-inoremap +- \pm
-inoremap ** \item
+inoremap <buffer> --> \to
+inoremap <buffer> ---> \longrightarrow
+inoremap <buffer> -+ \mp
+inoremap <buffer> ~= \approx
+inoremap <buffer> ~~ \sim
+inoremap <buffer> >> \gg
+inoremap <buffer> << \ll
+inoremap <buffer> >= \geq
+inoremap <buffer> <= \leq
+inoremap <buffer> != \neq
+inoremap <buffer> +- \pm
+inoremap <buffer> ** \item
 " }}}
 " {{{ user-completion autocompletes labels
 function! CompleteRefs(findstart, base)
