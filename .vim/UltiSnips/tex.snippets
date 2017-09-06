@@ -56,8 +56,11 @@ endsnippet
 snippet `[ "bmatrix" iA
 \begin{bmatrix} ${1} \end{bmatrix}
 endsnippet
-snippet `I "int" iA
-\int\limits_{${1}}^{${2}}${3}\;
+snippet `i "int" iA
+\int${1}\;\mathrm{d}
+endsnippet
+snippet `I "int with limits" iA
+\int\limits_{${1}}^{${2}}${3}\;\mathrm{d}
 endsnippet
 snippet `_ "overline" iA
 \overline{${VISUAL}${1:}}
@@ -174,17 +177,17 @@ snippet tikz "tikz" b
 endsnippet
 snippet a "a" b
 \begin{align}
-	${1}
+	${VISUAL}${1}
 \end{align}
 endsnippet
 snippet eq "eq" b
 \begin{equation}
-	${1}\label{eq:${2}}
+	${VISUAL}${1}\label{eq:${2}}
 \end{equation}
 endsnippet
 snippet a* "*" b
 \begin{align*}
-	${1}
+	${VISUAL}${1}
 \end{align*}
 endsnippet
 snippet e "e" b

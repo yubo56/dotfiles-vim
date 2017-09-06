@@ -71,7 +71,7 @@ inoremap <buffer> `T \partial
 inoremap <buffer> `R \varphi
 inoremap <buffer> `g \gamma
 inoremap <buffer> `h \eta
-inoremap <buffer> `i \iota
+" inoremap <buffer> `i \iota " I have never used iota, easier to use for ints
 inoremap <buffer> `k \kappa
 inoremap <buffer> `l \lambda
 inoremap <buffer> `m \mu
