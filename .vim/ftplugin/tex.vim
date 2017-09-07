@@ -41,11 +41,11 @@ noremap <buffer> <Leader>cc :Compile <cr><C-L>
 noremap <buffer> <Leader>cp :call CompileWith('pdflatex') <cr><C-L>
 noremap <buffer> <Leader>cx :call CompileWith('xelatex') <cr><C-L>
 if empty(matchstr($HOME, 'User')) " means on Linux not OS X
-    " silent means don't need to press enter on complete,  means
+    " silent means don't need to press enter on complete, <C-L> means
     " automatically resets screen
-    noremap <buffer> <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr>
+    noremap <buffer> <Leader>cv :exec 'silent ! zathura --fork ' . expand('%:r') . '.pdf'<cr><C-L>
 else
-    noremap <buffer> <Leader>cv :exec 'silent ! open ' . expand('%:r') . '.pdf'<cr>
+    noremap <buffer> <Leader>cv :exec 'silent ! open ' . expand('%:r') . '.pdf'<cr><C-L>
 endif
 noremap <buffer> <Leader>cg :e %:r.log<cr>
 " }}}
