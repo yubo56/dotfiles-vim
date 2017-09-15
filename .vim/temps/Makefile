@@ -1,26 +1,20 @@
-CC = gcc
-CFLAGS = -g -Wall -ansi -pedantic -Wstrict-prototypes -lm
-
-SRCS = $(wildcard *.c)
-OBJS = $(SRCS:.c=.o)
+# $< mean first requirement, $^ means all requirements, $@ means target
 BIN = main
 TEX_FN = hw
 
+CC = gcc
+CFLAGS = -g -Wall -ansi -pedantic -Wstrict-prototypes -lm
+SRCS = $(wildcard *.c)
+OBJS = $(SRCS:.c=.o)
+
 .PHONY: all
-all: ${BIN} run
+all: $(BIN) run
 
 .PHONY: cleanrun
-cleanrun: clean ${BIN} run
-
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $<
-
-.PHONY: ${BIN}
-${BIN}: $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $(BIN)
+cleanrun: clean $(BIN) run
 
 .PHONY: run
-run: ${BIN}
+run: $(BIN)
 	@echo ''
 	./$(BIN)
 
@@ -28,5 +22,11 @@ run: ${BIN}
 clean:
 	rm -f *.o $(BIN)
 
-${TEX_FN}.pdf: ${TEX_FN}.tex ${SRCS}
-	compiletex ${TEX_FN}.tex
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $<
+
+$(BIN): $(OBJS)
+	$(CC) $(CFLAGS) $^ -o $(BIN)
+
+$(TEX_FN).pdf: $(TEX_FN).tex $(BIN)
+	compiletex $(TEX_FN).tex

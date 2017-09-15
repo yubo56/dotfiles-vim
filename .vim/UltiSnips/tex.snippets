@@ -133,12 +133,12 @@ snippet d "Description" b
 \end{description}
 endsnippet
 snippet lst "lstlisting" b
-\begin{lstlisting}
+\begin{lstlisting}[basicstyle=\ttfamily\tiny]
 ${VISUAL}${1}
 \end{lstlisting}
 endsnippet
 snippet flst "lstinputlisting" b
-\lstinputlisting[language=${1}]{${2}}
+\lstinputlisting[basicstyle=\ttfamily\tiny, ${1:language=$2}]{$3}
 endsnippet
 snippet (( "in-line left/right parens" i
 \left( ${VISUAL}${1:} \right)
