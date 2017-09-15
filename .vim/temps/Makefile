@@ -3,25 +3,30 @@ CFLAGS = -g -Wall -ansi -pedantic -Wstrict-prototypes -lm
 
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
+BIN = main
+TEX_FN = hw
 
 .PHONY: all
-all: main run
+all: ${BIN} run
 
 .PHONY: cleanrun
-cleanrun: clean main run
+cleanrun: clean ${BIN} run
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $<
 
-.PHONY: main
-main: $(OBJS)
+.PHONY: ${BIN}
+${BIN}: $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $(BIN)
 
 .PHONY: run
-run: main
+run: ${BIN}
 	@echo ''
 	./$(BIN)
 
 .PHONY: clean
 clean:
 	rm -f *.o $(BIN)
+
+${TEX_FN}.pdf: ${TEX_FN}.tex ${SRCS}
+	compiletex ${TEX_FN}.tex

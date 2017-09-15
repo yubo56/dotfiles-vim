@@ -1,5 +1,5 @@
 snippet : "Makefile target" b
-.PHONY: ${1:target}
-$1: ${2:dependencies}
-	${3:command}
+${1:.PHONY: $2}
+$2: ${3:dependencies}
+	${4:command}
 endsnippet

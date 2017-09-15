@@ -137,6 +137,9 @@ snippet lst "lstlisting" b
 ${VISUAL}${1}
 \end{lstlisting}
 endsnippet
+snippet flst "lstinputlisting" b
+\lstinputlisting[language=${1}]{${2}}
+endsnippet
 snippet (( "in-line left/right parens" i
 \left( ${VISUAL}${1:} \right)
 endsnippet
@@ -202,6 +205,9 @@ snippet i "i" b
 endsnippet
 snippet s "s" b
 \section{${1}}
+endsnippet
+snippet sl "labeled section" b
+\section{${1}}\label{${2}}
 endsnippet
 snippet ss "ss" b
 \subsection{${1}}
