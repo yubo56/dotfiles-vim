@@ -124,27 +124,28 @@ inoremap <buffer> ** \item
 " }}}
 " {{{ user-completion autocompletes labels
 function! CompleteRefs(findstart, base)
-    " first invocation (findstart=1) tries to backtrack 4 characters
+    " first invocation returns -1 or index of char after 'ref{' sequence
     " second invocation checks whether base == 'ref{' before returning list of
     "       \label{(.*)} matches
     if a:findstart
-        " if line is too short, truncate at -1
-        return max([-1, col('.') - 5])
-    else
-        " if not empty base and base matches 'ref{' at index 0
-        if !empty(a:base) && !match(a:base, 'ref{')
-            let lbls = []
-            let linenr = 1
-            while linenr <= line("$")
-                let linematch = matchlist(getline(linenr), '\\label{\([^}]*\)}')
-                if !empty(linematch)
-                    call add(lbls, a:base . linematch[1])
-                endif
-                let linenr += 1
-            endwhile
-            return lbls
-        " else a:base is empty, empty return
+        " match returns -1 if not found, which cancels completion
+        let m = match(getline('.'), 'ref{')
+        if m == -1
+            return -1
         endif
+        return m + 4 " return index after 'ref{'
+    else
+        " a:base is what currently exists in the completion
+        let lbls = []
+        let linenr = 1
+        while linenr <= line("$")
+            let linematch = matchlist(getline(linenr), '\\label{\(' . a:base . '[^}]*\)}')
+            if !empty(linematch)
+                call add(lbls, linematch[1])
+            endif
+            let linenr += 1
+        endwhile
+        return lbls
     endif
 endfunction
 
