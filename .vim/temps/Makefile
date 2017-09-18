@@ -29,4 +29,4 @@ $(BIN): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $(BIN)
 
 $(TEX_FN).pdf: $(TEX_FN).tex $(BIN)
-	compiletex $(TEX_FN).tex
+	compiletex $(TEX_FN)

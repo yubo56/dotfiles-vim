@@ -288,7 +288,9 @@ snippet lh "lefthead" b
 endsnippet
 snippet se "subequations" b
 \begin{subequations}
-$1
+	\begin{${1:align}}
+		$2
+	\end{$1}
 \end{subequations}
 endsnippet
 
