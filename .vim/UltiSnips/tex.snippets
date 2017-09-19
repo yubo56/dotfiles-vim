@@ -175,8 +175,8 @@ snippet tikz "tikz" b
 	\begin{tikzpicture}
 		${1}
 	\end{tikzpicture}
-	\caption{${2}\label{fig:${3}}}
-\end{figure}
+	\caption{${2}}
+\end{figure}\label{fig:${3}}
 endsnippet
 snippet a "a" b
 \begin{align}
@@ -186,8 +186,7 @@ endsnippet
 snippet eq "eq" b
 \begin{equation}
 	${VISUAL}${1}
-		\label{eq:${2}}
-\end{equation}
+\end{equation}\label{eq:${2}}
 endsnippet
 snippet eq* "eq" b
 \begin{equation*}
@@ -237,8 +236,8 @@ snippet fig "fig" b
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=${1}\textwidth]{${2}}
-	\caption{${3}\label{fig:${4}}}
-\end{figure}
+	\caption{${3}}
+\end{figure}\label{fig:${4}}
 endsnippet
 snippet figsub "figsub" b
 \begin{figure}[!h]
@@ -249,8 +248,8 @@ snippet figsub "figsub" b
 		\caption{${3}}
 	\end{subfigure}
 	${4}
-	\caption{${5}\label{fig:${6}}}
-\end{figure}
+	\caption{${5}}
+\end{figure}\label{fig:${6}}
 endsnippet
 snippet subfig "subfig" b
 \begin{subfigure}{${1}\textwidth}
@@ -265,8 +264,8 @@ snippet tab "tab" b
 	\begin{tabular}{${1}}
 		${2}
 	\end{tabular}
-	\caption{${3}\label{tab:${4}}}
-\end{table}
+	\caption{${3}}
+\end{table}\label{tab:${4}}
 endsnippet
 snippet nonum "nonum" i
 \nonumber\\\\
