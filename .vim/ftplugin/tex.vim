@@ -19,25 +19,31 @@ set tw=80
 
 " {{{ Compile/viewing bindings
 " cc compiles w/ current make, cp[x] sets current to pdflatex[xelatex] and
-" calls cc
-command! Compile make | cwindow 3
-
-fun! SetMake(cmd)
+"       calls cc
+" Dynamically updates to current buffer every cc
+fun! SetTex(name)
+    let g:tex_cmd=a:name
+endf
+fun! SetMake()
     " if we have a Makefile in the current directory, defer to that
     if filereadable("Makefile")
         let &makeprg='make ' . expand('%:r') . '.pdf'
     else
-        let &makeprg='compiletex ' . expand('%:r') . ' ' . a:cmd
+        let &makeprg='compiletex ' . expand('%:r') . ' ' . g:tex_cmd
     endif
 endf
+fun! Compile()
+    call SetMake()
+    make | cwindow 3
+endf
 fun! CompileWith(cmd)
-    call SetMake(a:cmd)
-    Compile
+    call SetTex(a:cmd)
+    call Compile()
 endf
 
 set errorformat=%f:%l:\ %m
-call SetMake('pdflatex')
-noremap <buffer> <Leader>cc :Compile <cr><C-L>
+call SetTex('pdflatex')
+noremap <buffer> <Leader>cc :call Compile() <cr><C-L>
 noremap <buffer> <Leader>cp :call CompileWith('pdflatex') <cr><C-L>
 noremap <buffer> <Leader>cx :call CompileWith('xelatex') <cr><C-L>
 if empty(matchstr($HOME, 'User')) " means on Linux not OS X

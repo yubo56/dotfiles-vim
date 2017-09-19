@@ -185,8 +185,14 @@ snippet a "a" b
 endsnippet
 snippet eq "eq" b
 \begin{equation}
-	${VISUAL}${1}\label{eq:${2}}
+	${VISUAL}${1}
+		\label{eq:${2}}
 \end{equation}
+endsnippet
+snippet eq* "eq" b
+\begin{equation*}
+	${VISUAL}${1}
+\end{equation*}
 endsnippet
 snippet a* "*" b
 \begin{align*}
