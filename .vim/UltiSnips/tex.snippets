@@ -54,10 +54,14 @@ snippet `j "expvalue" iA
 \expvalue{${VISUAL}${1:}}
 endsnippet
 snippet `( "pmatrix" iA
-\begin{pmatrix} ${1} \end{pmatrix}
+\begin{pmatrix}
+	${1}
+\end{pmatrix}
 endsnippet
 snippet `[ "bmatrix" iA
-\begin{bmatrix} ${1} \end{bmatrix}
+\begin{bmatrix}
+	${1}
+\end{bmatrix}
 endsnippet
 snippet `I "int" iA
 \int\limits_{${1}}^{${2}}${3}\;\mathrm{d}
@@ -99,7 +103,7 @@ snippet LBL "label" iA
 \label{${1}}
 endsnippet
 snippet EQR "eqref" iA
-\eqref{${1}}
+Eq.~\eqref{${1}}
 endsnippet
 snippet REF "autoref" iA
 \autoref{${1}}
