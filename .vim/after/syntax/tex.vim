@@ -9,3 +9,9 @@ syn match texBadMath "\\[\])]"
 
 " highlight autoref correctly
 syn region texRefZone matchgroup=texStatement start="\\autoref{" end="}\|%stopzone\>" contains=@texRefGroup
+
+" give newcommand* the same treatment as newcommand
+syn match texNewCmd "\\newcommand\>\*" nextgroup=texCmdName skipwhite skipnl
+
+" can't set this in ftplugin: vim sources ftplugins too early even in after dir
+set indentexpr=

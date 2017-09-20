@@ -142,7 +142,7 @@ ${VISUAL}${1}
 \end{lstlisting}
 endsnippet
 snippet flst "lstinputlisting" b
-\lstinputlisting[basicstyle=\ttfamily\tiny, ${1:language=$2}]{$3}
+\lstinputlisting[basicstyle=\ttfamily\tiny${1:, language=$2}]{$3}
 endsnippet
 snippet (( "in-line left/right parens" i
 \left( ${VISUAL}${1:} \right)
@@ -192,7 +192,7 @@ snippet eq "eq" b
 	${VISUAL}${1}
 \end{equation}\label{eq:${2}}
 endsnippet
-snippet eq* "eq" b
+snippet e* "equation*" b
 \begin{equation*}
 	${VISUAL}${1}
 \end{equation*}

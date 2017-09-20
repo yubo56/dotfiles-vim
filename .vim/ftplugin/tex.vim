@@ -3,8 +3,6 @@
 " Language: LaTeX (ft=tex)
 "
 
-" only tex no rnu, lags b/c absurd repeat rate
-" set nornu
 " without vimlatex, set folding rule
 set foldmethod=indent
 
