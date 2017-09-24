@@ -103,7 +103,7 @@ snippet LBL "label" iA
 \label{${1}}
 endsnippet
 snippet EQR "eqref" iA
-Eq.~\eqref{${1}}
+\eqref{${1}}
 endsnippet
 snippet REF "autoref" iA
 \autoref{${1}}
@@ -301,9 +301,8 @@ snippet se "subequations" b
 	\begin{${1:align}}
 		$2
 	\end{$1}
-\end{subequations}
+\end{subequations}\label{eq:$3}
 endsnippet
-
 snippet cols "columns" b
 \begin{columns}
 	\begin{column}{${1:0.5}\textwidth}
