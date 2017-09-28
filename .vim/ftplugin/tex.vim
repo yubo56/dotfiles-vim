@@ -56,6 +56,7 @@ noremap <buffer> <Leader>cg :e %:r.log<cr>
 " {{{ imaps <buffer>
 " correct some timing bugs
 inoremap <buffer> `` ``
+inoremap <buffer> \` \`
 inoremap <buffer> `~ `~
 inoremap <buffer> `- `-
 inoremap <buffer> `< `<
