@@ -38,7 +38,7 @@ if $NO_PLUGIN !=? "TRUE"
         \ 'better written in dot\|times.*may look prettier here\|' .
         \ 'consider-using-enumerate' . '\|cell-var-from-loop\|broad-except\|' .
         \ 'too-many-arguments\|too-many-locals\|too-many-branches\|' .
-        \ 'too-few-public-methods\|invalid-name' }
+        \ 'too-few-public-methods\|invalid-name\|docstring' }
 
     " }}}
     " {{{ easyMotion config
