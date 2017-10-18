@@ -39,7 +39,6 @@ if $NO_PLUGIN !=? "TRUE"
         \ 'consider-using-enumerate' . '\|cell-var-from-loop\|broad-except\|' .
         \ 'too-many-arguments\|too-many-locals\|too-many-branches\|' .
         \ 'too-few-public-methods\|invalid-name\|missing-docstring' }
-
     " }}}
     " {{{ easyMotion config
     nmap <Leader>e <Plug>(easymotion-prefix)
@@ -96,6 +95,7 @@ if $NO_PLUGIN !=? "TRUE"
     let g:tagbar_width=60
     let g:tagbar_show_linenumbers=2
     let g:tagbar_autoclose=1
+    let g:tagbar_compact=1
     let g:tagbar_type_make = {
         \ 'kinds' : [
             \ 't:targets',
@@ -104,13 +104,13 @@ if $NO_PLUGIN !=? "TRUE"
     \ }
     let g:tagbar_type_tex = {
         \ 'ctagstype' : 'latex',
-        \ 'kinds'     : [
+        \ 'kinds' : [
             \ 'c:chapters:0:0',
             \ 's:sections:0:0',
-            \ 'll:subsections:0:0',
+            \ 'r:subsections:0:0',
             \ 'l:labels:0:0',
         \ ],
-        \ 'sort'    : 0,
+        \ 'sort' : 0,
     \ }
 
     " }}}

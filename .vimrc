@@ -59,8 +59,8 @@ set timeoutlen=500
 " wrapping + highlight
 set wrap
 set tw=80
-" hi ColorColumn ctermbg=Red
-" set cc=81
+hi ColorColumn ctermbg=Red
+set cc=+1
 " show opening operator when closing
 set showmatch
 " define what words are in vim

@@ -1,6 +1,6 @@
-" LaTeX filetype
 " vim: fdm=marker
 " Language: LaTeX (ft=tex)
+" LaTeX filetype
 "
 
 " without vimlatex, set folding rule
@@ -126,6 +126,7 @@ inoremap <buffer> <= \leq
 inoremap <buffer> != \neq
 inoremap <buffer> +- \pm
 inoremap <buffer> ** \item
+inoremap <buffer> nn\\ \nonumber\\
 " }}}
 " {{{ user-completion autocompletes labels
 function! CompleteRefs(findstart, base)
@@ -160,4 +161,7 @@ function! CompleteRefs(findstart, base)
 endfunction
 
 set completefunc=CompleteRefs
+" }}}
+" macros {{{
+let @p = "i\\left\<Esc>%i\\right\<Esc>"
 " }}}
