@@ -39,7 +39,7 @@ snippet `7 "material derivative" iA
 \md{${VISUAL}${1:}}{${2}}
 endsnippet
 snippet `| "derivative at" iA
-\left.\\${1:rd}{${VISUAL}$2}{$3}\right|
+\at{$1}
 endsnippet
 snippet `B "mathbf" iA
 \bm{${VISUAL}${1:}}
@@ -182,21 +182,33 @@ snippet tikz "tikz" b
 	\caption{${2}}
 \end{figure}\label{fig:${3}}
 endsnippet
-snippet a "a" b
-\begin{align}
-	${VISUAL}${1}
-\end{align}
-endsnippet
 snippet eq "eq" b
 \begin{equation}
 	${VISUAL}${1}
 		\label{eq:${2}}
 \end{equation}
 endsnippet
+snippet es "equation + split" b
+\begin{equation}
+	\begin{split}
+		${VISUAL}${1}
+			\label{eq:${2}}
+	\end{split}
+\end{equation}
 snippet e* "equation*" b
 \begin{equation*}
 	${VISUAL}${1}
 \end{equation*}
+endsnippet
+snippet a "a" b
+\begin{align}
+	${VISUAL}${1}
+\end{align}
+endsnippet
+snippet ad "aligned" b
+\begin{aligned}
+	${VISUAL}${1}
+\end{aligned}
 endsnippet
 snippet a* "*" b
 \begin{align*}
