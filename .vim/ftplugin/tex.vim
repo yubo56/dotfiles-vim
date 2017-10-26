@@ -165,5 +165,5 @@ endfunction
 set completefunc=CompleteRefs
 " }}}
 " macros {{{
-let @p = "i\\left\<Esc>%i\\right\<Esc>"
+let @p = "i\\p*\<Esc>lma%r}`ar{"
 " }}}

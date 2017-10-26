@@ -148,26 +148,26 @@ snippet flst "lstinputlisting" b
 \lstinputlisting[basicstyle=\ttfamily\tiny${1:, language=$2}]{$3}
 endsnippet
 snippet (( "in-line left/right parens" i
-\pp*{${VISUAL}${1:}}
+\p*{${VISUAL}${1:}}
 endsnippet
 snippet [[ "in-line left/right square brackets" i
-\bb*{${VISUAL}${1:}}
+\s*{${VISUAL}${1:}}
 endsnippet
 snippet {{ "in-line left/right curly braces" i
-\cb*{${VISUAL}${1:}}
+\z*{${VISUAL}${1:}}
 endsnippet
 snippet (B "block left/right parens" i
-\pp*{
+\p*{
 	${VISUAL}${1:}
 }
 endsnippet
 snippet [B "block left/right square brackets" i
-\bb*{
+\s*{
 	${VISUAL}${1:}
 }
 endsnippet
 snippet {B "block left/right curly braces" i
-\cb*{
+\z*{
 	${VISUAL}${1:}
 }
 endsnippet
@@ -303,11 +303,11 @@ snippet FBF "textbf" b
 \textbf{${VISUAL}${1}}
 endsnippet
 snippet se "subequations" b
-\begin{subequations}
+\begin{subequations}\label{se:$3}
 	\begin{${1:align}}
 		$2
 	\end{$1}
-\end{subequations}\label{se:$3}
+\end{subequations}
 endsnippet
 snippet cols "columns" b
 \begin{columns}
