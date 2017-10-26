@@ -148,28 +148,28 @@ snippet flst "lstinputlisting" b
 \lstinputlisting[basicstyle=\ttfamily\tiny${1:, language=$2}]{$3}
 endsnippet
 snippet (( "in-line left/right parens" i
-\left( ${VISUAL}${1:} \right)
+\pp*{${VISUAL}${1:}}
 endsnippet
 snippet [[ "in-line left/right square brackets" i
-\left[ ${VISUAL}${1:} \right]
+\bb*{${VISUAL}${1:}}
 endsnippet
 snippet {{ "in-line left/right curly braces" i
-\left\\\{ ${VISUAL}${1:} \right\\\}
+\cb*{${VISUAL}${1:}}
 endsnippet
 snippet (B "block left/right parens" i
-\left(
+\pp*{
 	${VISUAL}${1:}
-\right)
+}
 endsnippet
 snippet [B "block left/right square brackets" i
-\left[
+\bb*{
 	${VISUAL}${1:}
-\right]
+}
 endsnippet
 snippet {B "block left/right curly braces" i
-\left\\\{
+\cb*{
 	${VISUAL}${1:}
-\right\\\}
+}
 endsnippet
 
 # ported from snipmate
@@ -301,9 +301,6 @@ ${VISUAL}${1}
 endsnippet
 snippet FBF "textbf" b
 \textbf{${VISUAL}${1}}
-endsnippet
-snippet lh "lefthead" b
-\lhead{$1}
 endsnippet
 snippet se "subequations" b
 \begin{subequations}

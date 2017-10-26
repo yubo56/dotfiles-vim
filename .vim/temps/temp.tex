@@ -2,6 +2,7 @@
         usenames, % allows access to some tikz colors
         dvipsnames % more colors: https://en.wikibooks.org/wiki/LaTeX/Colors
     ]{article}
+    \usepackage{fouriernc}
     \usepackage{
         amsmath,
         amssymb,
@@ -64,6 +65,9 @@
     \DeclareMathOperator{\sgn}{sgn}
     \DeclareMathOperator{\diag}{diag}
 
+    \DeclarePairedDelimiter\pp{\lparen}{\rparen}
+    \DeclarePairedDelimiter\bb{\lbrack}{\rbrack}
+    \DeclarePairedDelimiter\cb{\lbrace}{\rbrace}
 
     % \everymath{\displaystyle} % biggify limits of inline sums and integrals
     \tikzstyle{circ} % usage: \node[circ, placement] (label) {text};
@@ -92,7 +96,13 @@
 \onehalfspacing
 
 \pagestyle{fancy}
-\rhead{Yubo Su}
+\rfoot{Yubo Su}
 \cfoot{\thepage/\pageref{LastPage}}
+
+\title{Title}
+\author{Yubo Su}
+\date{Date}
+
+\maketitle
 
 \end{document}
