@@ -38,6 +38,9 @@ endsnippet
 snippet `7 "material derivative" iA
 \md{${VISUAL}${1:}}{${2}}
 endsnippet
+snippet `| "derivative at" iA
+\at{$1}
+endsnippet
 snippet `B "mathbf" iA
 \bm{${VISUAL}${1:}}
 endsnippet
@@ -145,28 +148,28 @@ snippet flst "lstinputlisting" b
 \lstinputlisting[basicstyle=\ttfamily\tiny${1:, language=$2}]{$3}
 endsnippet
 snippet (( "in-line left/right parens" i
-\left( ${VISUAL}${1:} \right)
+\p*{${VISUAL}${1:}}
 endsnippet
 snippet [[ "in-line left/right square brackets" i
-\left[ ${VISUAL}${1:} \right]
+\s*{${VISUAL}${1:}}
 endsnippet
 snippet {{ "in-line left/right curly braces" i
-\left\\\{ ${VISUAL}${1:} \right\\\}
+\z*{${VISUAL}${1:}}
 endsnippet
 snippet (B "block left/right parens" i
-\left(
+\p*{
 	${VISUAL}${1:}
-\right)
+}
 endsnippet
 snippet [B "block left/right square brackets" i
-\left[
+\s*{
 	${VISUAL}${1:}
-\right]
+}
 endsnippet
 snippet {B "block left/right curly braces" i
-\left\\\{
+\z*{
 	${VISUAL}${1:}
-\right\\\}
+}
 endsnippet
 
 # ported from snipmate
@@ -179,21 +182,33 @@ snippet tikz "tikz" b
 	\caption{${2}}
 \end{figure}\label{fig:${3}}
 endsnippet
-snippet a "a" b
-\begin{align}
-	${VISUAL}${1}
-\end{align}
-endsnippet
 snippet eq "eq" b
 \begin{equation}
 	${VISUAL}${1}
 		\label{eq:${2}}
 \end{equation}
 endsnippet
+snippet es "equation + split" b
+\begin{equation}
+	\begin{split}
+		${VISUAL}${1}
+			\label{eq:${2}}
+	\end{split}
+\end{equation}
 snippet e* "equation*" b
 \begin{equation*}
 	${VISUAL}${1}
 \end{equation*}
+endsnippet
+snippet a "a" b
+\begin{align}
+	${VISUAL}${1}
+\end{align}
+endsnippet
+snippet ad "aligned" b
+\begin{aligned}
+	${VISUAL}${1}
+\end{aligned}
 endsnippet
 snippet a* "*" b
 \begin{align*}
@@ -287,15 +302,12 @@ endsnippet
 snippet FBF "textbf" b
 \textbf{${VISUAL}${1}}
 endsnippet
-snippet lh "lefthead" b
-\lhead{$1}
-endsnippet
 snippet se "subequations" b
-\begin{subequations}
+\begin{subequations}\label{se:$3}
 	\begin{${1:align}}
 		$2
 	\end{$1}
-\end{subequations}\label{se:$3}
+\end{subequations}
 endsnippet
 snippet cols "columns" b
 \begin{columns}

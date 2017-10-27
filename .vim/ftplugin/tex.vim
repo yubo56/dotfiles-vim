@@ -104,7 +104,6 @@ inoremap <buffer> `U \Upsilon
 inoremap <buffer> `W \Omega
 
 " other ` substitutions
-inoremap <buffer> `\| \Bigg\|
 inoremap <buffer> `& \cdot
 inoremap <buffer> `* \times
 inoremap <buffer> `8 \infty
@@ -115,6 +114,9 @@ inoremap <buffer> `+ ^\dagger
 
 " other substitutions, not `
 inoremap <buffer> --> \to
+inoremap <buffer> <--> \leftrightarrow
+inoremap <buffer> <==> \Leftrightarrow
+inoremap <buffer> ==> \Rightarrow
 inoremap <buffer> ---> \longrightarrow
 inoremap <buffer> -+ \mp
 inoremap <buffer> ~= \approx
@@ -163,5 +165,5 @@ endfunction
 set completefunc=CompleteRefs
 " }}}
 " macros {{{
-let @p = "i\\left\<Esc>%i\\right\<Esc>"
+let @p = "i\\p*\<Esc>lma%r}`ar{"
 " }}}
