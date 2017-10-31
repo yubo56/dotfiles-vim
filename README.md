@@ -1,6 +1,8 @@
 ### Yubo's vim config
 
 ## Updating plugins
+- `git submodule update` syncs sha1 to checked in version; `git reset` before
+  running
 - `git submodule update --remote` (still use `make pull` in dotfiles so on
   master branch for submodules)
 
