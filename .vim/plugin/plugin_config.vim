@@ -38,7 +38,8 @@ if $NO_PLUGIN !=? "TRUE"
         \ 'better written in dot\|times.*may look prettier here\|' .
         \ 'consider-using-enumerate' . '\|cell-var-from-loop\|broad-except\|' .
         \ 'too-many-arguments\|too-many-locals\|too-many-branches\|' .
-        \ 'too-few-public-methods\|invalid-name\|missing-docstring' }
+        \ 'too-few-public-methods\|invalid-name\|missing-docstring\|' .
+        \ 'Module.*numpy.*has no.*member' }
     " }}}
     " {{{ easyMotion config
     nmap <Leader>e <Plug>(easymotion-prefix)
