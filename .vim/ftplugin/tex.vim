@@ -120,6 +120,7 @@ inoremap <buffer> ==> \Rightarrow
 inoremap <buffer> ---> \longrightarrow
 inoremap <buffer> -+ \mp
 inoremap <buffer> ~= \approx
+inoremap <buffer> =~ \simeq
 inoremap <buffer> ~< \lesssim
 inoremap <buffer> ~> \gtrsim
 inoremap <buffer> ~~ \sim
