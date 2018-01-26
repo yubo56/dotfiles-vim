@@ -4,8 +4,9 @@ syn match texInputFile "\\lstinline\s*\(\[.*\]\)\={.\{-}}" contains=texStatement
 
 " ugh the bundled tex.vim one does not make sense
 syn clear texBadMath
-syn match texBadMath "\\end\s*{\s*\(align\|alignat\|displaymath\|displaymath\|eqnarray\|equation\|flalign\|gather\|math\|multline\|xalignat\)\*\=\s*}"
+syn match texBadMath "\\end\s*{\s*\(align\|alignat\|displaymath\|eqnarray\|equation\|flalign\|gather\|math\|multline\|xalignat\)\*\=\s*}"
 syn match texBadMath "\\[\])]"
+call TexNewMathZone("C","align",1)
 
 " highlight autoref correctly
 syn region texRefZone matchgroup=texStatement start="\\autoref{" end="}\|%stopzone\>" contains=@texRefGroup
