@@ -2,14 +2,14 @@
 " f, g = temporary register
 
 " settings
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set tw=120
+setlocal tabstop=2
+setlocal softtabstop=2
+setlocal shiftwidth=2
+setlocal tw=120
 
 " reset highlight for Blend style
 " set cc=121
-set cc=0
+setlocal cc=0
 
 " remove all *.only from the file
 let @o = "mfHmg:%s/\.only\(/\(/g\<CR>'gzt'f"
@@ -28,8 +28,8 @@ let @p = "0f_cf(cb => \<ESC>f,xr(%i, cb\<ESC>"
 " eslint symlink in $PATH to subdirectory of plugin
 let g:syntastic_javascript_checkers = ['eslint']
 
-set include=^const.*=.*require
-set suffixesadd=.js
+setlocal include=^const.*=.*require
+setlocal suffixesadd=.js
 
 " search node_modules too (unused since really slow)
 " fun! IncludeExpr(file)

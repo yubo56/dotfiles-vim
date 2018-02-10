@@ -4,13 +4,13 @@
 "
 
 " without vimlatex, set folding rule
-set foldmethod=indent
+setlocal foldmethod=indent
 
 " indentation configuration
 let g:tex_noindent_env = 'document\|verbatim\|lstlisting'
 
 " autowrap
-set tw=80
+setlocal tw=80
 
 " syntax highlighting in large files is especially slow
 " syntax off
@@ -39,7 +39,7 @@ fun! CompileWith(cmd)
     call Compile()
 endf
 
-set errorformat=%f:%l:\ %m
+setlocal errorformat=%f:%l:\ %m
 call SetTex('pdflatex')
 noremap <buffer> <Leader>cc :call Compile() <cr><C-L>
 noremap <buffer> <Leader>cp :call CompileWith('pdflatex') <cr><C-L>
@@ -165,7 +165,7 @@ function! CompleteRefs(findstart, base)
     endif
 endfunction
 
-set completefunc=CompleteRefs
+setlocal completefunc=CompleteRefs
 " }}}
 " macros {{{
 let @p = "i\\p*\<Esc>lma%r}`ar{"
