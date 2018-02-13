@@ -57,7 +57,7 @@ colorscheme desert
 " timeout len when waiting for input
 set timeoutlen=500
 " wrapping + highlight
-set nowrap
+set wrap
 set tw=80
 hi ColorColumn ctermbg=Red
 set cc=+1

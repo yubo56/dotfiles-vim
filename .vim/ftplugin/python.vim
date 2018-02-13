@@ -12,4 +12,6 @@ function! TogglePythonChecker()
     endif
 endfunction
 
+let @p = "a'=====\<C-R>=expand('%')\<CR>=====', \<ESC>"
+
 nnoremap <F4> :call TogglePythonChecker() <CR>
