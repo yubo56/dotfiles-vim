@@ -1,3 +1,9 @@
+" settings
+setlocal tabstop=2
+setlocal softtabstop=2
+setlocal shiftwidth=2
+setlocal tw=120
+
 let g:syntastic_typescript_checkers = ['tslint']
 fun! SetTslintArgs()
     if expand('%:p') =~ "blend/backend/lib"
