@@ -103,7 +103,7 @@ if has("persistent_undo")
 endif
 
 autocmd BufRead,BufNewFile *.h set filetype=c " *.h files are c, not cpp (wrt stnippets)
-autocmd BufRead,BufNewFile *.ts set filetype=typescript
+autocmd BufRead,BufNewFile *.ts set filetype=javascript
 " }}}
 " {{{ keybindings
 " paste mode toggle
