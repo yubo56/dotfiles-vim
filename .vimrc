@@ -166,7 +166,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " update ctags if found
 autocmd BufWritePost * :call UpdateCtags()
 
-" automatically cd to directory of current file
+" automatically lcd to directory of current file
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 " automatically turn off highlight when in insert mode
 autocmd InsertEnter * set nohlsearch
