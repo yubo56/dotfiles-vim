@@ -103,7 +103,7 @@ if has("persistent_undo")
 endif
 
 autocmd BufRead,BufNewFile *.h set filetype=c " *.h files are c, not cpp (wrt stnippets)
-autocmd BufRead,BufNewFile *.ts set filetype=typescript
+autocmd BufRead,BufNewFile *.ts set filetype=javascript
 " }}}
 " {{{ keybindings
 " paste mode toggle
@@ -166,7 +166,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " update ctags if found
 autocmd BufWritePost * :call UpdateCtags()
 
-" automatically cd to directory of current file
+" automatically lcd to directory of current file
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 " automatically turn off highlight when in insert mode
 autocmd InsertEnter * set nohlsearch

@@ -26,7 +26,25 @@ let @p = "0f_cf(cb => \<ESC>f,xr(%i, cb\<ESC>"
 
 " To make eslint work w/ plugins, just need to globally install plugin, point
 " eslint symlink in $PATH to subdirectory of plugin
+
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint']
+
+fun! SetupTS()
+    setlocal tw=160
+    let g:syntastic_filetype_map = { "javascript": "typescript" }
+    if expand('%:p') =~ "blend.*/backend/lib"
+        let g:syntastic_typescript_tslint_args = '--config ~/blend/backend/tslint.js'
+    else
+        let g:syntastic_typescript_tslint_args = '--config ~/blend/backend/tslint.test.js'
+    endif
+endf
+fun! SetupJS()
+    setlocal tw=120
+    let g:syntastic_filetype_map = {}
+endf
+autocmd BufEnter,BufReadPre  *.ts call SetupTS()
+autocmd BufEnter,BufReadPre *.js call SetupJS()
 
 setlocal include=^const.*=.*require
 setlocal suffixesadd=.js
