@@ -32,7 +32,7 @@ if $NO_PLUGIN !=? "TRUE"
     let g:syntastic_quiet_messages = { "regex":
         \ 'terminated with space\|enclose the previous parenthesis\|' .
         \ 'punctuation.*math mode\|space in front of parenthesis\|' .
-        \ 'between a pair of\|possible unwanted space at "{"\|' .
+        \ 'between a pair of\|possible unwanted space at "{"\|Vertical rules\|' .
         \ 'as an alternative to\|Whitespace before punctation mark\|' .
         \ 'remove spaces in front of punctuation\|achieve an ellipsis\|' .
         \ 'better written in dot\|times.*may look prettier here\|' .

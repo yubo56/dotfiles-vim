@@ -2,7 +2,7 @@
 setlocal tabstop=2
 setlocal softtabstop=2
 setlocal shiftwidth=2
-setlocal tw=120
+setlocal tw=160
 
 let g:syntastic_typescript_checkers = ['tslint']
 fun! SetTslintArgs()
