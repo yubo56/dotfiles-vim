@@ -36,7 +36,7 @@ if $NO_PLUGIN !=? "TRUE"
         \ 'as an alternative to\|Whitespace before punctation mark\|' .
         \ 'remove spaces in front of punctuation\|achieve an ellipsis\|' .
         \ 'better written in dot\|times.*may look prettier here\|' .
-        \ 'Module.*numpy.*has no.*member' }
+        \ 'Module.*numpy.*has no.*member\|too-many-statements' }
     " }}}
     " {{{ easyMotion config
     nmap <Leader>e <Plug>(easymotion-prefix)
