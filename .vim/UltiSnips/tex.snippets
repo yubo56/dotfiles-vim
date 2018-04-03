@@ -58,22 +58,22 @@ snippet `j "expvalue" iA
 endsnippet
 snippet `(s "smallpmatrix" i
 \begin{psmallmatrix}
-	${1}
+    ${1}
 \end{psmallmatrix}
 endsnippet
 snippet `[s "bmatrix" i
 \begin{bsmallmatrix}
-	${1}
+    ${1}
 \end{bsmallmatrix}
 endsnippet
 snippet `( "pmatrix" i
 \begin{pmatrix}
-	${1}
+    ${1}
 \end{pmatrix}
 endsnippet
 snippet `[ "bmatrix" i
 \begin{bmatrix}
-	${1}
+    ${1}
 \end{bmatrix}
 endsnippet
 snippet `I "int" iA
@@ -141,12 +141,12 @@ snippet FEM "emph" iA
 endsnippet
 snippet begin "begin/end environment" i
 \begin{${1}}${2}
-	${VISUAL}${3}
+    ${VISUAL}${3}
 \end{$1}
 endsnippet
 snippet d "Description" b
 \begin{description}
-	\item[${1}]${2}
+    \item[${1}]${2}
 \end{description}
 endsnippet
 snippet lst "lstlisting" b
@@ -168,76 +168,83 @@ snippet {{ "in-line left/right curly braces" i
 endsnippet
 snippet (B "block left/right parens" i
 \p*{
-	${VISUAL}${1:}
+    ${VISUAL}${1:}
 }
 endsnippet
 snippet [B "block left/right square brackets" i
 \s*{
-	${VISUAL}${1:}
+    ${VISUAL}${1:}
 }
 endsnippet
 snippet {B "block left/right curly braces" i
 \z*{
-	${VISUAL}${1:}
+    ${VISUAL}${1:}
 }
 endsnippet
 
 # ported from snipmate
 snippet tikz "tikz" b
 \begin{figure}[!h]
-	\centering
-	\begin{tikzpicture}
-		${1}
-	\end{tikzpicture}
-	\caption{${2}}\label{fig:${3}}
+    \centering
+    \begin{tikzpicture}
+        \draw[<->] (${1:-10}, 0) -- (${2:10}, 0);
+        \draw[<->] (0, ${3:-10}) -- (0, ${4:10});
+        \node[above left] at ($2, 0) {$${5:x}$};
+        \node[above right] at (0, $4) {$${6:y}$};
+        ${7}
+    \end{tikzpicture}
+    \caption{${8}}\label{fig:${9}}
 \end{figure}
+endsnippet
+snippet plot "tikz plot" b
+\draw[${1:<->}, domain=${2:0}:${3:10}] plot(\x, ${4:\x});
 endsnippet
 snippet eq "eq" b
 \begin{equation}
-	${VISUAL}${1}
+    ${VISUAL}${1}
 \end{equation}
 endsnippet
 snippet eql "eq label" b
 \begin{equation}
-	${VISUAL}${1}
-		\label{eq:${2}}
+    ${VISUAL}${1}
+        \label{eq:${2}}
 \end{equation}
 endsnippet
 snippet es "equation + split" b
 \begin{equation}
-	\begin{split}
-		${VISUAL}${1}
-	\end{split}\label{eq:${2}}
+    \begin{split}
+        ${VISUAL}${1}
+    \end{split}\label{eq:${2}}
 \end{equation}
 endsnippet
 snippet e* "equation*" b
 \begin{equation*}
-	${VISUAL}${1}
+    ${VISUAL}${1}
 \end{equation*}
 endsnippet
 snippet a "a" b
 \begin{align}
-	${VISUAL}${1}
+    ${VISUAL}${1}
 \end{align}
 endsnippet
 snippet ad "aligned" b
 \begin{aligned}
-	${VISUAL}${1}
+    ${VISUAL}${1}
 \end{aligned}
 endsnippet
 snippet a* "*" b
 \begin{align*}
-	${VISUAL}${1}
+    ${VISUAL}${1}
 \end{align*}
 endsnippet
 snippet e "e" b
 \begin{enumerate}[${1}]
-	\item ${2}
+    \item ${2}
 \end{enumerate}
 endsnippet
 snippet i "i" b
 \begin{itemize}
-	\item ${VISUAL}${1:}
+    \item ${VISUAL}${1:}
 \end{itemize}
 endsnippet
 snippet s "s" b
@@ -266,47 +273,47 @@ snippet ch "ch" b
 endsnippet
 snippet fig "fig" b
 \begin{figure}[!h]
-	\centering
-	\includegraphics[width=${1}\textwidth]{${2}}
-	\caption{${3}}\label{fig:${4}}
+    \centering
+    \includegraphics[width=${1}\textwidth]{${2}}
+    \caption{${3}}\label{fig:${4}}
 \end{figure}
 endsnippet
 snippet figsub "figsub" b
 \begin{figure}[!h]
-	\centering
-	\begin{subfigure}{${1}\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{${2}}
-		\caption{${3}}
-	\end{subfigure}
-	${4}
-	\caption{${5}}\label{fig:${6}}
+    \centering
+    \begin{subfigure}{${1}\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{${2}}
+        \caption{${3}}
+    \end{subfigure}
+    ${4}
+    \caption{${5}}\label{fig:${6}}
 \end{figure}
 endsnippet
 snippet subfig "subfig" b
 \begin{subfigure}{${1}\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{${2}}
-	\caption{${3}}
+    \centering
+    \includegraphics[width=\textwidth]{${2}}
+    \caption{${3}}
 \end{subfigure}
 endsnippet
 snippet tab "tab" b
 \begin{table}[!h]
-	\centering
-	\begin{tabular}{${1}}
-		${2}
-	\end{tabular}
-	\caption{${3}}\label{tab:${4}}
+    \centering
+    \begin{tabular}{${1}}
+        ${2}
+    \end{tabular}
+    \caption{${3}}\label{tab:${4}}
 \end{table}
 endsnippet
 snippet center "cent" b
 \begin{center}
-	${1}
+    ${1}
 \end{center}
 endsnippet
 snippet cases "cases" b
 \begin{cases}
-	${1}
+    ${1}
 \end{cases}
 endsnippet
 snippet verb "verb" b
@@ -319,33 +326,33 @@ snippet FBF "textbf" b
 endsnippet
 snippet se "subequations" b
 \begin{subequations}\label{se:$3}
-	\begin{${1:align}}
-		$2
-	\end{$1}
+    \begin{${1:align}}
+        $2
+    \end{$1}
 \end{subequations}
 endsnippet
 snippet cols "columns" b
 \begin{columns}
-	\begin{column}{${1:0.5}\textwidth}
-		${2}
-	\end{column}
-	\begin{column}{$1\textwidth}
-		${3}
-	\end{column}
+    \begin{column}{${1:0.5}\textwidth}
+        ${2}
+    \end{column}
+    \begin{column}{$1\textwidth}
+        ${3}
+    \end{column}
 \end{columns}
 endsnippet
 snippet col "single column" b
 \begin{column}{${1}\textwidth}
-	${2}
+    ${2}
 \end{column}
 endsnippet
 
 snippet fr "beamer frame" b
 \begin{frame}
-	\frametitle{${1}}
-	\framesubtitle{${2}}
+    \frametitle{${1}}
+    \framesubtitle{${2}}
 
-	${3}
+    ${3}
 \end{frame}
 endsnippet
 snippet bib "bibliography" b
