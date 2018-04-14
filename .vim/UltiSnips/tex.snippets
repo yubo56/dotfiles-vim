@@ -212,9 +212,9 @@ snippet eql "eq label" b
 endsnippet
 snippet es "equation + split" b
 \begin{equation}
-    \begin{split}
+    \begin{split}${2:\label{eq:${3}}}
         ${VISUAL}${1}
-    \end{split}\label{eq:${2}}
+    \end{split}
 \end{equation}
 endsnippet
 snippet e* "equation*" b
@@ -325,7 +325,7 @@ snippet FBF "textbf" b
 \textbf{${VISUAL}${1}}
 endsnippet
 snippet se "subequations" b
-\begin{subequations}\label{se:$3}
+\begin{subequations}${3:\label{se:$4}}
     \begin{${1:align}}
         $2
     \end{$1}
