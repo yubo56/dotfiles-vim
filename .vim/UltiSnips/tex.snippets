@@ -1,6 +1,6 @@
 # ported from vim-latex
 snippet `< "bra" iA
-\bra{${VISUAL}${1:}}
+\bra*{${VISUAL}${1:}}
 endsnippet
 snippet `C "hat" iA
 \hat{${VISUAL}${1:}}
@@ -21,7 +21,7 @@ snippet `# "mathbb" iA
 \mathbb{${VISUAL}${1:}}
 endsnippet
 snippet `> "ket" iA
-\ket{${VISUAL}${1:}}
+\ket*{${VISUAL}${1:}}
 endsnippet
 snippet `5 "rd" iA
 \rd{${VISUAL}${1:}}{${2}}
@@ -54,7 +54,7 @@ snippet `V "pvec" iA
 \pvec{${VISUAL}${1:}}
 endsnippet
 snippet `j "expvalue" iA
-\expvalue{${VISUAL}${1:}}
+\ev*{${VISUAL}${1:}}
 endsnippet
 snippet `(s "smallpmatrix" i
 \begin{psmallmatrix}
@@ -130,8 +130,8 @@ endsnippet
 snippet ^^ "superscript" iA
 ^{${1}}
 endsnippet
-snippet || "abs" iA
-\abs{${VISUAL}${1:}}
+snippet || "abs" i
+\abs*{${VISUAL}${1:}}
 endsnippet
 snippet <> "dotp" iA
 \dotp{${1}}{${2}}

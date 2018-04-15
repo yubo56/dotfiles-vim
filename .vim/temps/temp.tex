@@ -30,20 +30,15 @@
     \usepackage[font=scriptsize]{subcaption} % subfigures
 
     \newcommand*{\scinot}[2]{#1\times10^{#2}}
-    \newcommand*{\bra}[1]{\left<#1\right|}
-    \newcommand*{\ket}[1]{\left|#1\right>}
     \newcommand*{\dotp}[2]{\left<#1\,\middle|\,#2\right>}
     \newcommand*{\rd}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
     \newcommand*{\pd}[2]{\frac{\partial#1}{\partial#2}}
     \newcommand*{\rtd}[2]{\frac{\mathrm{d}^2#1}{\mathrm{d}#2^2}}
     \newcommand*{\ptd}[2]{\frac{\partial^2 #1}{\partial#2^2}}
     \newcommand*{\md}[2]{\frac{\mathrm{D}#1}{\mathrm{D}#2}}
-    \newcommand*{\norm}[1]{\left|\left|#1\right|\right|}
-    \newcommand*{\abs}[1]{\left|#1\right|}
     \newcommand*{\pvec}[1]{\vec{#1}^{\,\prime}}
     \newcommand*{\svec}[1]{\vec{#1}\;\!}
     \newcommand*{\bm}[1]{\boldsymbol{\mathbf{#1}}}
-    \newcommand*{\expvalue}[1]{\left<#1\right>}
     \newcommand*{\ang}[0]{\text{\AA}}
     \newcommand*{\mum}[0]{\upmu \mathrm{m}}
     \newcommand*{\at}[1]{\left.#1\right|}
@@ -65,6 +60,10 @@
     \DeclareMathOperator{\sgn}{sgn}
     \DeclareMathOperator{\diag}{diag\;}
 
+    \DeclarePairedDelimiter\bra{\langle}{\rvert}
+    \DeclarePairedDelimiter\ket{\lvert}{\rangle}
+    \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+    \DeclarePairedDelimiter\ev{\langle}{\rangle}
     \DeclarePairedDelimiter\p{\lparen}{\rparen}
     \DeclarePairedDelimiter\s{\lbrack}{\rbrack}
     \DeclarePairedDelimiter\z{\lbrace}{\rbrace}
