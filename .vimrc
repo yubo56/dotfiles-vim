@@ -83,7 +83,8 @@ set nojoinspaces
 set list
 hi SpecialKey ctermbg=DarkRed ctermfg=DarkGreen
 set listchars=tab:>-,trail:\ ,nbsp:~
-set showbreak=\\ " mark wrapped lines w/ backslash
+set linebreak " wrap lines at reasonable places
+set showbreak=\ \ \ \ \\ " mark wrapped lines w/ backslash
 
 " statusline
 set laststatus=2            " always statusbar
