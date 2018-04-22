@@ -187,8 +187,8 @@ snippet tikz "tikz" b
 \begin{figure}[!h]
     \centering
     \begin{tikzpicture}
-        \draw[<->] (${1:-10}, 0) -- (${2:10}, 0);
-        \draw[<->] (0, ${3:-10}) -- (0, ${4:10});
+        \draw[<->] (${1:-5}, 0) -- (${2:5}, 0);
+        \draw[<->] (0, ${3:-5}) -- (0, ${4:5});
         \node[above left] at ($2, 0) {$${5:x}$};
         \node[above right] at (0, $4) {$${6:y}$};
         ${7}
@@ -197,7 +197,7 @@ snippet tikz "tikz" b
 \end{figure}
 endsnippet
 snippet plot "tikz plot" b
-\draw[${1:<->}, domain=${2:0}:${3:10}] plot(\x, ${4:\x});
+\draw[${1:<->}, domain=${2:0}:${3:5}] plot(\x, ${4:\x});
 endsnippet
 snippet eq "eq" b
 \begin{equation}
