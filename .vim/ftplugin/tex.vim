@@ -168,7 +168,7 @@ fun! CompleteRefs(findstart, base)
 endf
 
 fun! _beamer()
-    1,$d
+    %d
     0r $HOME/.vim/temps/beamer_temp.tex
 endf
 cnoremap BEAM call _beamer()
