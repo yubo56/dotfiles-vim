@@ -136,7 +136,7 @@ inoremap <buffer> ** \item
 inoremap <buffer> nn\\ \nonumber\\
 " }}}
 " {{{ user-completion autocompletes labels
-function! CompleteRefs(findstart, base)
+fun! CompleteRefs(findstart, base)
     " first invocation returns -1 or index of char after 'ref{' sequence
     " second invocation checks whether base == 'ref{' before returning list of
     "       \label{(.*)} matches
@@ -165,7 +165,13 @@ function! CompleteRefs(findstart, base)
         endwhile
         return lbls
     endif
-endfunction
+endf
+
+fun! _beamer()
+    1,$d
+    0r $HOME/.vim/temps/beamer_temp.tex
+endf
+cnoremap BEAM call _beamer()
 
 setlocal completefunc=CompleteRefs
 " }}}
