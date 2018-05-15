@@ -1,6 +1,6 @@
 snippet fun "Function" i
 function ${1:function_name}(${2:argument}) {
-	${3:// body...}
+  ${3:// body...}
 }
 endsnippet
 snippet fa "Anonymous Function" i
@@ -8,24 +8,24 @@ function(${1}) {${2}}
 endsnippet
 snippet fb "Anonymous Function w/ braces" i
 function(${1}) {
-	${2}
+  ${2}
 }
 endsnippet
 snippet if "if" i
 if (${1:true}) {
-	${2}
+  ${2}
 }
 endsnippet
 snippet el "else" i
 else {
-	${1}
+  ${1}
 }
 endsnippet
 snippet ife "if ... else" i
 if (${1:true}) {
-	${2}
+  ${2}
 } else {
-	${3}
+  ${3}
 }
 endsnippet
 snippet ? "tertiary conditional" i
@@ -33,50 +33,50 @@ ${1:/* condition */} ? ${2:a} : ${3:b}
 endsnippet
 snippet switch "switch" i
 switch (${1:expression}) {
-	case '${3:case}': {
-		${4:// code}
-		break;
-	}
-	${5}
-	default: {
-		${2:// code}
-	}
+  case '${3:case}': {
+    ${4:// code}
+    break;
+  }
+  ${5}
+  default: {
+    ${2:// code}
+  }
 }
 endsnippet
 snippet case "case" i
 case '${1:case}':
-	${2:// code}
-	break;
+  ${2:// code}
+  break;
 ${3}
 endsnippet
 snippet for "for (...) {...}" i
 for (var ${2:i} = 0; $2 < ${1:Things}.length; $2${3:++}) {
-	${4:$1[$2]}
+  ${4:$1[$2]}
 }
 endsnippet
 snippet forr "for (...) {...} (Improved Native For-Loop)" i
 for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3:--}) {
-	${4:$1[$2]}
+  ${4:$1[$2]}
 }
 endsnippet
 snippet wh "while (...) {...}" i
 while (${1:/* condition */}) {
-	${2:/* code */}
+  ${2:/* code */}
 }
 endsnippet
 snippet :f "Object Method" i
 ${1:method_name}: function(${2:attribute}) {
-	${4}
+  ${4}
 }${3:,}
 endsnippet
 snippet des "describe clause" i
 describe('${1}', function() {
-	${2}
+  ${2}
 });
 endsnippet
 snippet it "describe clause" i
-it('${1}', function(${2:cb}) {
-	${3}
+it('${1}', ${2:async }function(${3:cb}) {
+  ${4:${VISUAL}}
 });
 endsnippet
 snippet exp "Description" i
@@ -105,19 +105,26 @@ console.log('=====`!v expand('%')`=====', '${1}'${2:, ${3:$1}});
 endsnippet
 snippet be "before each" b
 beforeEach(function(${1:cb}) {
-	${2}
+  ${2}
 });
 endsnippet
 snippet ctx "ctx before each" b
 let ctx;
 
 beforeEach(function(cb) {
-	async.waterfall([
-		setupUtils.setup,
-		async.asyncify(res => ctx = res.ctx)
-	], cb);
+  async.waterfall([
+    setupUtils.setup,
+    async.asyncify(res => ctx = res.ctx)
+  ], cb);
 });
 endsnippet
 snippet req "Description" b
 const ${1:_} = require('${2:$1}');
+endsnippet
+snippet try "try catch" b
+try {
+  ${1:${VISUAL}}
+} catch(${2:err}) {
+  ${3}
+}
 endsnippet
