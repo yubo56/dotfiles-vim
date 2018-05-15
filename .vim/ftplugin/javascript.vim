@@ -28,15 +28,15 @@ let @p = "0f_cf(cb => \<ESC>f,xr(%i, cb\<ESC>"
 " eslint symlink in $PATH to subdirectory of plugin
 
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_typescript_checkers = []
 
 fun! SetupTS()
     setlocal tw=160
     let g:syntastic_filetype_map = { "javascript": "typescript" }
     if expand('%:p') =~ "blend.*/backend/lib"
-        let g:syntastic_typescript_tslint_args = '--config ~/blend/backend/tslint.js'
+        let g:syntastic_typescript_tslint_args = '--project ~/blend/backend/tsconfig.json --config ~/blend/backend/tslint.js'
     else
-        let g:syntastic_typescript_tslint_args = '--config ~/blend/backend/tslint.test.js'
+        let g:syntastic_typescript_tslint_args = '--project ~/blend/backend/tsconfig.json --config ~/blend/backend/tslint.test.js'
     endif
 endf
 fun! SetupJS()
@@ -48,6 +48,16 @@ autocmd BufEnter,BufReadPre *.js call SetupJS()
 
 setlocal include=^const.*=.*require
 setlocal suffixesadd=.js
+
+function! ToggleTslint()
+    if g:syntastic_typescript_checkers ==? []
+        let g:syntastic_typescript_checkers=['tslint']
+    else
+        let g:syntastic_typescript_checkers=[]
+    endif
+endfunction
+
+nnoremap <F4> :call ToggleTslint() <CR>
 
 " search node_modules too (unused since really slow)
 " fun! IncludeExpr(file)
