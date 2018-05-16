@@ -184,7 +184,7 @@ endsnippet
 
 # ported from snipmate
 snippet tikz "tikz" b
-\begin{figure}[!h]
+\begin{figure}[t]
     \centering
     \begin{tikzpicture}
         \draw[<->] (${1:-5}, 0) -- (${2:5}, 0);
@@ -272,14 +272,14 @@ snippet ch "ch" b
 \chapter{${1:`!v strftime('%D')`}}
 endsnippet
 snippet fig "fig" b
-\begin{figure}[!h]
+\begin{figure}[t]
     \centering
     \includegraphics[width=${1}\textwidth]{${2}}
     \caption{${3}}${4:\label{fig:${5}}}
 \end{figure}
 endsnippet
 snippet figsub "figsub" b
-\begin{figure}[!h]
+\begin{figure}[t]
     \centering
     \begin{subfigure}{${1}\textwidth}
         \centering
@@ -298,7 +298,7 @@ snippet subfig "subfig" b
 \end{subfigure}
 endsnippet
 snippet tab "tab" b
-\begin{table}[!h]
+\begin{table}[t]
     \centering
     \begin{tabular}{${1}}
         ${2}
@@ -356,8 +356,11 @@ snippet fr "beamer frame" b
 \end{frame}
 endsnippet
 snippet bib "bibliography" b
-% \usepackage[numbers]{natbib}
-\bibliographystyle{plainnat}
-\renewcommand{\bibname}{References}
-{\scriptsize \bibliography{proposal}}
+    \usepackage[
+        backend=bibtex8,
+        natbib,
+        style=authoryear,
+        url=false,
+        doi=false]{biblatex}
+    \bibliography{`!v expand('%:r')`}
 endsnippet
