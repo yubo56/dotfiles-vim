@@ -363,4 +363,11 @@ snippet bib "bibliography" b
         url=false,
         doi=false]{biblatex}
     \bibliography{`!v expand('%:r')`}
+	% \printbibliography
+endsnippet
+snippet natbib "natbib bibliography" b
+	\usepackage[numbers]{natbib}
+	\bibliographystyle{plainnat}
+	\renewcommand{\bibname}{References}
+	{\scriptsize \bibliography{`!v expand('%:r')`}}
 endsnippet
