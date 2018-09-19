@@ -168,18 +168,15 @@ snippet {{ "in-line left/right curly braces" i
 endsnippet
 snippet (B "block left/right parens" i
 \p*{
-    ${VISUAL}${1:}
-}
+    ${VISUAL}${1:}}
 endsnippet
 snippet [B "block left/right square brackets" i
 \s*{
-    ${VISUAL}${1:}
-}
+    ${VISUAL}${1:}}
 endsnippet
 snippet {B "block left/right curly braces" i
 \z*{
-    ${VISUAL}${1:}
-}
+    ${VISUAL}${1:}}
 endsnippet
 
 # ported from snipmate
@@ -189,15 +186,15 @@ snippet tikz "tikz" b
     \begin{tikzpicture}
         \draw[<->] (${1:-5}, 0) -- (${2:5}, 0);
         \draw[<->] (0, ${3:-5}) -- (0, ${4:5});
-        \node[above left] at ($2, 0) {$${5:x}$};
-        \node[above right] at (0, $4) {$${6:y}$};
+        \node[below right] at ($2, 0) {$${5:x}$};
+        \node[above left] at (0, $4) {$${6:y}$};
         ${7}
     \end{tikzpicture}
     \caption{${8}}${9:\label{fig:${10}}}
 \end{figure}
 endsnippet
 snippet plot "tikz plot" b
-\draw[${1:<->}, domain=${2:0}:${3:5}] plot(\x, ${4:\x});
+\draw[${1:<->}, domain=${2:0}:${3:5}] plot({\x}, {${4:\x}});
 endsnippet
 snippet eq "eq" b
 \begin{equation}

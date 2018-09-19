@@ -133,6 +133,7 @@ inoremap <buffer> != \neq
 inoremap <buffer> +- \pm
 inoremap <buffer> ** \item
 inoremap <buffer> nn\\ \nonumber\\
+inoremap <buffer> %9 % chktex 9
 " }}}
 " {{{ user-completion autocompletes labels
 fun! CompleteRefs(findstart, base)
