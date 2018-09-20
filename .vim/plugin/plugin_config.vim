@@ -100,17 +100,6 @@ if $NO_PLUGIN !=? "TRUE"
             \ 'm:macros',
         \ ],
     \ }
-    let g:tagbar_type_tex = {
-        \ 'ctagstype' : 'latex',
-        \ 'kinds' : [
-            \ 'c:chapters:0:0',
-            \ 's:sections:0:0',
-            \ 'r:subsections:0:0',
-            \ 'l:labels:0:0',
-        \ ],
-        \ 'sort' : 0,
-    \ }
-
     " }}}
     " {{{ Tabular config
     noremap <Leader>a :Tab /
