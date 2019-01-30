@@ -60,7 +60,7 @@ if $NO_PLUGIN !=? "TRUE"
     " default CurLeft/Right kills arrow key, use Home/End to move cursor,
     " SelectMove(t/b) previously occupied home key
     let g:ctrlp_custom_ignore = 'venv$\|node_modules$\|git$\|dist$\|dev$' .
-                \ '\|build$\|jestCache$\|coverage$'
+                \ '\|build$\|jestCache$\|coverage.*$'
 
     " }}}
     " {{{ Bufexplorer config
