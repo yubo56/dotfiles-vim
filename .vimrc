@@ -106,6 +106,7 @@ endif
 
 autocmd BufRead,BufNewFile *.h set filetype=c " *.h files are c, not cpp (wrt stnippets)
 autocmd BufRead,BufNewFile *.ts,*.tsx set filetype=javascript
+autocmd BufRead,BufNewFile inlist* set filetype=fortran
 " }}}
 " {{{ keybindings
 " paste mode toggle
