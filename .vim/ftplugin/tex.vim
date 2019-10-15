@@ -32,7 +32,7 @@ fun! SetMake()
 endf
 fun! Compile()
     call SetMake()
-    make | cwindow 3
+    Make
 endf
 fun! CompileWith(cmd)
     call SetTex(a:cmd)
