@@ -128,6 +128,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 plt.rc('text', usetex=True)
 plt.rc('font', family='serif', size=16)
+plt.rc('lines', lw=3.5)
 endsnippet
 snippet subplots "subplots" b
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 6), sharex=True)
