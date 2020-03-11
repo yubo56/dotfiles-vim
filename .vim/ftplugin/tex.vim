@@ -176,5 +176,5 @@ cnoremap BEAM call _beamer()
 setlocal completefunc=CompleteRefs
 " }}}
 " macros {{{
-let @p = "i\\p*\<Esc>lma%r}`ar{"
+let @p = "i\\p\<Esc>lma%r}`ar{"
 " }}}
