@@ -20,6 +20,7 @@
         listings, % writing TrueType fonts and including code prettily
         tikz, % drawing things
         booktabs, % \bottomrule instead of hline apparently
+        xcolor, % colored text
         cancel % can cancel things out!
     }
     \usepackage[margin=1in]{geometry} % page geometry
@@ -69,6 +70,8 @@
     \DeclareMathOperator*{\argmax}{argmax}
     \DeclareMathOperator{\sgn}{sgn}
     \DeclareMathOperator{\diag}{diag\;}
+
+    \colorlet{Corr}{red}
 
     % \everymath{\displaystyle} % biggify limits of inline sums and integrals
     \tikzstyle{circ} % usage: \node[circ, placement] (label) {text};

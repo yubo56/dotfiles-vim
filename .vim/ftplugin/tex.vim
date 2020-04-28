@@ -177,4 +177,5 @@ setlocal completefunc=CompleteRefs
 " }}}
 " macros {{{
 let @p = "i\\p\<Esc>lma%r}`ar{"
+let @c = "d%lds{"
 " }}}
