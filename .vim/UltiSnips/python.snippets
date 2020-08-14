@@ -133,10 +133,27 @@ plt.rc('xtick', direction='in', top=True, bottom=True)
 plt.rc('ytick', direction='in', left=True, right=True)
 endsnippet
 snippet subplots "subplots" b
-fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 6), sharex=True)
+fig, (ax1, ax2) = plt.subplots(
+	2, 1,
+	figsize=(8, 8),
+	gridspec_kw={'height_ratios': [1, 1]},
+	sharex=True)
 endsnippet
 snippet save "matplotlib save" b
 plt.tight_layout()
 plt.savefig(${1:fn})
 plt.clf()
+endsnippet
+snippet pkl "pickle" b
+import os
+import pickle
+pkl_fn = ${1}
+if not os.path.exists(pkl_fn):
+	print('Running %s' % pkl_fn)
+	with open(pkl_fn, 'wb') as f:
+		pickle.dump((${2}), f)
+else:
+	with open(pkl_fn, 'rb') as f:
+		print('Loading %s' % pkl_fn)
+		$2 = pickle.load(f)
 endsnippet

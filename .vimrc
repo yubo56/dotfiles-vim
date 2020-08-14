@@ -7,7 +7,9 @@
 " number of digits
 " :%s/ \+/ /g -- compress all whitespace to 1 space
 " /^.\{81,\}$ -- search for all lines at least 81 characters long
+" :%s/^\(.\{80\}\).*/\1/g -- truncate all lines to 80 chars
 " :%s/>*/\=len(submatch(0))/g -- replace all '>' with number of such
+" :%s/[0-9a-f]\{8\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{12\}/UUID/g
 "
 " :g/pattern/d - delete lines matching this pattern (:g! for not-matching)
 " :sort - sorts lines (':sort u' to keep only unique)
@@ -16,6 +18,7 @@
 " ga - information on the character under the cursor
 " g[Uu~]{motion} - uppercase/lowercase/swap until motion
 " //e goes to end of match
+" :Helptags refreshes Pathogen help tags
 "
 
 set nocompatible
@@ -123,6 +126,9 @@ noremap <F3> :set number! relativenumber! <CR>
 
 " buffer splitting
 cnoremap vb vert sball
+
+" remove all unprintable characters
+cnoremap rp %s/[^[:print:]]//g
 
 " makes repeating commands easier
 nnoremap <space> @q
