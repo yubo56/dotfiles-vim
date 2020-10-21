@@ -128,7 +128,7 @@ noremap <F3> :set number! relativenumber! <CR>
 cnoremap vb vert sball
 
 " remove all unprintable characters
-cnoremap rp %s/[^[:print:]]//g
+cnoremap reprint %s/[^[:print:]]//g
 
 " makes repeating commands easier
 nnoremap <space> @q
