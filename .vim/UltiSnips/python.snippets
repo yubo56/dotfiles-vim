@@ -150,6 +150,7 @@ import pickle
 pkl_fn = ${1}
 if not os.path.exists(pkl_fn):
 	print('Running %s' % pkl_fn)
+	${VISUAL}
 	with open(pkl_fn, 'wb') as f:
 		pickle.dump((${2}), f)
 else:
