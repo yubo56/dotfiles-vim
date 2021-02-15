@@ -113,7 +113,6 @@ inoremap <buffer> `, \propto
 inoremap <buffer> `+ ^\dagger
 
 " other substitutions, not `
-inoremap <buffer> \: \colon
 inoremap <buffer> --> \to
 inoremap <buffer> <--> \leftrightarrow
 inoremap <buffer> <==> \Leftrightarrow
