@@ -147,11 +147,27 @@ fun! CompleteRefs(findstart, base)
         endif
 
         " keep searching while next match is != -1 and is left of curr col
-        while match(getline('.'), 'ref{', m + 1) != -1 && m < col('.')
-            let m = match(getline('.'), 'ref{', m + 1)
+        let mnext = match(getline('.'), 'ref{', m + 1)
+        while mnext != -1 && mnext < col('.')
+            let m = mnext
+            let mnext = match(getline('.'), 'ref{', m + 1)
         endw
         return m + 4 " return index after 'ref{'
     else
+        let m = match(getline('.'), 'ref{')
+        if m == -1
+            return [-1]
+        endif
+
+        let mnext = match(getline('.'), 'ref{', m + 1)
+        while mnext != -1 && mnext < col('.')
+            let m = mnext
+            let mnext = match(getline('.'), 'ref{', m + 1)
+        endw
+        return [m] " return index after 'ref{'
+
+        """""""""""""""""""
+
         " a:base is what currently exists in the completion
         let lbls = []
         let linenr = 1
