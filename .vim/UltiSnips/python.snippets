@@ -145,16 +145,15 @@ plt.savefig(${1:fn})
 plt.clf()
 endsnippet
 snippet pkl "pickle" b
-import os
-import pickle
+# import os, pickle, lzma
 pkl_fn = ${1}
 if not os.path.exists(pkl_fn):
 	print('Running %s' % pkl_fn)
 	${VISUAL}
-	with open(pkl_fn, 'wb') as f:
+	with lzma.open(pkl_fn, 'wb') as f:
 		pickle.dump((${2}), f)
 else:
-	with open(pkl_fn, 'rb') as f:
+	with lzma.open(pkl_fn, 'rb') as f:
 		print('Loading %s' % pkl_fn)
 		$2 = pickle.load(f)
 endsnippet
