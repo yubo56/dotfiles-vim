@@ -7,4 +7,4 @@ init_plugins:
 
 # separate target in case we learn more about this process and want to add to it
 update_plugins:
-	git submodule sync && git submodule update --init --recursive
+	git submodule sync && git submodule update --init --recursive --remote
