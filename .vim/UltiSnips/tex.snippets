@@ -284,6 +284,13 @@ snippet fig "fig" b
     \caption{${3}}${4:\label{fig:${5}}}
 \end{figure}
 endsnippet
+snippet figh "fig here" b
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=${1}\columnwidth]{${2}}
+    \caption{${3}}${4:\label{fig:${5}}}
+\end{figure}
+endsnippet
 snippet figsub "figsub" b
 \begin{figure}
     \centering
@@ -382,4 +389,7 @@ snippet circ "draw circle" b
 endsnippet
 snippet TXTC "textcolor" iA
 \textcolor{${1:red}}{${VISUAL}$2}
+endsnippet
+snippet UB "Description" iA
+\underbrace{${VISUAL}${1}}_{$2}
 endsnippet
