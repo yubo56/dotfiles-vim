@@ -27,6 +27,7 @@ set nocompatible
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 if $NO_PLUGIN !=? "TRUE"
     execute pathogen#infect()
+    execute pathogen#helptags()
 endif
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
@@ -123,6 +124,8 @@ nnoremap <C-W>q :bd <CR>
 
 " line numbers
 noremap <F3> :set number! relativenumber! <CR>
+noremap <F4> :set spell spelllang=en_us <CR>
+noremap <F5> :set spell spelllang=<CR>
 
 " buffer splitting
 cnoremap vb vert sball
