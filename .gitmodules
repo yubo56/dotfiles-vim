@@ -1,6 +1,6 @@
 [submodule ".vim/bundle/syntastic"]
     path = .vim/bundle/syntastic
-    url = https://github.com/scrooloose/syntastic.git
+    url = https://github.com/vim-syntastic/syntastic.git
 [submodule ".vim/bundle/ultisnips"]
     path = .vim/bundle/ultisnips
     url = https://github.com/SirVer/ultisnips.git
@@ -30,16 +30,16 @@
 	url = https://github.com/mbbill/undotree.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+	url = https://github.com/preservim/nerdtree.git
 [submodule ".vim/bundle/nerdtree-git-plugin"]
 	path = .vim/bundle/nerdtree-git-plugin
-	url = https://github.com/scrooloose/nerdtree-git-plugin.git
+	url = https://github.com/xuyuanp/nerdtree-git-plugin.git
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
 [submodule ".vim/bundle/tagbar"]
 	path = .vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
+	url = https://github.com/preservim/tagbar.git
 [submodule ".vim/bundle/vim-argumentative"]
 	path = .vim/bundle/vim-argumentative
 	url = https://github.com/PeterRincker/vim-argumentative.git
