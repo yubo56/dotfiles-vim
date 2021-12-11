@@ -1,18 +1,4 @@
-snippet once "Include header once only guard"
-#ifndef ${1:`!p
-if not snip.c:
-	import random, string
-	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn).upper()
-	rand = ''.join(random.sample(string.ascii_letters+string.digits, 8))
-	snip.rv = ('%s_%s' % (name,rand)).upper()
-else:
-	snip.rv = snip.c`}
-#define $1
-
-${VISUAL}$0
-
-#endif /* end of include guard: $1 */
-endsnippet
+extends cshared
 snippet readfile "description"
 std::vector<char> v;
 if (FILE *${2:fp} = fopen(${1:"filename"}, "r")) {
@@ -44,130 +30,26 @@ class ${1:`!v expand('%:r')`}
 		~$1 ();
 };
 endsnippet
-snippet main "description"
-int main(int argc, const char *argv[])
-{
-	${1}
-	return 0;
-}
-endsnippet
 snippet inc "description"
 #include <${1:cstdio}>${2}
 endsnippet
 snippet Inc "description"
-#include "${1:`!v expand('%:r')`}"${2}
+#include "${1:cstdio}"${2}
 endsnippet
-snippet Def "description"
-#ifndef $1
-#define ${1:SYMBOL} ${2:value}
-#endif${3}
-endsnippet
-snippet def "description"
-#define
-endsnippet
-snippet ifdef "description"
-#ifdef ${1:FOO}
-	${2:#define }
-#endif
-endsnippet
-snippet #if "description"
-#if ${1:FOO}
-	${2}
-#endif
-endsnippet
-snippet if "description"
-if (${1:/* condition */})
+snippet FILE "open file" b
+#include <cstdio>
+int main(int argc, const char *argv[])
 {
-	${2:/* code */}
+	FILE *fptr;
+	const char *fn = "${1}";
+	${2:int curr};
+
+	fptr = fopen(fn, "r");
+	fscanf(fptr, "${3:%d}", ${4:&curr});
+	while (!feof(fptr))
+	{
+		fscanf(fptr, "$3", $4);
+	}
+	return 0;
 }
-endsnippet
-snippet elif "description"
-else if (${1:/* condition */})
-{
-	${2:/* code */}
-}
-endsnippet
-snippet el "description"
-else
-{
-	${1}
-}
-endsnippet
-snippet t "description"
-${1:/* condition */} ? ${2:a} : ${3:b}
-endsnippet
-snippet do "description"
-do
-{
-	${2:/* code */}
-} while (${1:/* condition */});
-endsnippet
-snippet wh "description"
-while (${1:/* condition */})
-{
-	${2:/* code */}
-}
-endsnippet
-snippet for "description"
-for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++})
-{
-	${4:/* code */}
-}
-endsnippet
-snippet forr "description"
-for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++})
-{
-	${5:/* code */}
-}
-endsnippet
-snippet fun "description"
-${1:void} ${2:function_name}(${3})
-{
-	${4:/* code */}
-}
-${5}
-endsnippet
-snippet fund "description"
-${1:void} ${2:function_name}(${3});${4}
-endsnippet
-snippet td "description"
-typedef ${1:int} ${2:MyCustomType};${3}
-endsnippet
-snippet st "description"
-struct ${1:`!v expand('%:r')`}
-{
-	${2:/* data */}
-}${3: /* optional variable list */};${4}
-endsnippet
-snippet tds "description"
-typedef struct ${2:_$1 }
-{
-	${3:/* data */}
-} ${1:`!v expand('%:r')`};
-endsnippet
-snippet tde "description"
-typedef enum
-{
-	${1:/* data */}
-} ${2:foo};
-endsnippet
-snippet pr "description"
-printf("${1:%s}\n"${2});${3}
-endsnippet
-snippet fpr "description"
-fprintf(${1:stderr}, "${2:%s}\n"${3});${4}
-endsnippet
-snippet . "description"
-[${1}]${2}
-endsnippet
-snippet un "description"
-unsigned
-endsnippet
-snippet /* "description"
-/**
- * ${1}
- */
-endsnippet
-snippet MAX "Description" b
-#define MAX(a, b) ((a) > (b)) ? (a) : (b)
 endsnippet
