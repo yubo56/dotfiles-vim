@@ -132,6 +132,7 @@ cnoremap vb vert sball
 
 " remove all unprintable characters
 cnoremap reprint %s/[^[:print:]]//g
+cnoremap reprint2 %s/[^\x00-\x7F]//g
 
 " makes repeating commands easier
 nnoremap <space> @q
