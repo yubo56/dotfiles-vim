@@ -57,11 +57,14 @@ set incsearch " search as you go
 set hidden
 " syntax highlighting
 syntax on
+" colors!!
+colorscheme desert
 " timeout len when waiting for input
 set timeoutlen=500
 " wrapping + highlight
 set wrap
 set tw=80
+hi ColorColumn ctermbg=Red
 set cc=+1
 " show opening operator when closing
 set showmatch
@@ -69,11 +72,6 @@ set showmatch
 set iskeyword=@,48-57,192-255,_
 " define tags files
 set tags=./.tags;
-
-" colors!! (hacked version of desert)
-colorscheme desert_yubo
-" hi ColorColumn ctermbg=Red
-hi SpecialKey ctermbg=DarkRed ctermfg=DarkGreen
 
 " show mode in status bar (compatibility?)
 set showmode
@@ -88,6 +86,7 @@ set wildmode=longest:full,full
 set nojoinspaces
 " neat whitespace highlighting
 set list
+hi SpecialKey ctermbg=DarkRed ctermfg=DarkGreen
 set listchars=tab:>-,trail:\ ,nbsp:~
 set linebreak " wrap lines at reasonable places
 set showbreak=\\ " mark wrapped lines w/ backslash
