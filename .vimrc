@@ -57,8 +57,8 @@ set incsearch " search as you go
 set hidden
 " syntax highlighting
 syntax on
-" colors!!
-colorscheme desert
+" colors!! (use default for now, don't like the non-black bg of desert)
+" colorscheme desert
 " timeout len when waiting for input
 set timeoutlen=500
 " wrapping + highlight
