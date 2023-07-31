@@ -28,7 +28,8 @@ if $NO_PLUGIN !=? "TRUE"
     let g:syntastic_enable_perl_checker = 1
     let g:syntastic_perl_checkers = ['perl', 'podchecker']
     let g:syntastic_tex_checkers = ['chktex']
-    let g:syntastic_cpp_compiler_options = ' -std=c++11'
+    let g:syntastic_cpp_compiler_options = ' -std=c++20'
+    let g:syntastic_cpp_compiler="g++-12"
 
     " ignore messages
     let g:syntastic_quiet_messages = { "regex":
