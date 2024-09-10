@@ -70,10 +70,7 @@ inoremap <buffer> `b \beta
 inoremap <buffer> `c \chi
 inoremap <buffer> `d \delta
 inoremap <buffer> `e \epsilon
-inoremap <buffer> `E \varepsilon
 inoremap <buffer> `f \phi
-inoremap <buffer> `T \partial
-inoremap <buffer> `R \varphi
 inoremap <buffer> `g \gamma
 inoremap <buffer> `h \eta
 inoremap <buffer> `i \iota
@@ -92,23 +89,27 @@ inoremap <buffer> `x \xi
 inoremap <buffer> `y \psi
 inoremap <buffer> `z \zeta
 inoremap <buffer> `D \Delta
+inoremap <buffer> `E \varepsilon
 inoremap <buffer> `F \Phi
-inoremap <buffer> `P \Pi
 inoremap <buffer> `G \Gamma
-inoremap <buffer> `Q \Theta
+" inoremap <buffer> `H \hbar
+inoremap <buffer> `H \varpi
 inoremap <buffer> `L \Lambda
-inoremap <buffer> `X \Xi
-inoremap <buffer> `Y \Psi
+inoremap <buffer> `N \nabla
+inoremap <buffer> `P \Pi
+inoremap <buffer> `Q \Theta
+inoremap <buffer> `R \varphi
 inoremap <buffer> `S \Sigma
+inoremap <buffer> `T \partial
 inoremap <buffer> `U \Upsilon
 inoremap <buffer> `W \Omega
+inoremap <buffer> `X \Xi
+inoremap <buffer> `Y \Psi
 
 " other ` substitutions
 inoremap <buffer> `& \cdot
 inoremap <buffer> `* \times
 inoremap <buffer> `8 \infty
-inoremap <buffer> `N \nabla
-inoremap <buffer> `H \hbar
 inoremap <buffer> `, \propto
 inoremap <buffer> `+ ^\dagger
 

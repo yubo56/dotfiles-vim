@@ -160,3 +160,26 @@ else:
 		print('Loading %s' % pkl_fn)
 		$2 = pickle.load(f)
 endsnippet
+snippet rebound "rebound sim" b
+ntimes = ${1}
+times = np.linspace(0, ${2}, ntimes)
+sim = rebound.Simulation()
+sim.units = ('AU', 'Msun', 'yr')
+sim.add(m=1, r=0)
+sim.add(m=1e-3, r=0, a=1)
+sim.add(m=3e-6, r=0, a=1.5)
+${3}
+sim.integrator = '${4}'
+ps = sim.particles[1: ] # planet particles
+npl = len(ps)
+dat = np.zeros((6 * npl, ntimes))
+for i, t in enumerate(times):
+	sim.integrate(t)
+	for j in range(npl):
+		dat[6 * j, i] = ps[j].f
+		dat[6 * j + 1, i] = ps[j].a
+		dat[6 * j + 2, i] = ps[j].e
+		dat[6 * j + 3, i] = ps[j].inc
+		dat[6 * j + 4, i] = ps[j].omega
+		dat[6 * j + 5, i] = ps[j].Omega
+endsnippet
