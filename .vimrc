@@ -10,6 +10,7 @@
 " :%s/^\(.\{80\}\).*/\1/g -- truncate all lines to 80 chars
 " :%s/>*/\=len(submatch(0))/g -- replace all '>' with number of such
 " :%s/[0-9a-f]\{8\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{12\}/UUID/g
+" /[^\d0-\d127] - search for non-ascii characters
 "
 " :g/pattern/d - delete lines matching this pattern (:g! for not-matching)
 " :sort - sorts lines (':sort u' to keep only unique)
@@ -72,7 +73,7 @@ set cc=+1
 " show opening operator when closing
 set showmatch
 " define what words are in vim
-set iskeyword=@,48-57,192-255,_
+set iskeyword=@,48-57,192-255,_,-
 " define tags files
 set tags=./.tags;
 
