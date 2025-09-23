@@ -30,6 +30,7 @@ if $NO_PLUGIN !=? "TRUE"
     let g:syntastic_tex_checkers = ['chktex']
     let g:syntastic_cpp_compiler_options = ' -std=c++20'
     let g:syntastic_cpp_compiler="g++-12"
+    let g:syntastic_tex_chktex_args="-n8 -n1 -n37"
 
     " ignore messages
     let g:syntastic_quiet_messages = { "regex":
