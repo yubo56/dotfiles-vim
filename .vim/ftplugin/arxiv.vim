@@ -1,4 +1,3 @@
-set tw=0
 set sw=4
 set fdm=indent
 
