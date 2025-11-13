@@ -1,2 +1,2 @@
 " basic syntax highlighting
-syntax keyword Title Authors Link Abstract Title
+syntax keyword Title Authors Link Abstract Title Comments

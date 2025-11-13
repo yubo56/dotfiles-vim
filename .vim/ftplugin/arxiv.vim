@@ -1,6 +1,3 @@
-set sw=4
-set fdm=indent
-
 nnoremap <C-]> jjmaYGpdaW`a:exec 'silent ! wget -q -nc ' . matchlist(getline('.'), 'Link: \(\S\+\)')[1] . ' -P pdf/' . @%  . '&' <CR><C-L>kkzt
 nnoremap <C-G> :exec 'silent ! xdg-open ' . substitute(matchlist(getline('.'), 'Link: \(\S\+\)')[1], 'pdf', 'abs', 'g') <CR><C-L>
 nnoremap <C-P> :exec 'silent ! zathura pdf/' . @% . '/* &' <CR><C-L>
