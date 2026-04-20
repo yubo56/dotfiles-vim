@@ -11,6 +11,7 @@
 " :%s/>*/\=len(submatch(0))/g -- replace all '>' with number of such
 " :%s/[0-9a-f]\{8\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{12\}/UUID/g
 " /[^\d0-\d127] - search for non-ascii characters
+" %s/\d\+/\=printf("%04d", submatch(0))/g -- reformats numbers in file
 "
 " :g/pattern/d - delete lines matching this pattern (:g! for not-matching)
 " :sort - sorts lines (':sort u' to keep only unique)

@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/dracula"]
 	path = .vim/bundle/dracula
 	url = git@github.com:dracula/vim.git
+[submodule ".vim/bundle/vim-ai"]
+	path = .vim/bundle/vim-ai
+	url = https://github.com/madox2/vim-ai.git
