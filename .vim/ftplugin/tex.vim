@@ -131,7 +131,7 @@ inoremap <buffer> >= \geq
 inoremap <buffer> <= \leq
 inoremap <buffer> != \neq
 inoremap <buffer> +- \pm
-inoremap <buffer> ** \item
+inoremap <buffer> ** \item<CR><tab>
 inoremap <buffer> nn\\ \nonumber\\
 inoremap <buffer> %9 % chktex 9
 " }}}
