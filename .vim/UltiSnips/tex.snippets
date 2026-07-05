@@ -389,7 +389,9 @@ snippet circ "draw circle" b
 \filldraw (${1:0},${2:0}) circle(${3:1pt});
 endsnippet
 snippet TXTC "textcolor" iA
-\textcolor{${1:red}}{${VISUAL}$2}
+\textcolor{${1:red}}{
+${VISUAL}$2
+}
 endsnippet
 snippet UB "Description" iA
 \underbrace{${VISUAL}${1}}_{$2}
