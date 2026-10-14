@@ -1,55 +1,52 @@
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/pack/plugins/start/syntastic
-    url = https://github.com/vim-syntastic/syntastic.git
-[submodule ".vim/bundle/ultisnips"]
+[submodule ".vim/pack/plugins/start/ultisnips"]
 	path = .vim/pack/plugins/start/ultisnips
     url = https://github.com/SirVer/ultisnips.git
-[submodule ".vim/bundle/vim-javascript-syntax"]
+[submodule ".vim/pack/plugins/start/vim-javascript-syntax"]
 	path = .vim/pack/plugins/start/vim-javascript-syntax
     url = https://github.com/jelera/vim-javascript-syntax.git
-[submodule ".vim/bundle/vim-commentary"]
+[submodule ".vim/pack/plugins/start/vim-commentary"]
 	path = .vim/pack/plugins/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule ".vim/bundle/vim-easymotion"]
+[submodule ".vim/pack/plugins/start/vim-easymotion"]
 	path = .vim/pack/plugins/start/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
-[submodule ".vim/bundle/ctrlp.vim"]
+[submodule ".vim/pack/plugins/start/ctrlp.vim"]
 	path = .vim/pack/plugins/start/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule ".vim/bundle/vim-surround"]
+[submodule ".vim/pack/plugins/start/vim-surround"]
 	path = .vim/pack/plugins/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/vim-repeat"]
+[submodule ".vim/pack/plugins/start/vim-repeat"]
 	path = .vim/pack/plugins/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule ".vim/bundle/undotree"]
+[submodule ".vim/pack/plugins/start/undotree"]
 	path = .vim/pack/plugins/start/undotree
 	url = https://github.com/mbbill/undotree.git
-[submodule ".vim/bundle/nerdtree"]
+[submodule ".vim/pack/plugins/start/nerdtree"]
 	path = .vim/pack/plugins/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule ".vim/bundle/nerdtree-git-plugin"]
+[submodule ".vim/pack/plugins/start/nerdtree-git-plugin"]
 	path = .vim/pack/plugins/start/nerdtree-git-plugin
 	url = https://github.com/xuyuanp/nerdtree-git-plugin.git
-[submodule ".vim/bundle/tabular"]
+[submodule ".vim/pack/plugins/start/tabular"]
 	path = .vim/pack/plugins/start/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule ".vim/bundle/tagbar"]
+[submodule ".vim/pack/plugins/start/tagbar"]
 	path = .vim/pack/plugins/start/tagbar
 	url = https://github.com/preservim/tagbar.git
-[submodule ".vim/bundle/vim-argumentative"]
+[submodule ".vim/pack/plugins/start/vim-argumentative"]
 	path = .vim/pack/plugins/start/vim-argumentative
 	url = https://github.com/PeterRincker/vim-argumentative.git
-[submodule ".vim/bundle/vim-fugitive"]
+[submodule ".vim/pack/plugins/start/vim-fugitive"]
 	path = .vim/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/bufexplorer"]
+[submodule ".vim/pack/plugins/start/bufexplorer"]
 	path = .vim/pack/plugins/start/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
-[submodule ".vim/bundle/vim-python-pep8-indent"]
+[submodule ".vim/pack/plugins/start/vim-python-pep8-indent"]
 	path = .vim/pack/plugins/start/vim-python-pep8-indent
 	url = https://github.com/Vimjas/vim-python-pep8-indent.git
-[submodule ".vim/bundle/vim-dispatch"]
+[submodule ".vim/pack/plugins/start/vim-dispatch"]
 	path = .vim/pack/plugins/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
 [submodule ".vim/pack/plugins/start/vim-lsp"]
