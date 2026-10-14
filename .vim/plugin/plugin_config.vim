@@ -9,38 +9,23 @@ if $NO_PLUGIN !=? "TRUE"
     " :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
     " }}}
-    " {{{ Syntastic
-    " set statusline+=%#warningmsg#
-    " set statusline+=%{SyntasticStatuslineFlag()}
-    " set statusline+=%*
-
     " recognize tex correctly
     let g:tex_flavor = "latex"
 
-    " recommended syntastic options
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-    let g:syntastic_loc_list_height = 3
+    " {{{ Ale
+    " open the loclist when there are problems, 3 lines tall
+    let g:ale_open_list = 1
+    let g:ale_list_window_size = 3
 
-    " enable perl
-    let g:syntastic_enable_perl_checker = 1
-    let g:syntastic_perl_checkers = ['perl', 'podchecker']
-    let g:syntastic_tex_checkers = ['chktex']
-    let g:syntastic_cpp_compiler_options = ' -std=c++20'
-    let g:syntastic_cpp_compiler="g++-12"
-    let g:syntastic_tex_chktex_args="-n8 -n1 -n37"
-
-    " ignore messages
-    let g:syntastic_quiet_messages = { "regex":
-        \ 'terminated with space\|enclose the previous parenthesis\|' .
-        \ 'punctuation.*math mode\|space in front of parenthesis\|' .
-        \ 'between a pair of\|possible unwanted space at "{"\|Vertical rules\|' .
-        \ 'as an alternative to\|Whitespace before punctation mark\|' .
-        \ 'remove spaces in front of punctuation\|achieve an ellipsis\|' .
-        \ 'better written in dot\|times.*may look prettier here\|' .
-        \ 'Module.*numpy.*has no.*member\|too-many-statements' }
+    " 'perl' runs BEGIN blocks, so ALE leaves it off unless listed explicitly
+    " clangd reads compile_commands.json + .clangd from the repo root;
+    " standalone clang-tidy chokes on the gcc flags in compile_commands.json
+    let g:ale_linters = {
+        \ 'cpp': ['clangd'],
+        \ 'perl': ['perl'],
+        \ 'tex': ['chktex'],
+        \ }
+    let g:ale_tex_chktex_options = '-I -n8 -n1 -n37'
     " }}}
     " {{{ easyMotion config
     nmap <Leader>e <Plug>(easymotion-prefix)
