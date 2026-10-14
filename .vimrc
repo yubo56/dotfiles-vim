@@ -20,16 +20,15 @@
 " ga - information on the character under the cursor
 " g[Uu~]{motion} - uppercase/lowercase/swap until motion
 " //e goes to end of match
-" :Helptags refreshes Pathogen help tags
+" :helptags ALL refreshes plugin help tags
 "
 
 set nocompatible
 
-" pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-if $NO_PLUGIN !=? "TRUE"
-    execute pathogen#infect()
-    execute pathogen#helptags()
+" Keep NO_PLUGIN compatible with native Vim packages while still loading
+" personal scripts from ~/.vim/plugin.
+if $NO_PLUGIN ==? "TRUE"
+    set packpath-=~/.vim
 endif
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
