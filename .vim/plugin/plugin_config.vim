@@ -16,6 +16,7 @@ if $NO_PLUGIN !=? "TRUE"
     " open the loclist when there are problems, 3 lines tall
     let g:ale_open_list = 1
     let g:ale_list_window_size = 3
+    let g:ale_virtualtext_cursor = 'disabled'
 
     " 'perl' runs BEGIN blocks, so ALE leaves it off unless listed explicitly
     " clangd reads compile_commands.json + .clangd from the repo root;
