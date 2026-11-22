@@ -13,6 +13,7 @@ if $NO_PLUGIN !=? "TRUE"
     let g:tex_flavor = "latex"
 
     " {{{ Ale
+    let g:ale_completion_enabled = 1
     " open the loclist when there are problems, 3 lines tall
     let g:ale_open_list = 1
     let g:ale_list_window_size = 3
@@ -22,6 +23,7 @@ if $NO_PLUGIN !=? "TRUE"
     " clangd reads compile_commands.json + .clangd from the repo root;
     " standalone clang-tidy chokes on the gcc flags in compile_commands.json
     let g:ale_linters = {
+        \ 'c': ['clangd'],
         \ 'cpp': ['clangd'],
         \ 'perl': ['perl'],
         \ 'tex': ['chktex'],
